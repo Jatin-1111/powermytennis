@@ -4,7 +4,7 @@ import { privateLessons } from '@/data/programs';
 import { FeeTable } from '@/components/programs/FeeTable';
 
 export const metadata = {
-  title: 'Private Lessons | PowerMyTennis High Performance Academy',
+  title: 'Private Lessons',
   description: 'View fee charts and schedules for one-on-one private tennis lessons.',
 };
 
@@ -12,10 +12,10 @@ export default function PrivateLessonsPage() {
   return (
     <main className="min-h-screen bg-brand-white pb-24">
       {/* Page Header */}
-      <div className="bg-brand-primary py-24 md:py-32 text-center relative overflow-hidden">
+      <div className="bg-brand-primary py-section text-center relative overflow-hidden">
         <div className="absolute inset-0 opacity-5 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-brand-white via-brand-primary to-brand-primary" />
         <div className="relative z-10 px-4">
-          <h1 className="text-5xl md:text-6xl font-black uppercase tracking-tight text-brand-white mb-6">
+          <h1 className="text-hero font-black uppercase tracking-tight text-brand-white mb-6">
             Private Lessons
           </h1>
           <div className="w-24 h-1.5 bg-brand-accent mx-auto rounded-full"></div>

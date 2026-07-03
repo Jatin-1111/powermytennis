@@ -2,14 +2,12 @@
 
 import { useActionState } from 'react';
 import { useSearchParams } from 'next/navigation';
-import { submitContactForm } from '@/app/actions/contact';
+import { submitContactForm, type ContactFormState } from '@/app/actions/contact';
 import { programs } from '@/data/programs';
 import { useState, useEffect } from 'react';
 
-const initialState = {
+const initialState: ContactFormState = {
   success: false,
-  message: '',
-  error: '',
 };
 
 export function ContactForm() {

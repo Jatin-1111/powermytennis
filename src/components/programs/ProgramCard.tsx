@@ -24,7 +24,7 @@ export function ProgramCard({ program }: ProgramCardProps) {
           <span className="text-5xl md:text-6xl font-black text-brand-secondary font-mono tracking-tighter">
             {formatCurrency(program.fee)}
           </span>
-          <span className="text-brand-black font-bold uppercase tracking-widest opacity-60 text-sm md:text-base">
+          <span className="text-brand-secondary font-bold uppercase tracking-widest opacity-90 text-sm md:text-base">
             /{program.feeFrequency.replace('per ', '')}
           </span>
         </div>
@@ -40,7 +40,7 @@ export function ProgramCard({ program }: ProgramCardProps) {
         {/* Simple Schedule */}
         {program.simpleSchedule && (
           <div className="mb-6">
-            <h4 className="text-xs font-black text-brand-neutral uppercase tracking-widest mb-4">Batch Timings</h4>
+            <h4 className="text-xs font-black text-brand-secondary uppercase tracking-widest mb-4">Batch Timings</h4>
             <ul className="space-y-0">
               {program.simpleSchedule.map((slot, idx) => (
                 <li key={idx} className="flex flex-col md:flex-row justify-between items-start md:items-center py-3 border-b border-brand-neutral/20 last:border-0">
@@ -56,7 +56,7 @@ export function ProgramCard({ program }: ProgramCardProps) {
         {program.modules && (
           <div className="mb-6">
             {program.moduleSelectionText && (
-              <p className="text-xs font-black text-brand-coral uppercase tracking-widest mb-5 text-center bg-brand-coral/10 py-3 px-4 rounded-xl border border-brand-coral/20">
+              <p className="text-xs font-black text-brand-primary uppercase tracking-widest mb-5 text-center bg-brand-coral/10 py-3 px-4 rounded-xl border border-brand-coral/20">
                 {program.moduleSelectionText}
               </p>
             )}
@@ -64,9 +64,9 @@ export function ProgramCard({ program }: ProgramCardProps) {
               {program.modules.map((mod, idx) => (
                 <div key={idx} className="bg-brand-neutral/5 p-5 rounded-2xl border border-brand-neutral/20 h-full">
                   {mod.name && (
-                    <h5 className="font-black text-brand-primary mb-4 text-center border-b border-brand-neutral/20 pb-3 tracking-widest uppercase text-sm">
+                    <h4 className="font-black text-brand-primary mb-4 text-center border-b border-brand-neutral/20 pb-3 tracking-widest uppercase text-sm">
                       {mod.name}
-                    </h5>
+                    </h4>
                   )}
                   <ul className="space-y-3">
                     {mod.slots.map((slot, sIdx) => (
@@ -85,7 +85,7 @@ export function ProgramCard({ program }: ProgramCardProps) {
         {/* Inclusions */}
         {program.inclusions && program.inclusions.length > 0 && (
           <div className="mt-auto pt-6 border-t-2 border-dashed border-brand-neutral/30">
-            <h4 className="text-xs font-black text-brand-neutral uppercase tracking-widest mb-4">Included in Fee</h4>
+            <h4 className="text-xs font-black text-brand-secondary uppercase tracking-widest mb-4">Included in Fee</h4>
             <ul className="space-y-3">
               {program.inclusions.map((inclusion, idx) => (
                 <li key={idx} className="flex items-start gap-3 text-sm text-brand-black">

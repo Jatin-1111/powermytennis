@@ -74,7 +74,7 @@ export function Footer() {
 
         </div>
 
-        <div className="pt-8 border-t border-brand-neutral/20 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-medium text-brand-neutral opacity-60">
+        <div className="pt-8 border-t border-brand-neutral/20 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-medium text-brand-neutral">
           <p>&copy; {new Date().getFullYear()} {siteConfig.name}. All rights reserved.</p>
           <p>Powered by Next.js & Tailwind CSS</p>
         </div>

@@ -3,7 +3,7 @@ import { SectionHeading } from '@/components/shared/SectionHeading';
 import { policies, privateLessons } from '@/data/programs';
 
 export const metadata = {
-  title: 'Policies | PowerMyTennis High Performance Academy',
+  title: 'Policies',
   description: 'Registration, fee deposit, and scheduling policies for PowerMyTennis Academy.',
 };
 
@@ -11,11 +11,11 @@ export default function PoliciesPage() {
   return (
     <main className="min-h-screen bg-brand-white pb-24">
       {/* Page Header */}
-      <div className="bg-brand-primary py-24 md:py-32 text-center relative overflow-hidden">
+      <div className="bg-brand-primary py-section text-center relative overflow-hidden">
         <div className="absolute inset-0 opacity-5 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-brand-white via-brand-primary to-brand-primary" />
         <div className="relative z-10 px-4">
-          <h1 className="text-5xl md:text-6xl font-black uppercase tracking-tight text-brand-white mb-6">
-            Policies
+          <h1 className="text-hero font-black uppercase tracking-tight text-brand-white mb-6">
+            Academy Policies
           </h1>
           <div className="w-24 h-1.5 bg-brand-accent mx-auto rounded-full"></div>
         </div>
@@ -40,7 +40,7 @@ export default function PoliciesPage() {
             <p className="text-brand-black text-lg leading-relaxed font-medium">
               A registration fee of <strong className="font-black text-brand-primary bg-brand-neutral/20 px-2 py-0.5 rounded">₹{policies.registrationFee.amount}</strong> is applicable to athletes joining the following groups: <span className="font-bold text-brand-secondary">{policies.registrationFee.applicableGroups.join(', ')}</span>.
             </p>
-            <div className="mt-8 bg-brand-coral/10 text-brand-coral px-5 py-3 rounded-xl inline-block font-black text-sm tracking-widest uppercase border border-brand-coral/20">
+            <div className="mt-8 bg-brand-coral/10 text-brand-primary px-5 py-3 rounded-xl inline-block font-black text-sm tracking-widest uppercase border border-brand-coral/20">
               {policies.registrationFee.note}
             </div>
           </div>

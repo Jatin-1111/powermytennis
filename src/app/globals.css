@@ -31,6 +31,25 @@
   --color-module-yellow-green: #C4D92B;
   --color-module-dark-green: #2F5233;
   --color-module-pink: #E85A9C;
+
+  /* Typography Scale (Fluid) */
+  --text-hero: clamp(3rem, 8vw, 5rem);
+  --text-h1: clamp(2.25rem, 5vw, 3.5rem);
+  --text-h2: clamp(1.75rem, 4vw, 2.5rem);
+  --text-h3: clamp(1.25rem, 3vw, 1.5rem);
+  --text-body-lg: clamp(1rem, 2vw, 1.125rem);
+  --text-body: 1rem;
+  --text-sm: 0.875rem;
+
+  /* Spacing Scale (Fluid) */
+  --spacing-section: clamp(4rem, 8vw, 8rem);
+  --spacing-section-sm: clamp(3rem, 5vw, 5rem);
+  --spacing-card: clamp(1.25rem, 3vw, 2rem);
+  --spacing-element: clamp(1rem, 2vw, 1.5rem);
+
+  /* Elevation */
+  --shadow-card-idle: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+  --shadow-card-hover: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.05);
 }
 
 @media (prefers-color-scheme: dark) {

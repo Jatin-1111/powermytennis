@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { pathwayTiers, PathwayTier } from '@/data/pathway';
 import { PathwayTierCard } from './PathwayTierCard';
+import { MotionSection, MotionItem } from '@/components/shared/MotionSection';
 
 export function PathwayChart() {
   const [expandedTierId, setExpandedTierId] = useState<string | null>(null);
@@ -20,9 +21,9 @@ export function PathwayChart() {
     <div className="flex flex-col md:flex-row gap-4 md:gap-8 mb-6 md:mb-10 relative">
       {/* Desktop Category Label */}
       <div className="hidden md:flex md:w-48 shrink-0 items-center justify-center border-r-2 border-dashed border-brand-neutral/40 pr-8">
-        <h3 className="text-xl font-bold text-brand-secondary text-center leading-tight">
+        <h3 className="text-h3 font-bold text-brand-secondary text-center leading-tight" aria-label={title}>
           {title.split(' ').map((word, i) => (
-            <span key={i} className="block">{word}</span>
+            <span key={i} className="block" aria-hidden="true">{word}</span>
           ))}
         </h3>
       </div>
@@ -33,16 +34,17 @@ export function PathwayChart() {
       </div>
       
       {/* Tier Rows */}
-      <div className="flex-1 flex flex-col gap-4">
+      <MotionSection stagger className="flex-1 flex flex-col gap-4">
         {tiers.map(tier => (
-          <PathwayTierCard 
-            key={tier.id}
-            tier={tier}
-            isExpanded={expandedTierId === tier.id}
-            onToggle={() => toggleTier(tier.id)}
-          />
+          <MotionItem key={tier.id}>
+            <PathwayTierCard 
+              tier={tier}
+              isExpanded={expandedTierId === tier.id}
+              onToggle={() => toggleTier(tier.id)}
+            />
+          </MotionItem>
         ))}
-      </div>
+      </MotionSection>
     </div>
   );
 
@@ -56,7 +58,7 @@ export function PathwayChart() {
         <div className="w-1.5 bg-brand-secondary flex-1 rounded-b-full shadow-sm" />
         
         {/* Rotated Text */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -rotate-90 whitespace-nowrap">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -rotate-90 whitespace-nowrap bg-brand-white px-2">
           <span className="text-brand-secondary font-black uppercase tracking-widest text-sm opacity-90 tracking-[0.2em]">
             Coaching Progression
           </span>

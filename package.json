@@ -9,6 +9,7 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "framer-motion": "^12.42.2",
     "lucide-react": "^1.23.0",
     "next": "16.2.10",
     "react": "19.2.4",
@@ -23,6 +24,8 @@
     "babel-plugin-react-compiler": "1.0.0",
     "eslint": "^9",
     "eslint-config-next": "16.2.10",
+    "lighthouse": "^13.4.0",
+    "puppeteer": "^25.3.0",
     "tailwindcss": "^4",
     "typescript": "^5"
   }

@@ -17,10 +17,12 @@ const FACILITIES = [
 
 export function FacilityIconGrid() {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div className="flex flex-wrap justify-center gap-8">
       {FACILITIES.map((facility, index) => (
-        <div key={index} className={index === 3 ? "lg:col-start-2 lg:col-span-1" : ""}>
-          <FacilityIconCard icon={facility.icon} label={facility.label} />
+        <div key={index} className="flex flex-col w-full sm:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)]">
+          <div className="flex-1 w-full flex">
+            <FacilityIconCard icon={facility.icon} label={facility.label} />
+          </div>
         </div>
       ))}
     </div>

@@ -26,7 +26,7 @@ export function CoachCard({ coach }: CoachCardProps) {
           />
         ) : (
           <div className="w-full h-full bg-brand-primary flex items-center justify-center text-brand-white transition-transform duration-500 group-hover:scale-105" aria-label={`Placeholder photo for ${coach.name}`}>
-            <span className="text-7xl font-black opacity-30">{initials}</span>
+            <span className="text-7xl font-black text-brand-neutral">{initials}</span>
           </div>
         )}
         

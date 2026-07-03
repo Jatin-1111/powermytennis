@@ -4,6 +4,7 @@ import { siteConfig } from "@/data/siteConfig";
 import { WhatsAppCTA } from "@/components/shared/WhatsAppCTA";
 import { Navbar } from "@/components/shared/Navbar";
 import { Footer } from "@/components/shared/Footer";
+import { MotionProvider } from "@/components/shared/MotionProvider";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -17,6 +18,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://powermytennis.com'),
   title: {
     template: "%s | PowerMyTennis High Performance Academy",
     default: "PowerMyTennis High Performance Academy",
@@ -72,16 +74,18 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         
-        <Navbar />
-        
-        <div className="flex-1">
-          {children}
-        </div>
-        
-        <Footer />
-        
-        {/* Global WhatsApp CTA */}
-        <WhatsAppCTA />
+        <MotionProvider>
+          <Navbar />
+          
+          <div className="flex-1">
+            {children}
+          </div>
+          
+          <Footer />
+          
+          {/* Global WhatsApp CTA */}
+          <WhatsAppCTA />
+        </MotionProvider>
       </body>
     </html>
   );

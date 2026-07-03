@@ -1,4 +1,5 @@
 import { ReactNode } from 'react';
+import { MotionSection, MotionItem } from '@/components/shared/MotionSection';
 
 interface SectionHeadingProps {
   children: ReactNode;
@@ -19,15 +20,19 @@ export function SectionHeading({
   const subtitleColors = isDark ? 'text-brand-neutral' : 'text-brand-primary';
 
   return (
-    <div className={`mb-12 ${align === 'center' ? 'text-center' : 'text-left'} ${className}`}>
-      <h2 className={`text-3xl md:text-4xl font-black uppercase tracking-tight ${textColors}`}>
-        {children}
-      </h2>
+    <MotionSection stagger className={`mb-12 ${align === 'center' ? 'text-center' : 'text-left'} ${className}`}>
+      <MotionItem>
+        <h2 className={`text-h2 font-black uppercase tracking-tight ${textColors}`}>
+          {children}
+        </h2>
+      </MotionItem>
       {subtitle && (
-        <p className={`mt-4 text-lg md:text-xl font-medium max-w-2xl ${align === 'center' ? 'mx-auto' : ''} ${subtitleColors}`}>
-          {subtitle}
-        </p>
+        <MotionItem>
+          <p className={`mt-4 text-body-lg font-medium max-w-2xl ${align === 'center' ? 'mx-auto' : ''} ${subtitleColors}`}>
+            {subtitle}
+          </p>
+        </MotionItem>
       )}
-    </div>
+    </MotionSection>
   );
 }

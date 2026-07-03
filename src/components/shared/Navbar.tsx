@@ -47,7 +47,7 @@ export function Navbar() {
               <Link 
                 key={link.name}
                 href={link.href}
-                className={`text-sm font-bold uppercase tracking-widest transition-colors hover:text-brand-accent ${isActive ? 'text-brand-accent' : 'text-brand-primary'}`}
+                className={`text-sm font-bold uppercase tracking-widest transition-colors hover:text-brand-secondary ${isActive ? 'text-brand-secondary' : 'text-brand-primary'}`}
               >
                 {link.name}
               </Link>
@@ -69,7 +69,7 @@ export function Navbar() {
             onClick={() => setIsOpen(!isOpen)}
             aria-expanded={isOpen}
           >
-            <span className="sr-only">Open main menu</span>
+            <span className="sr-only">{isOpen ? "Close main menu" : "Open main menu"}</span>
             {isOpen ? (
               <svg className="block h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M6 18L18 6M6 6l12 12" />

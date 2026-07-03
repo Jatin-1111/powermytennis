@@ -7,7 +7,13 @@ import { siteConfig } from '@/data/siteConfig';
 const resendApiKey = process.env.RESEND_API_KEY || '';
 const resend = new Resend(resendApiKey);
 
-export async function submitContactForm(prevState: any, formData: FormData) {
+export type ContactFormState = {
+  success: boolean;
+  message?: string;
+  error?: string;
+};
+
+export async function submitContactForm(prevState: ContactFormState, formData: FormData): Promise<ContactFormState> {
   try {
     const name = formData.get('name') as string;
     const email = formData.get('email') as string;
