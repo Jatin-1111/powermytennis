@@ -161,7 +161,6 @@ export function Footer() {
           <p>
             &copy; {new Date().getFullYear()} {siteConfig.name}. All rights reserved.
           </p>
-          <p>Powered by Next.js & Tailwind CSS</p>
         </div>
       </div>
     </footer>
