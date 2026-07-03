@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { Outfit, Inter } from "next/font/google";
 import { siteConfig } from "@/data/siteConfig";
 import { WhatsAppCTA } from "@/components/shared/WhatsAppCTA";
 import { Navbar } from "@/components/shared/Navbar";
@@ -8,17 +7,7 @@ import { ComingSoon } from "@/components/shared/ComingSoon";
 import { MotionProvider } from "@/components/shared/MotionProvider";
 import "./globals.css";
 
-const fontHeading = Outfit({
-  variable: "--font-heading",
-  subsets: ["latin"],
-  display: "swap",
-});
 
-const fontBody = Inter({
-  variable: "--font-body",
-  subsets: ["latin"],
-  display: "swap",
-});
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://powermytennis.com'),
@@ -71,8 +60,13 @@ export default function RootLayout({
     return (
       <html
         lang="en"
-        className={`${fontBody.variable} ${fontHeading.variable} h-full antialiased font-sans`}
+        className={`h-full antialiased font-sans`}
       >
+        <head>
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+          <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Outfit:wght@100..900&display=swap" rel="stylesheet" />
+        </head>
         <body className="min-h-full flex flex-col bg-brand-primary">
           <ComingSoon />
         </body>
@@ -83,8 +77,13 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${fontBody.variable} ${fontHeading.variable} h-full antialiased font-sans`}
+      className={`h-full antialiased font-sans`}
     >
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Outfit:wght@100..900&display=swap" rel="stylesheet" />
+      </head>
       <body className="min-h-full flex flex-col">
         {/* Inject JSON-LD Schema */}
         <script

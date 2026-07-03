@@ -8,8 +8,12 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  
+  /* Manual font variable definition instead of next/font */
+  --font-body: "Inter", sans-serif;
+  --font-heading: "Outfit", sans-serif;
+  
   --font-sans: var(--font-body);
-  --font-heading: var(--font-heading);
 
   /* Brand Colors */
   --color-brand-primary: #22261B;

@@ -2,6 +2,7 @@ import { Container } from "@/components/shared/Container";
 import { SectionHeading } from "@/components/shared/SectionHeading";
 import { FacilityIconGrid } from "@/components/facilities/FacilityIconGrid";
 import { PerformanceReportsSection } from "@/components/facilities/PerformanceReportsSection";
+import { MotionSection, MotionItem } from "@/components/shared/MotionSection";
 
 export const metadata = {
   title: "Facilities",
@@ -16,10 +17,16 @@ export default function FacilitiesPage() {
       <div className="bg-brand-primary py-section text-center relative overflow-hidden">
         <div className="absolute inset-0 opacity-5 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-brand-white via-brand-primary to-brand-primary" />
         <div className="relative z-10 px-4">
-          <h1 className="text-hero font-black uppercase tracking-tight text-brand-white mb-6">
-            Facilities
-          </h1>
-          <div className="w-24 h-1.5 bg-brand-accent mx-auto rounded-full"></div>
+          <MotionSection>
+            <MotionItem>
+              <h1 className="text-hero font-black uppercase tracking-tight text-brand-white mb-6">
+                Facilities
+              </h1>
+            </MotionItem>
+            <MotionItem>
+              <div className="w-24 h-1.5 bg-brand-accent mx-auto rounded-full"></div>
+            </MotionItem>
+          </MotionSection>
         </div>
       </div>
 
