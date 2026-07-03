@@ -4,6 +4,7 @@ import { siteConfig } from "@/data/siteConfig";
 import { WhatsAppCTA } from "@/components/shared/WhatsAppCTA";
 import { Navbar } from "@/components/shared/Navbar";
 import { Footer } from "@/components/shared/Footer";
+import { ComingSoon } from "@/components/shared/ComingSoon";
 import { MotionProvider } from "@/components/shared/MotionProvider";
 import "./globals.css";
 
@@ -61,6 +62,21 @@ export default function RootLayout({
       "addressCountry": "IN"
     }
   };
+
+  const isComingSoon = process.env.NEXT_PUBLIC_COMING_SOON === 'true';
+
+  if (isComingSoon) {
+    return (
+      <html
+        lang="en"
+        className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      >
+        <body className="min-h-full flex flex-col bg-brand-primary">
+          <ComingSoon />
+        </body>
+      </html>
+    );
+  }
 
   return (
     <html
