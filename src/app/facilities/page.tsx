@@ -1,11 +1,12 @@
-import { Container } from '@/components/shared/Container';
-import { SectionHeading } from '@/components/shared/SectionHeading';
-import { FacilityIconGrid } from '@/components/facilities/FacilityIconGrid';
-import { PerformanceReportsSection } from '@/components/facilities/PerformanceReportsSection';
+import { Container } from "@/components/shared/Container";
+import { SectionHeading } from "@/components/shared/SectionHeading";
+import { FacilityIconGrid } from "@/components/facilities/FacilityIconGrid";
+import { PerformanceReportsSection } from "@/components/facilities/PerformanceReportsSection";
 
 export const metadata = {
-  title: 'Facilities',
-  description: 'Explore our state-of-the-art tennis infrastructure and comprehensive performance reporting system.',
+  title: "Facilities",
+  description:
+    "Explore our state-of-the-art tennis infrastructure and comprehensive performance reporting system.",
 };
 
 export default function FacilitiesPage() {
@@ -26,7 +27,7 @@ export default function FacilitiesPage() {
         <SectionHeading subtitle="Experience top-tier training on our premium surfaces equipped with modern amenities.">
           State-Of-The-Art Infrastructure
         </SectionHeading>
-        
+
         <div className="mt-12">
           <FacilityIconGrid />
         </div>

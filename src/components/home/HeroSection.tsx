@@ -1,52 +1,106 @@
-import { siteConfig } from '@/data/siteConfig';
-import { Button } from '@/components/shared/Button';
-import { Container } from '@/components/shared/Container';
-import { MotionSection, MotionItem } from '@/components/shared/MotionSection';
+"use client";
+
+import { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { siteConfig } from "@/data/siteConfig";
+import { Button } from "@/components/shared/Button";
+import { Container } from "@/components/shared/Container";
+import { MotionSection, MotionItem } from "@/components/shared/MotionSection";
+import { MagneticButton } from "@/components/shared/MagneticButton";
 
 export function HeroSection() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end start"],
+  });
+
+  // Subtle parallax for the image
+  const y = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]);
+  const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
+
   return (
-    <section className="relative bg-brand-primary text-brand-white py-section-sm md:py-section overflow-hidden flex flex-col justify-center min-h-[80vh]">
-      {/* Visual background element */}
-      <div className="absolute inset-0 opacity-10 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-brand-accent via-brand-primary to-brand-primary" />
-      
-      <Container className="relative z-10 text-center">
-        <MotionSection stagger>
-          <MotionItem>
-            <h1 className="text-[2.5rem] sm:text-[3.5rem] md:text-[5rem] lg:text-hero font-black uppercase tracking-tighter mb-6 leading-none break-words">
-              <span className="block text-brand-accent">{siteConfig.name.split(' ')[0]}</span>
-              <span className="block text-h2 md:text-h1 mt-2 tracking-tight">
-                {siteConfig.name.split(' ').slice(1).join(' ')}
-              </span>
-            </h1>
-          </MotionItem>
-          
-          <MotionItem>
-            <p className="text-body-lg md:text-h3 text-brand-neutral font-medium max-w-4xl mx-auto mb-element leading-relaxed">
-              {siteConfig.tagline}
-            </p>
-          </MotionItem>
-          
-          <MotionItem>
-            <p className="text-body-lg font-bold mb-12 flex items-center justify-center gap-2 text-brand-white/90 uppercase tracking-widest">
-              <svg className="w-6 h-6 text-brand-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-              </svg>
-              At its state-of-the-art academy at {siteConfig.address.city}
-            </p>
-          </MotionItem>
-          
-          <MotionItem>
-            <div className="flex flex-col sm:flex-row gap-5 justify-center items-center">
-              <Button href="/contact" variant="primary" className="w-full sm:w-auto px-10">
-                Book a Trial
-              </Button>
-              <Button href="/pathway" variant="outline-white" className="w-full sm:w-auto px-10">
-                Explore Pathway
-              </Button>
-            </div>
-          </MotionItem>
-        </MotionSection>
+    <section
+      ref={containerRef}
+      className="relative bg-brand-primary text-brand-white min-h-[90vh] md:min-h-screen flex items-center overflow-hidden"
+    >
+      {/* Background Parallax Image with Gradient Overlay */}
+      <motion.div 
+        style={{ y, opacity, willChange: "transform, opacity" }} 
+        className="absolute inset-0 z-0"
+      >
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage:
+              'url("https://images.unsplash.com/photo-1595435934249-5df7ed86e1c0?q=80&w=2000&auto=format&fit=crop")',
+          }}
+        />
+        {/* Complex Gradient for legibility - very dark on the left, fading to transparent on the right */}
+        <div className="absolute inset-0 bg-gradient-to-r from-brand-primary via-brand-primary/80 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-brand-primary via-transparent to-transparent opacity-50" />
+      </motion.div>
+
+      <Container className="relative z-10 w-full pt-24 pb-12">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          {/* Left Content Area (7 columns) */}
+          <div className="lg:col-span-7 flex flex-col justify-center text-left">
+            <MotionSection stagger>
+              <MotionItem>
+                <div className="inline-flex items-center gap-3 mb-6 bg-brand-white/10 backdrop-blur-sm px-4 py-2 rounded-full border border-brand-white/10">
+                  <span className="w-2 h-2 rounded-full bg-brand-accent animate-pulse" />
+                  <span className="text-xs md:text-sm font-bold uppercase tracking-widest text-brand-white">
+                    Elite Training in {siteConfig.address.city}
+                  </span>
+                </div>
+              </MotionItem>
+
+              <MotionItem>
+                <h1 className="text-hero font-black uppercase tracking-tight mb-8 leading-none">
+                  <span className="block text-brand-white">
+                    {siteConfig.name.split(" ")[0]}
+                  </span>
+                  <span className="block text-brand-accent mt-2">
+                    {siteConfig.name.split(" ").slice(1).join(" ")}
+                  </span>
+                </h1>
+              </MotionItem>
+
+              <MotionItem>
+                <p className="text-body-lg text-brand-neutral font-medium max-w-xl mb-12 leading-relaxed">
+                  {siteConfig.tagline}
+                </p>
+              </MotionItem>
+
+              <MotionItem>
+                <div className="flex flex-col sm:flex-row gap-6 items-start">
+                  <MagneticButton>
+                    <Button
+                      href="/contact"
+                      variant="primary"
+                      className="w-full sm:w-auto px-10 py-5 shadow-xl hover:shadow-2xl transition-shadow text-sm tracking-widest"
+                    >
+                      Book a Trial
+                    </Button>
+                  </MagneticButton>
+
+                  <MagneticButton intensity={0.1}>
+                    <Button
+                      href="/pathway"
+                      variant="outline-white"
+                      className="w-full sm:w-auto px-10 py-5 bg-brand-primary/20 backdrop-blur-sm text-sm tracking-widest"
+                    >
+                      Explore Pathway
+                    </Button>
+                  </MagneticButton>
+                </div>
+              </MotionItem>
+            </MotionSection>
+          </div>
+
+          {/* Right Area (Empty for Asymmetry, allowing image to show through) */}
+          <div className="hidden lg:block lg:col-span-5" />
+        </div>
       </Container>
     </section>
   );

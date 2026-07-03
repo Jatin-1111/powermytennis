@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Outfit, Inter } from "next/font/google";
 import { siteConfig } from "@/data/siteConfig";
 import { WhatsAppCTA } from "@/components/shared/WhatsAppCTA";
 import { Navbar } from "@/components/shared/Navbar";
@@ -8,14 +8,16 @@ import { ComingSoon } from "@/components/shared/ComingSoon";
 import { MotionProvider } from "@/components/shared/MotionProvider";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const fontHeading = Outfit({
+  variable: "--font-heading",
   subsets: ["latin"],
+  display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const fontBody = Inter({
+  variable: "--font-body",
   subsets: ["latin"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -69,7 +71,7 @@ export default function RootLayout({
     return (
       <html
         lang="en"
-        className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+        className={`${fontBody.variable} ${fontHeading.variable} h-full antialiased font-sans`}
       >
         <body className="min-h-full flex flex-col bg-brand-primary">
           <ComingSoon />
@@ -81,7 +83,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${fontBody.variable} ${fontHeading.variable} h-full antialiased font-sans`}
     >
       <body className="min-h-full flex flex-col">
         {/* Inject JSON-LD Schema */}

@@ -8,8 +8,8 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-body);
+  --font-heading: var(--font-heading);
 
   /* Brand Colors */
   --color-brand-primary: #22261B;
@@ -33,23 +33,46 @@
   --color-module-pink: #E85A9C;
 
   /* Typography Scale (Fluid) */
-  --text-hero: clamp(3rem, 8vw, 5rem);
-  --text-h1: clamp(2.25rem, 5vw, 3.5rem);
-  --text-h2: clamp(1.75rem, 4vw, 2.5rem);
-  --text-h3: clamp(1.25rem, 3vw, 1.5rem);
-  --text-body-lg: clamp(1rem, 2vw, 1.125rem);
+  --text-hero: clamp(3.5rem, 10vw, 6.5rem);
+  --text-hero--line-height: 1.05;
+  --text-hero--letter-spacing: -0.04em;
+  
+  --text-h1: clamp(2.5rem, 7vw, 4.5rem);
+  --text-h1--line-height: 1.1;
+  --text-h1--letter-spacing: -0.03em;
+  
+  --text-h2: clamp(2rem, 5vw, 3rem);
+  --text-h2--line-height: 1.15;
+  --text-h2--letter-spacing: -0.02em;
+  
+  --text-h3: clamp(1.5rem, 4vw, 2rem);
+  --text-h3--line-height: 1.2;
+  --text-h3--letter-spacing: -0.01em;
+
+  --text-body-lg: clamp(1.125rem, 2vw, 1.25rem);
+  --text-body-lg--line-height: 1.6;
+
   --text-body: 1rem;
-  --text-sm: 0.875rem;
+  --text-body--line-height: 1.6;
+
+  --text-caption: 0.875rem;
+  --text-caption--line-height: 1.5;
+  --text-caption--letter-spacing: 0.05em;
 
   /* Spacing Scale (Fluid) */
-  --spacing-section: clamp(4rem, 8vw, 8rem);
-  --spacing-section-sm: clamp(3rem, 5vw, 5rem);
-  --spacing-card: clamp(1.25rem, 3vw, 2rem);
-  --spacing-element: clamp(1rem, 2vw, 1.5rem);
+  --spacing-section: clamp(5rem, 10vw, 10rem);
+  --spacing-section-sm: clamp(3rem, 6vw, 6rem);
+  --spacing-card: clamp(1.5rem, 4vw, 2.5rem);
+  --spacing-element: clamp(1rem, 2vw, 2rem);
 
-  /* Elevation */
-  --shadow-card-idle: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
-  --shadow-card-hover: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.05);
+  /* Engineered Depth System */
+  --shadow-sm: 0 2px 8px -2px rgb(34 38 27 / 0.08), 0 1px 4px -1px rgb(34 38 27 / 0.04);
+  --shadow-md: 0 12px 24px -4px rgb(34 38 27 / 0.12), 0 4px 12px -2px rgb(34 38 27 / 0.08);
+  --shadow-lg: 0 24px 48px -12px rgb(34 38 27 / 0.18), 0 8px 24px -4px rgb(34 38 27 / 0.12);
+  --shadow-xl: 0 32px 64px -16px rgb(34 38 27 / 0.25), 0 16px 32px -8px rgb(34 38 27 / 0.15);
+  
+  --shadow-card-idle: var(--shadow-sm);
+  --shadow-card-hover: var(--shadow-xl);
 }
 
 @media (prefers-color-scheme: dark) {

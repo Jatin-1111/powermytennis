@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import { ReactNode } from 'react';
-import { motion } from 'framer-motion';
-import { FADE_UP, STAGGER_CONTAINER } from '@/lib/motion-variants';
+import { ReactNode } from "react";
+import { motion } from "framer-motion";
+import { FADE_UP, STAGGER_CONTAINER } from "@/lib/motion-variants";
 
 interface MotionSectionProps {
   children: ReactNode;
@@ -11,7 +11,12 @@ interface MotionSectionProps {
   stagger?: boolean;
 }
 
-export function MotionSection({ children, className = '', delay = 0, stagger = false }: MotionSectionProps) {
+export function MotionSection({
+  children,
+  className = "",
+  delay = 0,
+  stagger = false,
+}: MotionSectionProps) {
   return (
     <motion.section
       variants={stagger ? STAGGER_CONTAINER : FADE_UP}
@@ -26,7 +31,12 @@ export function MotionSection({ children, className = '', delay = 0, stagger = f
   );
 }
 
-export function MotionDiv({ children, className = '', delay = 0, stagger = false }: MotionSectionProps) {
+export function MotionDiv({
+  children,
+  className = "",
+  delay = 0,
+  stagger = false,
+}: MotionSectionProps) {
   return (
     <motion.div
       variants={stagger ? STAGGER_CONTAINER : FADE_UP}
@@ -41,9 +51,15 @@ export function MotionDiv({ children, className = '', delay = 0, stagger = false
   );
 }
 
-export function MotionItem({ children, className = '' }: { children: ReactNode, className?: string }) {
+export function MotionItem({
+  children,
+  className = "",
+}: {
+  children: ReactNode;
+  className?: string;
+}) {
   return (
-    <motion.div variants={FADE_UP} className={className}>
+    <motion.div variants={FADE_UP} className={`h-full ${className}`}>
       {children}
     </motion.div>
   );

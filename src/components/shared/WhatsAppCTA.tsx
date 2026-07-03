@@ -1,15 +1,15 @@
-'use client';
+"use client";
 
-import { siteConfig } from '@/data/siteConfig';
-import { motion } from 'framer-motion';
-import { FADE_UP } from '@/lib/motion-variants';
+import { siteConfig } from "@/data/siteConfig";
+import { motion } from "framer-motion";
+import { FADE_UP } from "@/lib/motion-variants";
 
 export function WhatsAppCTA() {
-  const formattedPhone = siteConfig.phone.replace(/\s+/g, '');
+  const formattedPhone = siteConfig.phone.replace(/\s+/g, "");
   const whatsappUrl = `https://wa.me/91${formattedPhone}`;
 
   return (
-    <motion.a 
+    <motion.a
       href={whatsappUrl}
       target="_blank"
       rel="noopener noreferrer"

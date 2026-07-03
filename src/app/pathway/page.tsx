@@ -1,11 +1,12 @@
-import { Container } from '@/components/shared/Container';
-import { SectionHeading } from '@/components/shared/SectionHeading';
-import { Button } from '@/components/shared/Button';
-import { PathwayChart } from '@/components/pathway/PathwayChart';
+import { Container } from "@/components/shared/Container";
+import { SectionHeading } from "@/components/shared/SectionHeading";
+import { Button } from "@/components/shared/Button";
+import { PathwayChart } from "@/components/pathway/PathwayChart";
 
 export const metadata = {
-  title: 'Coaching Pathway',
-  description: 'Explore the PowerMyTennis skill-based coaching groups from Orange to High Performance.',
+  title: "Coaching Pathway",
+  description:
+    "Explore the PowerMyTennis skill-based coaching groups from Orange to High Performance.",
 };
 
 export default function PathwayPage() {
@@ -26,7 +27,7 @@ export default function PathwayPage() {
         <SectionHeading subtitle="Select a group to see the included skill modules.">
           Interactive Coaching Progression
         </SectionHeading>
-        
+
         <PathwayChart />
 
         <div className="mt-20 text-center max-w-2xl mx-auto bg-brand-neutral/10 p-10 rounded-3xl border border-brand-neutral/20 shadow-md">
@@ -34,9 +35,14 @@ export default function PathwayPage() {
             Build a smart and realistic plan
           </h3>
           <p className="text-brand-black mb-8 text-lg">
-            Our Coaches assess skill levels at the time of registration and recommend the best group fitment for each athlete.
+            Our Coaches assess skill levels at the time of registration and
+            recommend the best group fitment for each athlete.
           </p>
-          <Button href="/contact?reason=Pathway+Consultation" variant="primary" className="px-10">
+          <Button
+            href="/contact?reason=Pathway+Consultation"
+            variant="primary"
+            className="px-10"
+          >
             Talk to our expert team
           </Button>
         </div>

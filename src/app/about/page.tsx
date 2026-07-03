@@ -1,9 +1,10 @@
-import { AcademyStory } from '@/components/about/AcademyStory';
-import { LocationAccessibility } from '@/components/about/LocationAccessibility';
+import { AcademyStory } from "@/components/about/AcademyStory";
+import { LocationAccessibility } from "@/components/about/LocationAccessibility";
 
 export const metadata = {
-  title: 'About',
-  description: 'Learn about the vision and location of PowerMyTennis Academy in New Chandigarh.',
+  title: "About",
+  description:
+    "Learn about the vision and location of PowerMyTennis Academy in New Chandigarh.",
 };
 
 export default function AboutPage() {
@@ -19,7 +20,7 @@ export default function AboutPage() {
           <div className="w-24 h-1.5 bg-brand-accent mx-auto rounded-full"></div>
         </div>
       </div>
-      
+
       <AcademyStory />
       <LocationAccessibility />
     </main>

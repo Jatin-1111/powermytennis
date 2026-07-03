@@ -1,4 +1,4 @@
-import { siteConfig } from '@/data/siteConfig';
+import { siteConfig } from "@/data/siteConfig";
 
 export function LaunchBanner() {
   return (

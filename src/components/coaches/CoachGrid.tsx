@@ -1,5 +1,5 @@
-import { coaches } from '@/data/coaches';
-import { CoachCard } from './CoachCard';
+import { coaches } from "@/data/coaches";
+import { CoachCard } from "./CoachCard";
 
 export function CoachGrid() {
   return (
