@@ -119,30 +119,29 @@ export function FacilityIconGrid() {
   return (
     // Explicit grid — no auto-rows to avoid overflow
     <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-      {/* Row 1: Clay hero (tall, 2 rows) | Gymnasium stacked on top | Mini beneath */}
-      {/* Clay: col 1-2, row 1-2 */}
+      {/* Tall Hero Column (Left) */}
       <div className="col-span-2 md:col-span-1 md:row-span-2" style={{ minHeight: "420px" }}>
         <Card facility={clay} index={0} className="h-full" />
       </div>
 
-      {/* Gymnasium: col 2, row 1 */}
-      <div className="col-span-1 md:col-span-2">
+      {/* Middle Column Top */}
+      <div className="col-span-1 md:col-span-1">
         <Card facility={gym} index={1} className="h-full min-h-[190px]" />
       </div>
 
-      {/* Mini Courts: col 3, row 2 */}
+      {/* Right Column Top */}
       <div className="col-span-1 md:col-span-1">
         <Card facility={mini} index={2} className="h-full min-h-[190px]" />
       </div>
 
-      {/* Row 2 right col: mini (already placed) | we put shower here */}
+      {/* Middle Column Bottom */}
       <div className="col-span-1 md:col-span-1">
         <Card facility={shower} index={3} className="h-full min-h-[190px]" />
       </div>
 
-      {/* Row 3: Pantry full width */}
-      <div className="col-span-2 md:col-span-3">
-        <Card facility={pantry} index={4} className="h-full min-h-[120px]" />
+      {/* Right Column Bottom */}
+      <div className="col-span-1 md:col-span-1">
+        <Card facility={pantry} index={4} className="h-full min-h-[190px]" />
       </div>
     </div>
   );

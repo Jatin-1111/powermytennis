@@ -21,14 +21,6 @@ export const metadata: Metadata = {
     description: siteConfig.tagline,
     url: "https://powermytennis.com",
     siteName: "PowerMyTennis",
-    images: [
-      {
-        url: "/images/og-image.jpg", // Placeholder until provided
-        width: 1200,
-        height: 630,
-        alt: "PowerMyTennis Academy",
-      },
-    ],
     locale: "en_IN",
     type: "website",
   },

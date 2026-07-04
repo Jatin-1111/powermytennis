@@ -119,6 +119,24 @@ export default function ProgramsAndFeesPage() {
           </MotionSection>
         </div>
       </Container>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            programs.map((p) => ({
+              "@context": "https://schema.org",
+              "@type": "Course",
+              name: p.name,
+              description: `High performance tennis training program: ${p.name}`,
+              provider: {
+                "@type": "Organization",
+                name: "PowerMyTennis High Performance Academy",
+                sameAs: "https://powermytennis.com",
+              },
+            }))
+          ),
+        }}
+      />
     </main>
   );
 }

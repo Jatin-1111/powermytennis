@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef } from "react";
+import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { siteConfig } from "@/data/siteConfig";
 import { Button } from "@/components/shared/Button";
@@ -29,13 +30,16 @@ export function HeroSection() {
         style={{ y, opacity, willChange: "transform, opacity" }} 
         className="absolute inset-0 z-0"
       >
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage:
-              'url("https://images.unsplash.com/photo-1595435934249-5df7ed86e1c0?q=80&w=2000&auto=format&fit=crop")',
-          }}
-        />
+        <div className="absolute inset-0">
+          <Image
+            src="https://images.unsplash.com/photo-1595435934249-5df7ed86e1c0?q=80&w=2000&auto=format&fit=crop"
+            alt="PowerMyTennis Academy Training"
+            fill
+            priority
+            className="object-cover object-center"
+            sizes="100vw"
+          />
+        </div>
         {/* Complex Gradient for legibility - very dark on the left, fading to transparent on the right */}
         <div className="absolute inset-0 bg-gradient-to-r from-brand-primary via-brand-primary/80 to-transparent" />
         <div className="absolute inset-0 bg-gradient-to-t from-brand-primary via-transparent to-transparent opacity-50" />

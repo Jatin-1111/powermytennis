@@ -37,21 +37,34 @@ export default function PathwayPage() {
 
         <PathwayChart />
 
-        <div className="mt-20 text-center max-w-2xl mx-auto bg-brand-neutral/10 p-10 rounded-3xl border border-brand-neutral/20 shadow-md">
-          <h3 className="text-2xl font-black text-brand-primary uppercase tracking-tight mb-4">
-            Build a smart and realistic plan
-          </h3>
-          <p className="text-brand-black mb-8 text-lg">
-            Our Coaches assess skill levels at the time of registration and
-            recommend the best group fitment for each athlete.
-          </p>
-          <Button
-            href="/contact?reason=Pathway+Consultation"
-            variant="primary"
-            className="px-10"
-          >
-            Talk to our expert team
-          </Button>
+        <div className="mt-20 text-center max-w-4xl mx-auto relative overflow-hidden bg-brand-primary p-12 md:p-16 rounded-[2.5rem] border border-brand-neutral/20 shadow-[0_20px_50px_-12px_rgba(0,0,0,0.5)] group">
+          {/* Geometric Pattern: Upward Progression Slashes */}
+          <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-20 transition-opacity duration-700 group-hover:opacity-40">
+            {/* Massive upward-right triangle (Growth) */}
+            <div className="absolute -bottom-[50%] -left-[10%] w-[120%] h-[150%] bg-brand-secondary transform -rotate-[15deg] origin-bottom-left" />
+            {/* Sharp intersecting speed-line */}
+            <div className="absolute -top-[20%] right-[10%] w-[10%] h-[200%] bg-brand-accent transform rotate-[35deg]" />
+            {/* Subtle secondary speed-line */}
+            <div className="absolute -bottom-[20%] right-[30%] w-[5%] h-[150%] bg-brand-white transform rotate-[35deg]" />
+          </div>
+
+          <div className="relative z-10">
+            <h3 className="text-3xl md:text-4xl font-black text-brand-white uppercase tracking-tight mb-6 leading-tight">
+              Build a smart & <br/>
+              <span className="text-brand-accent">realistic plan</span>
+            </h3>
+            <p className="text-brand-white/80 mb-10 text-lg md:text-xl max-w-xl mx-auto font-medium">
+              Our Coaches assess skill levels at the time of registration and
+              recommend the best group fitment for each athlete.
+            </p>
+            <Button
+              href="/contact?reason=Pathway+Consultation"
+              variant="primary"
+              className="px-10 py-4 text-sm tracking-widest shadow-[0_0_20px_rgba(157,242,40,0.3)] hover:shadow-[0_0_30px_rgba(157,242,40,0.5)]"
+            >
+              Talk to our expert team
+            </Button>
+          </div>
         </div>
       </Container>
     </main>

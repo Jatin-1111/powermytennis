@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 import { EASE_OUT_EXPO } from "@/lib/motion-variants";
 import { MotionSection, MotionItem } from "@/components/shared/MotionSection";
 
+
 export default function PrivateLessonsPage() {
   const chiefCoach = privateLessons.fees.find(f => f.role === "CHIEF COACH");
   const otherFees = privateLessons.fees.filter(f => f.role !== "CHIEF COACH");

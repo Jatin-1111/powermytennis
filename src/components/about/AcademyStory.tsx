@@ -136,9 +136,20 @@ export function AcademyStory() {
         <div className="mt-24">
           <MotionSection>
             <MotionItem>
-              <div className="relative bg-brand-primary p-12 md:p-16 overflow-hidden rounded-3xl shadow-xl group">
-                <div className="absolute top-0 right-0 w-64 h-64 bg-brand-accent rounded-full blur-[100px] opacity-20 group-hover:opacity-40 transition-opacity duration-700" />
-                <p className="relative z-10 text-h2 md:text-h1 font-black italic text-brand-white text-center leading-tight max-w-4xl mx-auto">
+              <div className="relative bg-brand-primary p-12 md:p-16 overflow-hidden rounded-[2.5rem] shadow-2xl group border border-brand-neutral/20">
+                {/* Subtle Geometric Pattern Background */}
+                <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
+                  {/* Base Grid */}
+                  <div 
+                    className="absolute inset-0 opacity-[0.04]"
+                    style={{
+                      backgroundImage: `linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)`,
+                      backgroundSize: '40px 40px'
+                    }}
+                  />
+                </div>
+                
+                <p className="relative z-10 text-h2 md:text-h1 font-black italic text-brand-white text-center leading-tight max-w-4xl mx-auto drop-shadow-md">
                   "In tennis, coaching is the bridge between a player's raw
                   physical ability and their ultimate{" "}
                   <span className="text-brand-accent">on-court potential</span>"

@@ -67,7 +67,7 @@ export function PathwayChart() {
   return (
     <div className="relative flex max-w-5xl mx-auto w-full py-8">
       {/* Y-Axis Arrow (Desktop Only) */}
-      <div className="hidden md:flex w-16 shrink-0 relative mr-6 flex-col items-center py-4">
+      <div className="hidden md:flex w-16 shrink-0 relative mr-6 flex-col items-center py-4 z-10">
         {/* Arrow head */}
         <div className="w-0 h-0 border-l-[16px] border-l-transparent border-r-[16px] border-r-transparent border-b-[24px] border-b-brand-accent z-10 drop-shadow-md" />
         {/* Arrow shaft */}
@@ -81,7 +81,7 @@ export function PathwayChart() {
         </div>
       </div>
 
-      <div className="flex-1 w-full">
+      <div className="flex-1 w-full relative z-10">
         {renderTierGroup("Full-Time Tennis Athlete", fullTimeTiers, false)}
         {renderTierGroup("General Tennis Athlete", generalTiers, true)}
       </div>

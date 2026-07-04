@@ -43,32 +43,45 @@ export function PillarsSnapshot() {
       />
 
       <Container className="relative z-10 pt-24">
-        {/* Stats Bar */}
-        <MotionSection
-          stagger
-          className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-24 border-b border-brand-neutral/20 pb-16"
-        >
-          {[
-            { value: 80, suffix: "+", label: "Years Experience" },
-            { value: 4, suffix: "", label: "Clay Courts" },
-            { value: 20, suffix: "+", label: "Athletes Trained" },
-            { value: 1, suffix: "", label: "Premium Location" },
-          ].map((stat, i) => (
-            <MotionItem key={i}>
-              <div className="flex flex-col items-center justify-center text-center">
-                <div className="text-h1 font-black text-brand-primary mb-2 flex items-baseline">
-                  <AnimatedCounter value={stat.value} duration={2} />
-                  {stat.suffix && (
+        {/* Stats Bar with Geometric Pattern */}
+        <div className="relative w-full overflow-hidden bg-brand-primary rounded-[2.5rem] p-8 md:p-12 mb-24 shadow-2xl border border-brand-neutral/20 group">
+          {/* Geometric Pattern: Diagonal Racing Pinstripes */}
+          <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-30 transition-opacity duration-700 group-hover:opacity-60">
+            {/* The diagonal pinstripes */}
+            <div 
+              className="absolute -inset-[50%]"
+              style={{
+                backgroundImage: `repeating-linear-gradient(45deg, transparent, transparent 30px, rgba(157, 242, 40, 0.15) 30px, rgba(157, 242, 40, 0.15) 32px)`
+              }}
+            />
+            {/* Deep shadow vignette so the edges fade perfectly */}
+            <div className="absolute inset-0 shadow-[inset_0_0_120px_60px_#1C2123]" />
+          </div>
+
+          <MotionSection
+            stagger
+            className="grid grid-cols-2 md:grid-cols-4 gap-8 relative z-10"
+          >
+            {[
+              { value: 80, suffix: "+", label: "Years Experience" },
+              { value: 4, suffix: "", label: "Clay Courts" },
+              { value: 20, suffix: "+", label: "Athletes Trained" },
+              { value: 1, suffix: "", label: "Premium Location" },
+            ].map((stat, i) => (
+              <MotionItem key={i}>
+                <div className="flex flex-col items-center justify-center text-center p-4">
+                  <div className="text-h1 font-black text-brand-white mb-2 flex items-baseline drop-shadow-md">
+                    <AnimatedCounter value={stat.value} duration={2} />
                     <span className="text-brand-accent ml-1">{stat.suffix}</span>
-                  )}
+                  </div>
+                  <div className="text-sm md:text-base font-bold text-brand-white/80 uppercase tracking-widest">
+                    {stat.label}
+                  </div>
                 </div>
-                <p className="text-sm font-bold uppercase tracking-widest text-brand-secondary">
-                  {stat.label}
-                </p>
-              </div>
-            </MotionItem>
-          ))}
-        </MotionSection>
+              </MotionItem>
+            ))}
+          </MotionSection>
+        </div>
 
         {/* Section label + heading — contained */}
         <div className="flex items-center gap-6 mb-4">
