@@ -75,7 +75,7 @@ export function PillarsSnapshot() {
           <span className="text-xs font-black uppercase tracking-[0.3em] text-brand-secondary">
             Our Coaching Framework
           </span>
-          <div className="flex-1 h-px bg-brand-neutral/30" />
+          <div className="flex-1 h-[3px] bg-gradient-to-l from-transparent via-brand-neutral/20 to-brand-neutral/60 rounded-l-full" />
         </div>
         <h2 className="text-h1 font-black uppercase text-brand-primary tracking-tight mb-12">
           The Four Pillars

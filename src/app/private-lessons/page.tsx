@@ -81,7 +81,7 @@ export default function PrivateLessonsPage() {
                   </div>
                   <div className="text-brand-white/50 font-bold uppercase tracking-[0.2em] text-sm flex items-center gap-4">
                     {chiefCoach.duration.replace("per ", "Per ")}
-                    <div className="flex-1 h-px bg-brand-white/20" />
+                    <div className="flex-1 h-[3px] bg-gradient-to-l from-transparent via-brand-white/10 to-brand-white/30 rounded-l-full" />
                   </div>
                 </div>
               </div>

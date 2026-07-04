@@ -3,12 +3,15 @@
 import { motion } from "framer-motion";
 import { EASE_OUT_EXPO } from "@/lib/motion-variants";
 
+import { ShowerHead, Coffee } from "lucide-react";
+
 const FACILITIES = [
   {
     id: "clay",
     label: "Tournament Clay Courts",
     stat: "4",
     unit: "Courts",
+    icon: null,
     description: "ITF-standard red clay surface for elite training and match play",
     hero: true,
   },
@@ -17,6 +20,7 @@ const FACILITIES = [
     label: "Gymnasium",
     stat: "600",
     unit: "sq ft",
+    icon: null,
     description: "Strength & conditioning equipped with sports science tools",
     hero: false,
   },
@@ -25,6 +29,7 @@ const FACILITIES = [
     label: "Mini Clay Courts",
     stat: "2",
     unit: "Courts",
+    icon: null,
     description: "Dedicated development courts for juniors & beginners",
     hero: false,
   },
@@ -33,6 +38,7 @@ const FACILITIES = [
     label: "Shower Room",
     stat: null,
     unit: null,
+    icon: ShowerHead,
     description: "Private, fully equipped changing & shower facilities",
     hero: false,
   },
@@ -41,6 +47,7 @@ const FACILITIES = [
     label: "Pantry",
     stat: null,
     unit: null,
+    icon: Coffee,
     description: "Hydration station & nutrition support between sessions",
     hero: false,
   },
@@ -95,10 +102,10 @@ function Card({
           </div>
         )}
 
-        {/* No-stat: accent dash */}
-        {!facility.stat && (
-          <div className="mt-6">
-            <div className="w-6 h-[3px] bg-brand-accent rounded-full group-hover:w-10 transition-all duration-300" />
+        {/* No-stat: Premium Icon */}
+        {!facility.stat && facility.icon && (
+          <div className="mt-8 text-brand-white/20 group-hover:text-brand-accent transition-colors duration-500">
+            <facility.icon className="w-12 h-12 md:w-16 md:h-16 group-hover:scale-110 transition-transform duration-500 drop-shadow-[0_0_15px_rgba(198,217,43,0)] group-hover:drop-shadow-[0_0_15px_rgba(198,217,43,0.5)]" strokeWidth={1.5} />
           </div>
         )}
       </div>

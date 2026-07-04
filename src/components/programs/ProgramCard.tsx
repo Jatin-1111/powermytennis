@@ -224,9 +224,9 @@ export function ProgramCard({ program, featured = false }: ProgramCardProps) {
         {program.simpleSchedule && (
           <div className="mb-6">
             <h4 className="text-xs font-black text-brand-secondary uppercase tracking-widest mb-4 flex items-center gap-3">
-              <span className="flex-1 h-px bg-brand-neutral/30"></span>
+              <span className="flex-1 h-[3px] bg-gradient-to-r from-transparent via-brand-neutral/20 to-brand-neutral/60 rounded-r-full"></span>
               Batch Timings
-              <span className="flex-1 h-px bg-brand-neutral/30"></span>
+              <span className="flex-1 h-[3px] bg-gradient-to-l from-transparent via-brand-neutral/20 to-brand-neutral/60 rounded-l-full"></span>
             </h4>
             <ul className="space-y-0">
               {program.simpleSchedule.map((slot, idx) => (

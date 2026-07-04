@@ -56,8 +56,8 @@ function ReportPanel({
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.35, delay: index * 0.1 + i * 0.07 }}
-            className="group/item flex items-start gap-4 px-7 py-4 border-b border-brand-white/[0.07] last:border-0
-              hover:bg-brand-white/[0.04] transition-colors duration-200 cursor-default"
+            className="group/item flex items-start gap-4 px-7 py-4 border-b border-brand-white/10 last:border-0
+              hover:bg-brand-white/5 transition-colors duration-200 cursor-default"
           >
             <div
               className="w-1.5 h-1.5 rounded-full mt-2 flex-shrink-0"
@@ -83,11 +83,11 @@ export function PerformanceReportsSection() {
     <div className="mt-20">
       {/* Divider + label */}
       <div className="flex items-center gap-5 mb-10">
-        <div className="flex-1 h-px bg-brand-neutral/25" />
+        <div className="flex-1 h-[3px] bg-gradient-to-r from-transparent via-brand-neutral/20 to-brand-neutral/60 rounded-r-full" />
         <span className="text-xs font-black uppercase tracking-[0.28em] text-brand-secondary">
           Athlete Intelligence
         </span>
-        <div className="flex-1 h-px bg-brand-neutral/25" />
+        <div className="flex-1 h-[3px] bg-gradient-to-l from-transparent via-brand-neutral/20 to-brand-neutral/60 rounded-l-full" />
       </div>
 
       {/* Heading block */}

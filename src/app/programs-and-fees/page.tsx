@@ -64,11 +64,11 @@ export default function ProgramsAndFeesPage() {
           <MotionSection>
             <MotionItem>
               <div className="flex items-center gap-4 mb-10">
-                <div className="flex-1 h-px bg-gradient-to-r from-brand-accent to-transparent"></div>
+                <div className="flex-1 h-[3px] bg-gradient-to-r from-transparent via-brand-accent/40 to-brand-accent rounded-r-full"></div>
                 <span className="text-xs font-black uppercase tracking-[0.3em] text-brand-accent bg-brand-primary px-5 py-2.5 rounded-full shadow-md">
                   Performance Programs
                 </span>
-                <div className="flex-1 h-px bg-gradient-to-l from-brand-accent to-transparent"></div>
+                <div className="flex-1 h-[3px] bg-gradient-to-l from-transparent via-brand-accent/40 to-brand-accent rounded-l-full"></div>
               </div>
             </MotionItem>
           </MotionSection>
@@ -99,11 +99,11 @@ export default function ProgramsAndFeesPage() {
           <MotionSection>
             <MotionItem>
               <div className="flex items-center gap-4 mb-10">
-                <div className="flex-1 h-px bg-gradient-to-r from-brand-secondary to-transparent"></div>
+                <div className="flex-1 h-[3px] bg-gradient-to-r from-transparent via-brand-secondary/40 to-brand-secondary rounded-r-full"></div>
                 <span className="text-xs font-black uppercase tracking-[0.3em] text-brand-white bg-brand-secondary px-5 py-2.5 rounded-full shadow-md">
                   Foundation Programs
                 </span>
-                <div className="flex-1 h-px bg-gradient-to-l from-brand-secondary to-transparent"></div>
+                <div className="flex-1 h-[3px] bg-gradient-to-l from-transparent via-brand-secondary/40 to-brand-secondary rounded-l-full"></div>
               </div>
             </MotionItem>
           </MotionSection>
