@@ -61,7 +61,7 @@ export function LocationAccessibility() {
             className="h-[500px] w-full rounded-3xl overflow-hidden shadow-card-hover bg-brand-neutral/50 relative border-4 border-brand-white"
           >
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d27435.539824637653!2d76.6715694!3d30.7629671!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ff3cbfa775d73%3A0x8ba6f3bc5b4d7f5f!2sNew%20Chandigarh%2C%20Punjab!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+              src={`https://maps.google.com/maps?q=${siteConfig.address.coordinates.lat},${siteConfig.address.coordinates.lng}&t=&z=15&ie=UTF8&iwloc=&output=embed`}
               title={`Map of ${siteConfig.address.city}`}
               className="w-full h-full border-0"
               allowFullScreen

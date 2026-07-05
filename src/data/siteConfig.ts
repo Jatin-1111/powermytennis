@@ -7,6 +7,10 @@ export interface SiteConfig {
   address: {
     city: string;
     accessibleFrom: string[];
+    coordinates: {
+      lat: number;
+      lng: number;
+    };
   };
 }
 
@@ -20,5 +24,9 @@ export const siteConfig: SiteConfig = {
   address: {
     city: "New Chandigarh",
     accessibleFrom: ["Chandigarh", "Kharar", "Ropar", "SAS Nagar"],
+    coordinates: {
+      lat: 30.8165849,
+      lng: 76.7266800,
+    },
   },
 };

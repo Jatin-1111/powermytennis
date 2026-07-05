@@ -71,122 +71,184 @@ export function ContactForm() {
   return (
     <form
       action={formAction}
-      className="bg-brand-white p-8 md:p-12 rounded-3xl shadow-2xl border border-brand-neutral/30 h-full"
+      className="bg-brand-white rounded-[2rem] shadow-xl border border-brand-neutral/20 h-full flex flex-col relative overflow-hidden"
     >
-      <h3 className="text-3xl font-black text-brand-primary uppercase tracking-tight mb-8">
-        Send us a message
-      </h3>
-
-      {state.error && (
-        <div className="mb-8 p-4 bg-brand-coral/10 border-l-4 border-brand-coral text-brand-coral font-medium rounded-r-lg">
-          {state.error}
+      {/* Technical Window Bar */}
+      <div className="bg-brand-neutral/5 border-b border-brand-neutral/20 px-8 py-4 flex items-center justify-between">
+        <div className="flex gap-2">
+          <div className="w-2.5 h-2.5 rounded-sm bg-brand-neutral/40" />
+          <div className="w-2.5 h-2.5 rounded-sm bg-brand-neutral/40" />
+          <div className="w-2.5 h-2.5 rounded-sm bg-brand-accent shadow-[0_0_8px_rgba(198,217,43,0.6)]" />
         </div>
-      )}
-
-      <div className="space-y-6">
-        <div>
-          <label
-            htmlFor="name"
-            className="block text-sm font-bold text-brand-secondary mb-2 uppercase tracking-widest"
-          >
-            Full Name
-          </label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            required
-            className="w-full bg-brand-neutral/10 border-2 border-transparent focus:bg-brand-white focus:border-brand-accent rounded-xl px-5 py-4 transition-all outline-none placeholder:text-brand-primary/50 text-brand-primary font-medium"
-            placeholder="John Doe"
-          />
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div>
-            <label
-              htmlFor="phone"
-              className="block text-sm font-bold text-brand-secondary mb-2 uppercase tracking-widest"
-            >
-              Phone Number
-            </label>
-            <input
-              type="tel"
-              id="phone"
-              name="phone"
-              required
-              className="w-full bg-brand-neutral/10 border-2 border-transparent focus:bg-brand-white focus:border-brand-accent rounded-xl px-5 py-4 transition-all outline-none placeholder:text-brand-primary/50 text-brand-primary font-medium"
-              placeholder="+91 XXXXX XXXXX"
-            />
-          </div>
-          <div>
-            <label
-              htmlFor="email"
-              className="block text-sm font-bold text-brand-secondary mb-2 uppercase tracking-widest"
-            >
-              Email Address
-            </label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              required
-              className="w-full bg-brand-neutral/10 border-2 border-transparent focus:bg-brand-white focus:border-brand-accent rounded-xl px-5 py-4 transition-all outline-none placeholder:text-brand-primary/50 text-brand-primary font-medium"
-              placeholder="john@example.com"
-            />
-          </div>
-        </div>
-
-        <div>
-          <label
-            htmlFor="program"
-            className="block text-sm font-bold text-brand-secondary mb-2 uppercase tracking-widest"
-          >
-            Program of Interest
-          </label>
-          <select
-            id="program"
-            name="program"
-            required
-            value={defaultProgram}
-            onChange={(e) => setDefaultProgram(e.target.value)}
-            className="w-full bg-brand-neutral/10 border-2 border-transparent focus:bg-brand-white focus:border-brand-accent rounded-xl px-5 py-4 transition-all outline-none placeholder:text-brand-primary/50 text-brand-primary font-medium appearance-none cursor-pointer"
-          >
-            <option value="" disabled>
-              Select a program...
-            </option>
-            {programOptions.map((option) => (
-              <option key={option} value={option}>
-                {option}
-              </option>
-            ))}
-          </select>
-        </div>
-
-        <div>
-          <label
-            htmlFor="message"
-            className="block text-sm font-bold text-brand-secondary mb-2 uppercase tracking-widest"
-          >
-            Your Message
-          </label>
-          <textarea
-            id="message"
-            name="message"
-            required
-            rows={4}
-            className="w-full bg-brand-neutral/10 border-2 border-transparent focus:bg-brand-white focus:border-brand-accent rounded-xl px-5 py-4 transition-all outline-none placeholder:text-brand-primary/50 text-brand-primary font-medium resize-y"
-            placeholder="How can we help you?"
-          ></textarea>
+        <div className="text-[10px] font-black uppercase tracking-[0.3em] text-brand-neutral">
+          SECURE_CONNECTION // READY
         </div>
       </div>
 
-      <div className="mt-10">
+      <div className="p-8 md:p-10 lg:p-12 flex-1 flex flex-col">
+        <div className="mb-10">
+          <h3 className="text-3xl md:text-4xl font-black text-brand-primary uppercase tracking-tight mb-2">
+            Send Message
+          </h3>
+          <p className="text-brand-black/50 font-medium text-sm max-w-sm">
+            Fill in the details below. Our team will get back to you as soon as possible.
+          </p>
+        </div>
+
+        {state.error && (
+          <div className="mb-8 p-4 bg-brand-coral/10 border-l-4 border-brand-coral text-brand-coral font-medium rounded-r-lg text-sm">
+            ERROR: {state.error}
+          </div>
+        )}
+
+        <div className="space-y-6 flex-1">
+          {/* Name & Phone in grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="group">
+              <label
+                htmlFor="name"
+                className="block text-[10px] font-black text-brand-secondary mb-2 uppercase tracking-[0.2em] group-focus-within:text-brand-accent transition-colors"
+              >
+                Player / Parent Name
+              </label>
+              <div className="relative">
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  required
+                  className="w-full bg-transparent border-2 border-brand-neutral/20 focus:border-brand-accent rounded-xl px-5 py-4 transition-all outline-none text-brand-primary font-bold placeholder:text-brand-neutral/50 placeholder:font-medium peer"
+                  placeholder="John Doe"
+                />
+                <div className="absolute right-4 top-1/2 -translate-y-1/2 w-1.5 h-1.5 rounded-full bg-brand-accent opacity-0 peer-focus:opacity-100 transition-opacity" />
+              </div>
+            </div>
+
+            <div className="group">
+              <label
+                htmlFor="phone"
+                className="block text-[10px] font-black text-brand-secondary mb-2 uppercase tracking-[0.2em] group-focus-within:text-brand-accent transition-colors"
+              >
+                Contact Number
+              </label>
+              <div className="relative">
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  required
+                  className="w-full bg-transparent border-2 border-brand-neutral/20 focus:border-brand-accent rounded-xl px-5 py-4 transition-all outline-none text-brand-primary font-bold placeholder:text-brand-neutral/50 placeholder:font-medium peer"
+                  placeholder="+91 98765 43210"
+                />
+                <div className="absolute right-4 top-1/2 -translate-y-1/2 w-1.5 h-1.5 rounded-full bg-brand-accent opacity-0 peer-focus:opacity-100 transition-opacity" />
+              </div>
+            </div>
+          </div>
+
+          <div className="group">
+            <label
+              htmlFor="email"
+              className="block text-[10px] font-black text-brand-secondary mb-2 uppercase tracking-[0.2em] group-focus-within:text-brand-accent transition-colors"
+            >
+              Email Address
+            </label>
+            <div className="relative">
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                className="w-full bg-transparent border-2 border-brand-neutral/20 focus:border-brand-accent rounded-xl px-5 py-4 transition-all outline-none text-brand-primary font-bold placeholder:text-brand-neutral/50 placeholder:font-medium peer"
+                placeholder="john@example.com"
+              />
+              <div className="absolute right-4 top-1/2 -translate-y-1/2 w-1.5 h-1.5 rounded-full bg-brand-accent opacity-0 peer-focus:opacity-100 transition-opacity" />
+            </div>
+          </div>
+
+          <div className="group">
+            <label
+              htmlFor="program"
+              className="block text-[10px] font-black text-brand-secondary mb-2 uppercase tracking-[0.2em] group-focus-within:text-brand-accent transition-colors"
+            >
+              Inquiry Type
+            </label>
+            <div className="relative">
+              <select
+                id="program"
+                name="program"
+                value={defaultProgram}
+                onChange={(e) => setDefaultProgram(e.target.value)}
+                required
+                className="w-full bg-transparent border-2 border-brand-neutral/20 focus:border-brand-accent rounded-xl px-5 py-4 transition-all outline-none text-brand-primary font-bold appearance-none cursor-pointer peer"
+              >
+                <option value="" disabled className="text-brand-neutral/50 font-medium">
+                  Select an inquiry type...
+                </option>
+                {programOptions.map((opt) => (
+                  <option key={opt} value={opt} className="font-bold">
+                    {opt}
+                  </option>
+                ))}
+              </select>
+              <div className="absolute right-5 top-1/2 -translate-y-1/2 pointer-events-none text-brand-neutral peer-focus:text-brand-accent transition-colors">
+                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <div className="group">
+            <label
+              htmlFor="message"
+              className="block text-[10px] font-black text-brand-secondary mb-2 uppercase tracking-[0.2em] group-focus-within:text-brand-accent transition-colors"
+            >
+              Your Message
+            </label>
+            <div className="relative">
+              <textarea
+                id="message"
+                name="message"
+                rows={4}
+                required
+                className="w-full bg-transparent border-2 border-brand-neutral/20 focus:border-brand-accent rounded-xl px-5 py-4 transition-all outline-none resize-none text-brand-primary font-bold placeholder:text-brand-neutral/50 placeholder:font-medium peer"
+                placeholder="Tell us about your goals..."
+              />
+              <div className="absolute right-4 top-6 w-1.5 h-1.5 rounded-full bg-brand-accent opacity-0 peer-focus:opacity-100 transition-opacity" />
+            </div>
+          </div>
+        </div>
+
         <button
           type="submit"
           disabled={isPending}
-          className={`w-full inline-flex items-center justify-center font-black px-8 py-5 rounded-full transition-all duration-300 text-center uppercase tracking-widest text-brand-primary shadow-lg hover:shadow-xl hover:-translate-y-1 ${isPending ? "bg-brand-neutral opacity-70 cursor-not-allowed" : "bg-brand-accent hover:bg-[#b0c426]"}`}
+          className="group relative w-full overflow-hidden bg-brand-primary rounded-xl py-5 flex items-center justify-center mt-10 transition-all disabled:opacity-50"
         >
-          {isPending ? "Sending..." : "Send Inquiry"}
+          {/* Button Background slide */}
+          <div className="absolute inset-0 bg-brand-secondary translate-y-[101%] group-hover:translate-y-0 transition-transform duration-300 ease-out" />
+          
+          {isPending ? (
+            <div className="flex items-center gap-3 relative z-10">
+              <div className="w-5 h-5 border-3 border-brand-white border-t-transparent rounded-full animate-spin" />
+              <span className="font-black uppercase tracking-[0.2em] text-brand-white text-sm">
+                Sending...
+              </span>
+            </div>
+          ) : (
+            <div className="flex items-center gap-3 relative z-10">
+              <span className="font-black uppercase tracking-[0.2em] text-brand-white text-sm group-hover:text-brand-accent transition-colors duration-300">
+                Send Message
+              </span>
+              <svg
+                className="w-5 h-5 text-brand-white group-hover:translate-x-1 group-hover:text-brand-accent transition-all duration-300"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </div>
+          )}
         </button>
       </div>
     </form>
