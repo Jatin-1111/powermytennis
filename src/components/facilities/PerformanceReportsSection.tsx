@@ -42,7 +42,7 @@ function ReportPanel({
         <div className="text-xs font-black text-brand-white/30 uppercase tracking-[0.25em] mb-2">
           {subtitle}
         </div>
-        <h3 className="text-2xl font-black uppercase text-brand-white tracking-tight">
+        <h3 className="text-h3 font-black uppercase text-brand-white tracking-tight">
           {title}
         </h3>
       </div>
@@ -92,11 +92,11 @@ export function PerformanceReportsSection() {
 
       {/* Heading block */}
       <div className="mb-10">
-        <h2 className="text-h1 font-black uppercase text-brand-primary tracking-tight leading-tight">
+        <h2 className="text-h2 font-black uppercase text-brand-primary tracking-tight leading-tight">
           Performance Reports
         </h2>
-        <p className="text-brand-black/55 font-medium mt-3 max-w-lg leading-relaxed">
-          Every athlete receives a comprehensive biweekly report covering both measurable and qualitative performance metrics.
+        <p className="text-brand-black/55 font-medium mt-3 max-w-lg leading-relaxed text-pretty">
+          High Performance athletes receive a monthly progress report and quarterly fitness screening — covering both measurable and qualitative performance metrics.
         </p>
       </div>
 

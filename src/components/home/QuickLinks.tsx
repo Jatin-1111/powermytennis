@@ -8,7 +8,7 @@ export function QuickLinks() {
     {
       title: "The Coaching Pathway",
       description:
-        "Explore our skill-based coaching groups from Orange Ball to High Performance.",
+        "Explore our skill-based coaching groups from Orange to High Performance.",
       href: "/pathway",
       color: "bg-brand-secondary",
       text: "text-brand-white",
@@ -50,7 +50,7 @@ export function QuickLinks() {
                 <h3 className="text-h3 font-black uppercase tracking-wide mb-element">
                   {link.title}
                 </h3>
-                <p className="opacity-90 mb-8 font-medium leading-relaxed flex-1">
+                <p className="opacity-90 mb-8 font-medium leading-relaxed flex-1 text-pretty">
                   {link.description}
                 </p>
                 <div className="mt-auto">

@@ -21,7 +21,7 @@ export function TestimonialMarquee() {
           </span>
           <div className="flex-1 h-[3px] bg-gradient-to-l from-transparent via-brand-neutral/20 to-brand-neutral/60 rounded-l-full" />
         </div>
-        <h2 className="text-h1 font-black uppercase text-brand-white tracking-tight leading-none">
+        <h2 className="text-h2 font-black uppercase text-brand-white tracking-tight leading-none">
           Proven Results.
         </h2>
       </Container>

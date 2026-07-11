@@ -9,7 +9,7 @@ export function Footer() {
         
         {/* Pre-Footer CTA */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-8 pb-16 border-b border-brand-white/10 mb-16">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tighter max-w-2xl">
+          <h2 className="text-hero font-black uppercase tracking-tighter max-w-2xl">
             Ready to <span className="text-brand-accent">dominate?</span>
           </h2>
           <Link
@@ -150,9 +150,9 @@ export function Footer() {
 
       {/* Massive Typographic Wordmark */}
       <div className="w-full flex justify-center overflow-hidden pointer-events-none select-none border-t border-brand-white/10 pt-16 pb-4">
-        <h1 className="text-[14vw] font-black uppercase text-brand-white/5 tracking-tighter leading-none">
+        <p aria-hidden="true" className="text-[14vw] font-black uppercase text-brand-white/5 tracking-tighter leading-none">
           PowerMyTennis
-        </h1>
+        </p>
       </div>
 
       {/* Bottom Bar */}

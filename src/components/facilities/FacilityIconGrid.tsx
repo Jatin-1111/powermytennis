@@ -8,7 +8,7 @@ import { ShowerHead, Coffee } from "lucide-react";
 const FACILITIES = [
   {
     id: "clay",
-    label: "Tournament Clay Courts",
+    label: "Professional Clay Courts",
     stat: "4",
     unit: "Courts",
     icon: null,
@@ -94,7 +94,7 @@ function Card({
         {/* Label + description at top */}
         <div className="mb-auto">
           <h3 className={`font-black uppercase text-brand-white tracking-tight leading-tight mb-2
-            ${facility.hero ? "text-2xl md:text-3xl" : "text-lg md:text-xl"}`}>
+            ${facility.hero ? "text-h2" : "text-h3"}`}>
             {facility.label}
           </h3>
           <p className="text-brand-white/45 text-sm font-medium leading-relaxed group-hover:text-brand-white/65 transition-colors duration-300">
@@ -106,7 +106,7 @@ function Card({
         {facility.stat && (
           <div className="mt-6 flex items-baseline gap-2">
             <span className={`font-black text-brand-white leading-none tracking-tighter
-              ${facility.hero ? "text-7xl md:text-8xl" : "text-5xl md:text-6xl"}`}>
+              ${facility.hero ? "text-h1" : "text-h2"}`}>
               {facility.stat}
             </span>
             <span className="text-brand-accent font-black text-sm uppercase tracking-widest">
@@ -138,7 +138,7 @@ export function FacilityIconGrid() {
           facility={clay}
           index={0}
           className="h-full"
-          bgImage="https://images.unsplash.com/photo-1595435934249-5df7ed86e1c0?q=80&w=1200&auto=format&fit=crop"
+          bgImage="/powermytennis-assets/courts-overview.jpeg"
         />
       </div>
 

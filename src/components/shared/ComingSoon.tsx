@@ -25,9 +25,8 @@ export function ComingSoon() {
           <div className="inline-block bg-brand-accent/20 text-brand-accent px-4 py-1.5 rounded-full font-black text-xs md:text-sm uppercase tracking-widest border border-brand-accent/30">
             {siteConfig.address.city}
           </div>
-          <h1 className="text-hero font-black uppercase tracking-tight leading-none text-brand-white">
-            Something <span className="text-brand-accent">Powerful</span> Is
-            Coming
+          <h1 className="text-hero font-black uppercase tracking-tight leading-none text-brand-white text-balance">
+            Something <span className="text-brand-accent">Powerful</span> Is Coming
           </h1>
           <p className="text-body-lg text-brand-neutral max-w-2xl mx-auto font-medium">
             We are putting the finishing touches on our high-performance tennis
@@ -37,7 +36,7 @@ export function ComingSoon() {
 
         <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto mt-8">
           <a
-            href={`https://wa.me/918699212962?text=${encodeURIComponent("Hi, I'm interested in PowerMyTennis Academy!")}`}
+            href={`https://wa.me/91${siteConfig.phone.replace(/\s+/g, "")}?text=${encodeURIComponent("Hi, I'm interested in PowerMyTennis Academy!")}`}
             target="_blank"
             rel="noopener noreferrer"
             className="bg-brand-accent text-brand-primary px-8 py-4 rounded-xl font-black uppercase tracking-widest text-sm hover:opacity-90 transition-opacity flex items-center justify-center gap-2"

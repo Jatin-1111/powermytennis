@@ -90,7 +90,7 @@ export function PillarsSnapshot() {
           </span>
           <div className="flex-1 h-[3px] bg-gradient-to-l from-transparent via-brand-neutral/20 to-brand-neutral/60 rounded-l-full" />
         </div>
-        <h2 className="text-h1 font-black uppercase text-brand-primary tracking-tight mb-12">
+        <h2 className="text-h2 font-black uppercase text-brand-primary tracking-tight mb-12">
           The Four Pillars
         </h2>
       </Container>
@@ -123,8 +123,7 @@ export function PillarsSnapshot() {
                 {/* Large title */}
                 <div className="flex-1 min-w-0">
                   <h3
-                    className="font-black uppercase tracking-tight leading-none text-brand-primary group-hover:text-white transition-colors duration-500"
-                    style={{ fontSize: "clamp(2.2rem, 5.5vw, 5rem)" }}
+                    className="text-h2 font-black uppercase tracking-tight leading-none text-brand-primary group-hover:text-white transition-colors duration-500"
                   >
                     {pillar.title}
                   </h3>
@@ -137,15 +136,17 @@ export function PillarsSnapshot() {
 
                 {/* Description — right-aligned, fixed width on desktop */}
                 <div className="hidden md:block md:w-56 lg:w-72 xl:w-96 flex-shrink-0">
-                  <p className="text-sm font-medium text-brand-black/50 group-hover:text-brand-white/75 transition-colors duration-500 leading-relaxed">
-                    {pillar.description}
+                  <p className="text-sm font-medium text-brand-black/70 group-hover:text-brand-white/80 transition-colors duration-500 leading-relaxed flex gap-2">
+                    <span className="text-brand-accent group-hover:text-brand-accent/70 transition-colors duration-500 select-none">—</span>
+                    <span>{pillar.description}</span>
                   </p>
                 </div>
               </div>
 
               {/* Mobile description — below title */}
-              <p className="md:hidden text-sm font-medium text-brand-black/60 group-hover:text-brand-white/75 transition-colors duration-500 leading-relaxed pb-6 -mt-2">
-                {pillar.description}
+              <p className="md:hidden text-sm font-medium text-brand-black/70 group-hover:text-brand-white/80 transition-colors duration-500 leading-relaxed pb-6 -mt-2 flex gap-2">
+                <span className="text-brand-accent group-hover:text-brand-accent/70 transition-colors duration-500 select-none">—</span>
+                <span>{pillar.description}</span>
               </p>
             </Container>
           </motion.div>

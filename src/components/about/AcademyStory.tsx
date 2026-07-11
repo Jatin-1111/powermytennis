@@ -41,7 +41,7 @@ export function AcademyStory() {
                   <span className="text-brand-secondary font-bold uppercase tracking-widest text-sm mb-4 block">
                     Nestled in New Chandigarh
                   </span>
-                  <h2 className="text-h2 lg:text-h1 font-black text-brand-primary uppercase tracking-tight leading-none">
+                  <h2 className="text-h2 font-black text-brand-primary uppercase tracking-tight leading-none">
                     How We Fuel <br />
                     <span className="text-brand-accent bg-brand-primary px-4 py-1 inline-block mt-2 transform -rotate-2">
                       Your Dream
@@ -60,7 +60,7 @@ export function AcademyStory() {
 
               <MotionItem>
                 <div className="space-y-6 text-brand-black text-body-lg">
-                  <p className="leading-relaxed">
+                  <p className="leading-relaxed text-pretty">
                     At PowerMyTennis, we strongly believe in imparting{" "}
                     <strong className="text-brand-primary font-bold">
                       Purposeful Coaching
@@ -68,9 +68,9 @@ export function AcademyStory() {
                     that helps meet tennis-related aspirations of athletes.
                     These aspirations may range from becoming an Elite Tennis
                     Player to seeking international admissions based on tennis
-                    points.
+                    points to becoming a skilled recreational player.
                   </p>
-                  <p className="leading-relaxed">
+                  <p className="leading-relaxed text-pretty">
                     Focused on tennis specific requirements, we offer a
                     wholistic facility wherein full time athletes may play,
                     rest, eat, study, bathe and change. Talk to our expert team

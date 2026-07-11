@@ -51,11 +51,11 @@ export function HeroSection() {
           <div className="lg:col-span-7 flex flex-col justify-center text-left">
             <MotionSection stagger>
               <MotionItem>
-                <h1 className="text-[clamp(1.5rem,9vw,6.5rem)] font-black uppercase tracking-tight mb-8 leading-none">
-                  <span className="block text-brand-white">
+                <h1 className="font-black uppercase tracking-tight mb-8 leading-none">
+                  <span className="block text-brand-white text-hero">
                     {siteConfig.name.split(" ")[0]}
                   </span>
-                  <span className="block text-brand-accent mt-2">
+                  <span className="block text-brand-accent text-h3 mt-3 tracking-[0.08em]">
                     {siteConfig.name.split(" ").slice(1).join(" ")}
                   </span>
                 </h1>

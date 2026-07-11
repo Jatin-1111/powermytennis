@@ -50,7 +50,7 @@ export default function PoliciesPage() {
         <div className="space-y-10 mt-12">
           {/* Registration Policy */}
           <div className="bg-brand-neutral/10 p-10 md:p-12 rounded-3xl border border-brand-neutral/20 shadow-sm hover:shadow-md transition-shadow">
-            <h3 className="text-2xl font-black text-brand-primary uppercase tracking-tight mb-6 flex items-center gap-4">
+            <h3 className="text-h3 font-black text-brand-primary uppercase tracking-tight mb-6 flex items-center gap-4">
               <div className="p-2 bg-brand-accent rounded-xl">
                 <svg
                   className="w-6 h-6 text-brand-primary"
@@ -68,7 +68,7 @@ export default function PoliciesPage() {
               </div>
               Registration Fee
             </h3>
-            <p className="text-brand-black text-lg leading-relaxed font-medium">
+            <p className="text-brand-black text-body-lg leading-relaxed font-medium">
               A registration fee of{" "}
               <strong className="font-black text-brand-primary bg-brand-neutral/20 px-2 py-0.5 rounded">
                 ₹{policies.registrationFee.amount}
@@ -86,7 +86,7 @@ export default function PoliciesPage() {
 
           {/* Deposit Policy */}
           <div className="bg-brand-neutral/10 p-10 md:p-12 rounded-3xl border border-brand-neutral/20 shadow-sm hover:shadow-md transition-shadow">
-            <h3 className="text-2xl font-black text-brand-primary uppercase tracking-tight mb-6 flex items-center gap-4">
+            <h3 className="text-h3 font-black text-brand-primary uppercase tracking-tight mb-6 flex items-center gap-4">
               <div className="p-2 bg-brand-accent rounded-xl">
                 <svg
                   className="w-6 h-6 text-brand-primary"
@@ -104,14 +104,14 @@ export default function PoliciesPage() {
               </div>
               Fee Deposit
             </h3>
-            <p className="text-brand-black text-xl leading-relaxed font-bold">
+            <p className="text-brand-black text-body-lg leading-relaxed font-bold">
               {policies.depositRule}.
             </p>
           </div>
 
           {/* Scheduling Policy */}
           <div className="bg-brand-neutral/10 p-10 md:p-12 rounded-3xl border border-brand-neutral/20 shadow-sm hover:shadow-md transition-shadow">
-            <h3 className="text-2xl font-black text-brand-primary uppercase tracking-tight mb-8 flex items-center gap-4">
+            <h3 className="text-h3 font-black text-brand-primary uppercase tracking-tight mb-8 flex items-center gap-4">
               <div className="p-2 bg-brand-accent rounded-xl">
                 <svg
                   className="w-6 h-6 text-brand-primary"
@@ -134,7 +134,7 @@ export default function PoliciesPage() {
                 <span className="font-bold text-brand-secondary uppercase tracking-widest text-sm mb-2 sm:mb-0">
                   Match Days
                 </span>
-                <span className="font-black text-brand-primary text-2xl uppercase tracking-tight">
+                <span className="font-black text-brand-primary text-h3 uppercase tracking-tight">
                   {privateLessons.matchDays}
                 </span>
               </li>
@@ -142,7 +142,7 @@ export default function PoliciesPage() {
                 <span className="font-bold text-brand-secondary uppercase tracking-widest text-sm mb-2 sm:mb-0">
                   Academy Off Day
                 </span>
-                <span className="font-black text-brand-coral text-2xl uppercase tracking-tight">
+                <span className="font-black text-brand-coral text-h3 uppercase tracking-tight">
                   {privateLessons.offDay}
                 </span>
               </li>

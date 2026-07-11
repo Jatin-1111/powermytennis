@@ -62,11 +62,11 @@ export default function PathwayPage() {
           </div>
 
           <div className="relative z-10">
-            <h3 className="text-3xl md:text-4xl font-black text-brand-white uppercase tracking-tight mb-6 leading-tight">
-              Build a smart & <br/>
-              <span className="text-brand-accent">realistic plan</span>
+            <h3 className="text-h2 font-black text-brand-white uppercase tracking-tight mb-6 leading-tight">
+              Build a smart & realistic{" "}
+              <span className="text-brand-accent">plan</span>
             </h3>
-            <p className="text-brand-white/80 mb-10 text-lg md:text-xl max-w-xl mx-auto font-medium">
+            <p className="text-brand-white/80 mb-10 text-body-lg max-w-xl mx-auto font-medium">
               Our Coaches assess skill levels at the time of registration and
               recommend the best group fitment for each athlete.
             </p>

@@ -22,14 +22,14 @@ export function CoachCard({ coach }: CoachCardProps) {
           <img
             src={coach.photoUrl}
             alt={`Photo of ${coach.name}, ${coach.role}`}
-            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+            className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
           />
         ) : (
           <div
             className="w-full h-full bg-brand-primary flex items-center justify-center text-brand-white transition-transform duration-500 group-hover:scale-105"
             aria-label={`Placeholder photo for ${coach.name}`}
           >
-            <span className="text-7xl font-black text-brand-neutral">
+            <span className="text-h1 font-black text-brand-neutral">
               {initials}
             </span>
           </div>
@@ -43,7 +43,7 @@ export function CoachCard({ coach }: CoachCardProps) {
 
       {/* Content Area */}
       <div className="p-8 flex flex-col flex-1 bg-brand-neutral/5">
-        <h3 className="text-2xl font-black text-brand-primary mb-6 tracking-tight">
+        <h3 className="text-h3 font-black text-brand-primary mb-6 tracking-tight">
           {coach.name}
         </h3>
 
@@ -88,7 +88,7 @@ export function CoachCard({ coach }: CoachCardProps) {
                   />
                 </svg>
               </div>
-              <p className="text-brand-black font-bold text-lg">
+              <p className="text-brand-black font-bold text-body-lg">
                 {coach.experience}
               </p>
             </div>

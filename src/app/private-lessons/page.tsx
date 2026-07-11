@@ -54,7 +54,7 @@ export default function PrivateLessonsPage() {
             <div className="w-12 h-px bg-brand-neutral/30" />
           </div>
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-8">
-            <h2 className="text-h1 font-black uppercase text-brand-primary tracking-tight leading-tight max-w-2xl">
+            <h2 className="text-h2 font-black uppercase text-brand-primary tracking-tight leading-tight max-w-2xl">
               Coaching Tiers
             </h2>
             <p className="text-brand-black/60 font-medium md:max-w-xs pb-2 leading-relaxed">

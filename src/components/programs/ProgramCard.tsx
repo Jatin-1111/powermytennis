@@ -40,7 +40,7 @@ export function ProgramCard({ program, featured = false }: ProgramCardProps) {
               <div className="text-brand-accent text-xs font-black uppercase tracking-[0.3em] mb-4">
                 Flagship Program
               </div>
-              <h3 className="text-3xl lg:text-4xl font-black uppercase text-brand-white tracking-tight leading-tight mb-6 group-hover:text-brand-accent transition-colors duration-300">
+              <h3 className="text-h2 font-black uppercase text-brand-white tracking-tight leading-tight mb-6 group-hover:text-brand-accent transition-colors duration-300">
                 {program.name}
               </h3>
               <div className="inline-block bg-brand-accent text-brand-primary px-5 py-2 rounded-full text-xs font-black uppercase tracking-[0.15em] shadow-md mb-8">
@@ -148,7 +148,7 @@ export function ProgramCard({ program, featured = false }: ProgramCardProps) {
     >
       {/* Header */}
       <div className="relative z-10 p-7 text-center border-b-4 border-brand-accent bg-brand-primary">
-        <h3 className="text-2xl md:text-3xl font-black uppercase tracking-tight text-brand-white mb-3 group-hover:text-brand-accent transition-colors duration-300">
+        <h3 className="text-h3 font-black uppercase tracking-tight text-brand-white mb-3 group-hover:text-brand-accent transition-colors duration-300">
           {program.name}
         </h3>
         <div className="inline-block bg-brand-accent text-brand-primary px-5 py-1.5 rounded-full text-xs font-black uppercase tracking-[0.15em] shadow-md">

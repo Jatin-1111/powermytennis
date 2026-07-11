@@ -39,5 +39,9 @@ export function AnimatedCounter({
     });
   }, [springValue]);
 
-  return <motion.span ref={ref} className={className} />;
+  return (
+    <motion.span ref={ref} className={className}>
+      {Intl.NumberFormat("en-US").format(value)}
+    </motion.span>
+  );
 }

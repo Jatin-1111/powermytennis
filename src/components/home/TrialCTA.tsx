@@ -45,14 +45,14 @@ export function TrialCTA() {
             </MotionItem>
 
             <MotionItem>
-              <h2 className="text-h1 font-black uppercase tracking-tight text-brand-white leading-none mb-6">
+              <h2 className="text-h2 font-black uppercase tracking-tight text-brand-white leading-none mb-6">
                 Book a <br />
                 <span className="text-brand-accent">Free Trial</span>
               </h2>
             </MotionItem>
 
             <MotionItem>
-              <p className="text-brand-white/60 font-medium text-lg leading-relaxed mb-10 max-w-md">
+              <p className="text-brand-white/60 font-medium text-lg leading-relaxed mb-10 max-w-md text-pretty">
                 Bring your child for one complimentary session. Our coaches
                 assess their level, explain the right program, and show you our
                 training methodology — no strings attached.

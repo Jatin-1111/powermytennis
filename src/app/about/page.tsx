@@ -3,9 +3,9 @@ import { LocationAccessibility } from "@/components/about/LocationAccessibility"
 import { MotionSection, MotionItem } from "@/components/shared/MotionSection";
 
 export const metadata = {
-  title: "About",
+  title: "About The Academy",
   description:
-    "Learn about the vision and location of PowerMyTennis Academy in New Chandigarh.",
+    "Learn about the vision, coaching philosophy, and location of PowerMyTennis High Performance Academy in New Chandigarh.",
 };
 
 export default function AboutPage() {
@@ -33,7 +33,7 @@ export default function AboutPage() {
               </div>
             </MotionItem>
             <MotionItem>
-              <h1 className="text-hero font-black uppercase tracking-tight text-brand-white drop-shadow-lg">
+              <h1 className="text-hero font-black uppercase tracking-tight text-brand-white drop-shadow-lg text-balance">
                 About The Academy
               </h1>
             </MotionItem>

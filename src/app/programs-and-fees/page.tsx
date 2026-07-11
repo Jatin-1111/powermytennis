@@ -47,7 +47,7 @@ export default function ProgramsAndFeesPage() {
               </div>
             </MotionItem>
             <MotionItem>
-              <h1 className="text-hero font-black uppercase tracking-tight text-brand-white drop-shadow-lg">
+              <h1 className="text-hero font-black uppercase tracking-tight text-brand-white drop-shadow-lg text-balance">
                 Programs & Fees
               </h1>
             </MotionItem>
@@ -111,10 +111,10 @@ export default function ProgramsAndFeesPage() {
                   <p className="text-[10px] font-black uppercase tracking-[0.25em] text-brand-secondary mb-2">
                     Not Sure Which Level?
                   </p>
-                  <h3 className="text-2xl md:text-3xl font-black text-brand-primary uppercase tracking-tight">
+                  <h3 className="text-h2 font-black text-brand-primary uppercase tracking-tight">
                     Book a Free Assessment
                   </h3>
-                  <p className="text-brand-black/55 text-sm font-medium mt-2 max-w-md">
+                  <p className="text-brand-black/55 text-sm font-medium mt-2 max-w-md text-pretty">
                     Our coaches will evaluate your current level and recommend the right program — no commitment required.
                   </p>
                 </div>

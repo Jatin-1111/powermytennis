@@ -34,7 +34,7 @@ export function SectionHeading({
       {subtitle && (
         <MotionItem>
           <p
-            className={`mt-4 text-body-lg font-medium max-w-2xl ${align === "center" ? "mx-auto" : ""} ${subtitleColors}`}
+            className={`mt-4 text-body-lg font-medium max-w-2xl text-pretty ${align === "center" ? "mx-auto" : ""} ${subtitleColors}`}
           >
             {subtitle}
           </p>

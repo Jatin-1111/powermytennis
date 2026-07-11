@@ -69,7 +69,7 @@ export const testimonials: Testimonial[] = [
     quote: "The quarterly performance reports are a game-changer. I get complete visibility into my daughter's progress — technique scores, fitness metrics, match stats. No other academy does this.",
     authorName: "Kiran S.",
     authorRole: "Parent",
-    program: "Intermediate Program",
+    program: "High Performance Program",
     highlight: "complete visibility",
   },
   {

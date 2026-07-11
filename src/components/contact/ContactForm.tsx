@@ -54,10 +54,10 @@ export function ContactForm() {
             />
           </svg>
         </div>
-        <h3 className="text-3xl font-black text-brand-primary uppercase tracking-tight mb-4">
+        <h3 className="text-h3 font-black text-brand-primary uppercase tracking-tight mb-4">
           Message Sent!
         </h3>
-        <p className="text-brand-black text-lg">{state.message}</p>
+        <p className="text-brand-black text-body-lg">{state.message}</p>
         <button
           onClick={() => window.location.reload()}
           className="mt-8 text-brand-secondary font-bold hover:underline uppercase tracking-widest text-sm"
@@ -73,21 +73,9 @@ export function ContactForm() {
       action={formAction}
       className="bg-brand-white rounded-[2rem] shadow-xl border border-brand-neutral/20 h-full flex flex-col relative overflow-hidden"
     >
-      {/* Technical Window Bar */}
-      <div className="bg-brand-neutral/5 border-b border-brand-neutral/20 px-8 py-4 flex items-center justify-between">
-        <div className="flex gap-2">
-          <div className="w-2.5 h-2.5 rounded-sm bg-brand-neutral/40" />
-          <div className="w-2.5 h-2.5 rounded-sm bg-brand-neutral/40" />
-          <div className="w-2.5 h-2.5 rounded-sm bg-brand-accent shadow-[0_0_8px_rgba(198,217,43,0.6)]" />
-        </div>
-        <div className="text-[10px] font-black uppercase tracking-[0.3em] text-brand-neutral">
-          SECURE_CONNECTION // READY
-        </div>
-      </div>
-
       <div className="p-8 md:p-10 lg:p-12 flex-1 flex flex-col">
         <div className="mb-10">
-          <h3 className="text-3xl md:text-4xl font-black text-brand-primary uppercase tracking-tight mb-2">
+          <h3 className="text-h2 font-black text-brand-primary uppercase tracking-tight mb-2">
             Send Message
           </h3>
           <p className="text-brand-black/50 font-medium text-sm max-w-sm">

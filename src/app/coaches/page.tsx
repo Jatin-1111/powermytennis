@@ -34,9 +34,8 @@ export default function CoachesPage() {
               </div>
             </MotionItem>
             <MotionItem>
-              <h1 className="text-hero font-black uppercase tracking-tight text-brand-white drop-shadow-lg">
-                A Formidable
-                <br className="md:hidden" /> Coaching Team
+              <h1 className="text-hero font-black uppercase tracking-tight text-brand-white drop-shadow-lg text-balance">
+                A Formidable Coaching Team
               </h1>
             </MotionItem>
           </MotionSection>

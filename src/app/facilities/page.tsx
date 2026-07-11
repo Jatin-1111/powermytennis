@@ -52,6 +52,133 @@ export default function FacilitiesPage() {
           <FacilityIconGrid />
         </div>
 
+        {/* Photo Gallery */}
+        <div className="mt-16">
+          <div className="flex items-center gap-4 mb-8">
+            <span className="text-xs font-black uppercase tracking-[0.3em] text-brand-secondary">
+              Inside the Academy
+            </span>
+            <div className="flex-1 h-[2px] bg-gradient-to-r from-brand-neutral/30 to-transparent" />
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
+            {/* Aerial — spans 2 rows on md */}
+            <div className="col-span-2 md:col-span-1 overflow-hidden rounded-2xl aspect-[4/3] md:aspect-auto md:row-span-2">
+              <img
+                src="/powermytennis-assets/courts-aerial.jpeg"
+                alt="Aerial view of PowerMyTennis clay courts"
+                className="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-700"
+                style={{ minHeight: "260px" }}
+              />
+            </div>
+
+            {/* Trophy moment — coach + player at net, faces clearly visible */}
+            <div className="overflow-hidden rounded-2xl aspect-[4/3]">
+              <img
+                src="/powermytennis-assets/player-trophy-group.jpeg"
+                alt="Coach and player celebrating with trophy at the net"
+                className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-700"
+              />
+            </div>
+
+            {/* Junior player — charming portrait of young student */}
+            <div className="overflow-hidden rounded-2xl aspect-[4/3]">
+              <img
+                src="/powermytennis-assets/junior-player-smile.jpeg"
+                alt="Junior player on clay court with racket"
+                className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-700"
+              />
+            </div>
+
+            {/* Solo trophy — player holding trophies at net */}
+            <div className="overflow-hidden rounded-2xl aspect-[4/3]">
+              <img
+                src="/powermytennis-assets/player-trophy-solo.jpeg"
+                alt="Player holding trophies at the net on clay court"
+                className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-700"
+              />
+            </div>
+
+            {/* Court overview — facility shot */}
+            <div className="overflow-hidden rounded-2xl aspect-[4/3]">
+              <img
+                src="/powermytennis-assets/courts-overview.jpeg"
+                alt="PowerMyTennis clay courts with floodlights"
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                style={{ objectPosition: "50% 35%" }}
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* Section: On the Courts */}
+        <div className="mt-20">
+          <div className="flex items-center gap-4 mb-8">
+            <span className="text-xs font-black uppercase tracking-[0.3em] text-brand-secondary">
+              On The Courts
+            </span>
+            <div className="flex-1 h-[2px] bg-gradient-to-r from-brand-neutral/30 to-transparent" />
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {/* Coach portrait — spans 2 rows; image is absolute so it doesn't inflate the container height */}
+            <div className="relative overflow-hidden rounded-2xl aspect-[4/3] md:aspect-auto md:row-span-2">
+              <img
+                src="/powermytennis-assets/coach-portrait-balls.jpeg"
+                alt="Head coach on court with tennis balls and city skyline"
+                className="absolute inset-0 w-full h-full object-cover object-top hover:scale-105 transition-transform duration-700"
+              />
+            </div>
+
+            {/* Right top */}
+            <div className="overflow-hidden rounded-2xl aspect-[4/3]">
+              <img
+                src="/powermytennis-assets/player-forehand-action.jpeg"
+                alt="Player hitting a forehand on clay court"
+                className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-700"
+              />
+            </div>
+
+            {/* Right bottom */}
+            <div className="overflow-hidden rounded-2xl aspect-[4/3]">
+              <img
+                src="/powermytennis-assets/player-backhand-action.jpeg"
+                alt="Player hitting a backhand on clay court"
+                className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-700"
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* Section: Coaching in Progress */}
+        <div className="mt-16">
+          <div className="flex items-center gap-4 mb-8">
+            <span className="text-xs font-black uppercase tracking-[0.3em] text-brand-secondary">
+              Coaching in Progress
+            </span>
+            <div className="flex-1 h-[2px] bg-gradient-to-r from-brand-neutral/30 to-transparent" />
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {/* Coach Romen with two junior students — great group coaching moment */}
+            <div className="overflow-hidden rounded-2xl aspect-[4/3]">
+              <img
+                src="/powermytennis-assets/coach-students-group.jpeg"
+                alt="Coach with two junior students on the clay court"
+                className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-700"
+              />
+            </div>
+            {/* Coach and student holding rackets — 1-on-1 coaching relationship */}
+            <div className="overflow-hidden rounded-2xl aspect-[4/3]">
+              <img
+                src="/powermytennis-assets/coach-student-rackets.jpeg"
+                alt="Coach and student posing with rackets on the clay court"
+                className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-700"
+              />
+            </div>
+          </div>
+        </div>
+
         <PerformanceReportsSection />
       </Container>
     </main>
