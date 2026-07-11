@@ -51,7 +51,7 @@ export function HeroSection() {
           <div className="lg:col-span-7 flex flex-col justify-center text-left">
             <MotionSection stagger>
               <MotionItem>
-                <h1 className="text-[clamp(2rem,10vw,6.5rem)] font-black uppercase tracking-tight mb-8 leading-none">
+                <h1 className="text-[clamp(1.5rem,9vw,6.5rem)] font-black uppercase tracking-tight mb-8 leading-none">
                   <span className="block text-brand-white">
                     {siteConfig.name.split(" ")[0]}
                   </span>
