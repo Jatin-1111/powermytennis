@@ -31,7 +31,7 @@ export const coaches: Coach[] = [
     role: "Coach",
     credentials: "Ex-Founder & Coach, Prime Tennis Academy, Bathinda",
     experience: "",
-    photoUrl: "/coach-navmeet.jpg",
+    photoUrl: "/coach-navneet.jpg",
   },
   {
     id: "shiv-bahadur",
