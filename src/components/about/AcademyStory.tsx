@@ -179,7 +179,7 @@ export function AcademyStory() {
                   </div>
                   <div>
                     <div className="text-[10px] font-black uppercase tracking-[0.25em] text-brand-secondary mb-1">
-                      Director, PowerMyTennis
+                      Director(Coaching & Development), PowerMyTennis
                     </div>
                     <h3 className="text-xl font-black text-brand-primary uppercase tracking-tight mb-2">
                       Yengkhom Romen Singh
