@@ -91,7 +91,7 @@ export function ContactForm() {
             Send Message
           </h3>
           <p className="text-brand-black/50 font-medium text-sm max-w-sm">
-            Fill in the details below. Our team will get back to you as soon as possible.
+            Fill in the details below. We respond within 24 hours — for urgent queries, WhatsApp us directly.
           </p>
         </div>
 

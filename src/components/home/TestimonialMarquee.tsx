@@ -71,6 +71,11 @@ export function TestimonialMarquee() {
                 <p className="text-brand-accent text-xs font-bold uppercase tracking-widest mt-1">
                   {testimonial.authorRole}
                 </p>
+                {testimonial.program && (
+                  <p className="text-brand-white/30 text-[10px] font-bold uppercase tracking-widest mt-1">
+                    {testimonial.program}
+                  </p>
+                )}
               </div>
             </div>
           ))}

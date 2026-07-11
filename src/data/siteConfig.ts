@@ -17,7 +17,7 @@ export interface SiteConfig {
 export const siteConfig: SiteConfig = {
   name: "PowerMyTennis High Performance Academy",
   tagline:
-    "is thrilled to announce the launch of its Comprehensive Tennis Coaching Modules",
+    "Elite clay-court training for aspiring players in New Chandigarh. High-performance coaching at every level.",
   phone: "86992 12962",
   email: "rahul@powermysport.com",
   sessionsBeginDate: "05 JUN",

@@ -8,7 +8,7 @@ export function QuickLinks() {
     {
       title: "The Coaching Pathway",
       description:
-        "Explore our skill-based coaching groups from Orange to High Performance.",
+        "Explore our skill-based coaching groups from Orange Ball to High Performance.",
       href: "/pathway",
       color: "bg-brand-secondary",
       text: "text-brand-white",
@@ -16,16 +16,16 @@ export function QuickLinks() {
     {
       title: "Programs & Fees",
       description:
-        "View schedules, seat availability, and fee structures for all modules.",
+        "View schedules, seat availability, and fee structures for all 6 training modules.",
       href: "/programs-and-fees",
       color: "bg-brand-primary",
       text: "text-brand-white",
     },
     {
-      title: "Coaching Team",
+      title: "Private Lessons",
       description:
-        "Meet our formidable team with 80+ years of cumulative experience.",
-      href: "/coaches",
+        "One-on-one sessions with our expert coaches, tailored to your pace and goals.",
+      href: "/private-lessons",
       color: "bg-brand-accent",
       text: "text-brand-primary",
     },

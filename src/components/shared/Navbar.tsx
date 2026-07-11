@@ -8,10 +8,10 @@ import { Button } from "./Button";
 import { motion, AnimatePresence } from "framer-motion";
 
 const NAV_LINKS = [
-  { name: "Home", href: "/" },
   { name: "About", href: "/about" },
   { name: "Pathway", href: "/pathway" },
   { name: "Programs & Fees", href: "/programs-and-fees" },
+  { name: "Private Lessons", href: "/private-lessons" },
   { name: "Coaches", href: "/coaches" },
   { name: "Facilities", href: "/facilities" },
 ];

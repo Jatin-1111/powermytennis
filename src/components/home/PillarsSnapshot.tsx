@@ -63,10 +63,10 @@ export function PillarsSnapshot() {
             className="grid grid-cols-2 md:grid-cols-4 gap-8 relative z-10"
           >
             {[
-              { value: 80, suffix: "+", label: "Years Experience" },
-              { value: 4, suffix: "", label: "Clay Courts" },
-              { value: 20, suffix: "+", label: "Athletes Trained" },
-              { value: 1, suffix: "", label: "Premium Location" },
+              { value: 5, suffix: "", label: "Expert Coaches" },
+              { value: 6, suffix: "", label: "Clay Courts" },
+              { value: 6, suffix: "", label: "Program Levels" },
+              { value: 4, suffix: "", label: "Cities Accessible" },
             ].map((stat, i) => (
               <MotionItem key={i}>
                 <div className="flex flex-col items-center justify-center text-center p-4">

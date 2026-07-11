@@ -57,10 +57,12 @@ function Card({
   facility,
   index,
   className = "",
+  bgImage,
 }: {
   facility: (typeof FACILITIES)[0];
   index: number;
   className?: string;
+  bgImage?: string;
 }) {
   return (
     <motion.div
@@ -74,10 +76,21 @@ function Card({
         shadow-[0_4px_24px_rgba(0,0,0,0.25)] hover:shadow-[0_12px_40px_rgba(0,0,0,0.35)]
         ${className}`}
     >
-      {/* Subtle top accent line — becomes accent on hover */}
-      <div className="absolute top-0 inset-x-0 h-[2px] bg-brand-white/10 group-hover:bg-brand-accent transition-colors duration-400" />
+      {/* Optional background photo */}
+      {bgImage && (
+        <>
+          <div
+            className="absolute inset-0 bg-cover bg-center z-0 scale-105 group-hover:scale-100 transition-transform duration-700"
+            style={{ backgroundImage: `url("${bgImage}")` }}
+          />
+          <div className="absolute inset-0 bg-brand-primary/80 group-hover:bg-brand-primary/70 transition-colors duration-500 z-0" />
+        </>
+      )}
 
-      <div className="flex flex-col flex-1 p-6 md:p-7">
+      {/* Subtle top accent line — becomes accent on hover */}
+      <div className="absolute top-0 inset-x-0 h-[2px] bg-brand-white/10 group-hover:bg-brand-accent transition-colors duration-400 z-10" />
+
+      <div className="flex flex-col flex-1 p-6 md:p-7 relative z-10">
         {/* Label + description at top */}
         <div className="mb-auto">
           <h3 className={`font-black uppercase text-brand-white tracking-tight leading-tight mb-2
@@ -121,7 +134,12 @@ export function FacilityIconGrid() {
     <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
       {/* Tall Hero Column (Left) */}
       <div className="col-span-2 md:col-span-1 md:row-span-2" style={{ minHeight: "420px" }}>
-        <Card facility={clay} index={0} className="h-full" />
+        <Card
+          facility={clay}
+          index={0}
+          className="h-full"
+          bgImage="https://images.unsplash.com/photo-1595435934249-5df7ed86e1c0?q=80&w=1200&auto=format&fit=crop"
+        />
       </div>
 
       {/* Middle Column Top */}

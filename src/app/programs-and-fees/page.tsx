@@ -102,6 +102,37 @@ export default function ProgramsAndFeesPage() {
           </MotionSection>
         </div>
 
+        {/* ── MID-PAGE ASSESSMENT CTA ──────────────────────────────────── */}
+        <div className="mt-16 md:mt-20">
+          <MotionSection>
+            <MotionItem>
+              <div className="bg-brand-neutral/5 border border-brand-neutral/20 rounded-2xl p-8 md:p-10 flex flex-col sm:flex-row items-center justify-between gap-6">
+                <div>
+                  <p className="text-[10px] font-black uppercase tracking-[0.25em] text-brand-secondary mb-2">
+                    Not Sure Which Level?
+                  </p>
+                  <h3 className="text-2xl md:text-3xl font-black text-brand-primary uppercase tracking-tight">
+                    Book a Free Assessment
+                  </h3>
+                  <p className="text-brand-black/55 text-sm font-medium mt-2 max-w-md">
+                    Our coaches will evaluate your current level and recommend the right program — no commitment required.
+                  </p>
+                </div>
+                <a
+                  href="/contact?reason=Program+Inquiry"
+                  className="group relative inline-flex items-center gap-3 bg-brand-primary text-brand-white font-black uppercase tracking-widest text-xs px-8 py-4 rounded-xl overflow-hidden shrink-0 transition-all hover:shadow-lg"
+                >
+                  <div className="absolute inset-0 bg-brand-secondary translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />
+                  <span className="relative z-10">Contact Us</span>
+                  <svg className="w-4 h-4 relative z-10 group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                  </svg>
+                </a>
+              </div>
+            </MotionItem>
+          </MotionSection>
+        </div>
+
         {/* ── FOUNDATION TIER GROUP ────────────────────────────────────── */}
         <div className="mt-20 md:mt-28">
           <MotionSection>
