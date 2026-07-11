@@ -32,16 +32,16 @@ export function AcademyStory() {
       />
 
       <Container>
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-8 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-8 items-center">
           {/* Text Content - Left Side */}
-          <div className="lg:col-span-6 relative z-10">
+          <div className="md:col-span-1 lg:col-span-6 relative z-10">
             <MotionSection stagger>
               <MotionItem>
                 <div className="text-left mb-12">
                   <span className="text-brand-secondary font-bold uppercase tracking-widest text-sm mb-4 block">
                     Nestled in New Chandigarh
                   </span>
-                  <h2 className="text-h2 md:text-h1 font-black text-brand-primary uppercase tracking-tight leading-none">
+                  <h2 className="text-h2 lg:text-h1 font-black text-brand-primary uppercase tracking-tight leading-none">
                     How We Fuel <br />
                     <span className="text-brand-accent bg-brand-primary px-4 py-1 inline-block mt-2 transform -rotate-2">
                       Your Dream
@@ -86,7 +86,7 @@ export function AcademyStory() {
           </div>
 
           {/* Image Collage - Right Side */}
-          <div className="lg:col-span-6 relative h-[600px] hidden md:block">
+          <div className="md:col-span-1 lg:col-span-6 relative h-[480px] md:h-[420px] lg:h-[600px] hidden md:block">
             {/* Image 1: Top Right, Parallax Up */}
             <motion.div
               style={{ y: yImage1, willChange: "transform" }}

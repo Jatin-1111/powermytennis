@@ -17,11 +17,7 @@ export function WhatsAppCTA() {
       initial="hidden"
       whileInView="show"
       viewport={{ once: true, margin: "0px" }}
-      className="fixed bottom-6 right-6 z-50 group flex items-center bg-brand-accent text-brand-primary rounded-full overflow-hidden cursor-pointer
-        shadow-[0_4px_20px_rgba(198,217,43,0.35),0_0_0_4px_rgba(198,217,43,0.15)]
-        hover:shadow-[0_6px_28px_rgba(198,217,43,0.45),0_0_0_6px_rgba(198,217,43,0.2)]
-        transition-shadow duration-300
-        md:bottom-8 md:right-8"
+      className="fixed bottom-6 right-6 z-50 group flex items-center bg-brand-accent text-brand-primary rounded-full overflow-hidden cursor-pointer shadow-[0_4px_20px_rgba(198,217,43,0.35),0_0_0_4px_rgba(198,217,43,0.15)] hover:shadow-[0_6px_28px_rgba(198,217,43,0.45),0_0_0_6px_rgba(198,217,43,0.2)] transition-shadow duration-300 md:bottom-8 md:right-8"
       aria-label="Contact on WhatsApp"
     >
       {/* Icon — always visible */}

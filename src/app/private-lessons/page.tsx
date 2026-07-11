@@ -64,8 +64,8 @@ export default function PrivateLessonsPage() {
         </div>
 
         {/* Asymmetric Pricing Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 mb-24">
-          
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-6 md:gap-8 lg:gap-10 mb-24">
+
           {/* FLAGSHIP: Chief Coach (Left Column) */}
           {chiefCoach && (
             <motion.div
@@ -73,7 +73,7 @@ export default function PrivateLessonsPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-40px" }}
               transition={{ duration: 0.6, ease: EASE_OUT_EXPO }}
-              className="lg:col-span-5 relative group"
+              className="md:col-span-1 lg:col-span-5 relative group"
             >
               <div className="bg-brand-primary rounded-[2rem] p-8 md:p-12 h-full flex flex-col justify-between overflow-hidden border border-brand-white/10 shadow-[0_20px_40px_rgba(0,0,0,0.2)]">
                 {/* Glow effect */}
@@ -103,7 +103,7 @@ export default function PrivateLessonsPage() {
           )}
 
           {/* STANDARD MENU: Other Coaches (Right Column Grid) */}
-          <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-8">
+          <div className="md:col-span-1 lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-8">
             {otherFees.map((fee, idx) => (
               <motion.div
                 key={idx}

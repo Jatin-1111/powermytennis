@@ -49,10 +49,10 @@ export function PathwayTierCard({
         aria-expanded={isExpanded}
         className="w-full px-card py-6 flex flex-col md:flex-row md:items-center justify-between text-left focus:outline-none"
       >
-        <div className="flex flex-col md:flex-row md:items-baseline gap-1 md:gap-4 mb-4 md:mb-0">
-          <h3 className="text-h3 md:text-h2 font-black text-brand-primary uppercase tracking-tight group-hover:text-brand-secondary transition-colors duration-300">
+        <div className="flex flex-col md:flex-row md:items-baseline gap-1 md:gap-3 mb-4 md:mb-0 min-w-0">
+          <h3 className="text-h3 lg:text-h2 font-black text-brand-primary uppercase tracking-tight group-hover:text-brand-secondary transition-colors duration-300 leading-tight">
             {tier.name}{" "}
-            <span className="text-brand-secondary text-body-lg md:text-xl font-bold lowercase tracking-normal opacity-80 group-hover:opacity-100 transition-opacity">
+            <span className="text-brand-secondary text-body-lg lg:text-xl font-bold lowercase tracking-normal opacity-80 group-hover:opacity-100 transition-opacity">
               ({tier.hours})
             </span>
           </h3>

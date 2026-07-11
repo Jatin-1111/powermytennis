@@ -6,7 +6,7 @@ export function LocationAccessibility() {
   return (
     <section className="py-section-sm md:py-section bg-brand-neutral/10 border-t border-brand-neutral/20">
       <Container>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-16 items-center">
           <MotionSection stagger>
             <MotionItem>
               <h2 className="text-h2 font-black text-brand-primary uppercase tracking-tight mb-6">
@@ -58,7 +58,7 @@ export function LocationAccessibility() {
 
           <MotionSection
             delay={0.2}
-            className="h-[500px] w-full rounded-3xl overflow-hidden shadow-card-hover bg-brand-neutral/50 relative border-4 border-brand-white"
+            className="h-[360px] md:h-[400px] lg:h-[500px] w-full rounded-3xl overflow-hidden shadow-card-hover bg-brand-neutral/50 relative border-4 border-brand-white"
           >
             <iframe
               src={`https://maps.google.com/maps?q=${siteConfig.address.coordinates.lat},${siteConfig.address.coordinates.lng}&t=&z=15&ie=UTF8&iwloc=&output=embed`}

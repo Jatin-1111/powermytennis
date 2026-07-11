@@ -136,7 +136,7 @@ export function PillarsSnapshot() {
                 </div>
 
                 {/* Description — right-aligned, fixed width on desktop */}
-                <div className="hidden md:block w-80 xl:w-96 flex-shrink-0">
+                <div className="hidden md:block md:w-56 lg:w-72 xl:w-96 flex-shrink-0">
                   <p className="text-sm font-medium text-brand-black/50 group-hover:text-brand-white/75 transition-colors duration-500 leading-relaxed">
                     {pillar.description}
                   </p>

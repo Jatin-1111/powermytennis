@@ -59,16 +59,16 @@ export function Navbar() {
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden lg:flex items-center gap-2">
+        <nav className="hidden lg:flex items-center lg:gap-1 xl:gap-2">
           {NAV_LINKS.map((link) => {
             const isActive = pathname === link.href;
             return (
               <Link
                 key={link.name}
                 href={link.href}
-                className={`relative px-4 py-2 text-xs font-black uppercase tracking-widest rounded-full transition-all duration-300 ${
-                  isActive 
-                    ? "bg-brand-primary text-brand-white shadow-md" 
+                className={`relative lg:px-3 xl:px-4 py-2 text-xs font-black uppercase tracking-widest rounded-full transition-all duration-300 ${
+                  isActive
+                    ? "bg-brand-primary text-brand-white shadow-md"
                     : "text-brand-primary hover:bg-brand-neutral/10"
                 }`}
               >
@@ -84,7 +84,7 @@ export function Navbar() {
             <Button
               href="/contact"
               variant="primary"
-              className="px-6 py-2.5 text-xs tracking-widest uppercase font-black shadow-md border border-brand-neutral/10 rounded-full"
+              className="lg:px-4 xl:px-6 py-2.5 text-xs tracking-widest uppercase font-black shadow-md border border-brand-neutral/10 rounded-full"
             >
               Contact Us
             </Button>

@@ -23,7 +23,7 @@ export function PathwayChart() {
 
   const renderTierGroup = (title: string, tiers: PathwayTier[], isOffset: boolean) => (
     // Replaced horizontal stagger with vertical offset for cleaner alignment
-    <div className={`flex flex-col md:flex-row gap-4 md:gap-8 mb-12 md:mb-16 relative ${isOffset ? 'md:mt-16' : ''}`}>
+    <div className={`flex flex-col md:flex-row gap-4 md:gap-5 lg:gap-8 mb-10 md:mb-14 lg:mb-16 relative ${isOffset ? 'md:mt-12 lg:mt-16' : ''}`}>
       {/* Desktop Category Label */}
       <div className="hidden md:flex md:w-48 shrink-0 items-center justify-center border-r-2 border-dashed border-brand-accent/40 pr-8">
         <h3

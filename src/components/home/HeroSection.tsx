@@ -26,8 +26,8 @@ export function HeroSection() {
       className="relative bg-brand-primary text-brand-white min-h-[90vh] md:min-h-screen flex items-center overflow-hidden"
     >
       {/* Background Parallax Image with Gradient Overlay */}
-      <motion.div 
-        style={{ y, opacity, willChange: "transform, opacity" }} 
+      <motion.div
+        style={{ y, opacity, willChange: "transform, opacity" }}
         className="absolute inset-0 z-0"
       >
         <div className="absolute inset-0">
@@ -51,16 +51,7 @@ export function HeroSection() {
           <div className="lg:col-span-7 flex flex-col justify-center text-left">
             <MotionSection stagger>
               <MotionItem>
-                <div className="inline-flex items-center gap-3 mb-6 bg-brand-white/10 backdrop-blur-sm px-4 py-2 rounded-full border border-brand-white/10">
-                  <span className="w-2 h-2 rounded-full bg-brand-accent animate-pulse" />
-                  <span className="text-xs md:text-sm font-bold uppercase tracking-widest text-brand-white">
-                    Elite Training in {siteConfig.address.city}
-                  </span>
-                </div>
-              </MotionItem>
-
-              <MotionItem>
-                <h1 className="text-hero font-black uppercase tracking-tight mb-8 leading-none">
+                <h1 className="text-[clamp(2rem,10vw,6.5rem)] font-black uppercase tracking-tight mb-8 leading-none">
                   <span className="block text-brand-white">
                     {siteConfig.name.split(" ")[0]}
                   </span>

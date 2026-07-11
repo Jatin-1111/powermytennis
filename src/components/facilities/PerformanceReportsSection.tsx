@@ -101,7 +101,7 @@ export function PerformanceReportsSection() {
       </div>
 
       {/* Panels */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
         <ReportPanel
           title="Objective"
           subtitle="Data-driven metrics"
