@@ -52,7 +52,7 @@ export function HeroSection() {
             <MotionSection stagger>
               <MotionItem>
                 <h1 className="font-black uppercase tracking-tight mb-8 leading-none">
-                  <span className="block text-brand-white text-hero">
+                  <span className="block text-brand-white text-[clamp(1.75rem,9vw,4.5rem)] lg:text-hero">
                     {siteConfig.name.split(" ")[0]}
                   </span>
                   <span className="block text-brand-accent text-h3 mt-3 tracking-[0.08em]">
