@@ -6,7 +6,10 @@ import { MotionSection, MotionItem } from "@/components/shared/MotionSection";
 export const metadata = {
   title: "Policies",
   description:
-    "Registration, fee deposit, and scheduling policies for PowerMyTennis Academy.",
+    "Registration, fee deposit, and scheduling policies for PowerMyTennis High Performance Academy in New Chandigarh.",
+  alternates: {
+    canonical: "https://powermytennis.com/policies",
+  },
 };
 
 export default function PoliciesPage() {

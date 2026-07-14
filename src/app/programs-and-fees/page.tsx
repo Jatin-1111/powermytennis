@@ -8,7 +8,10 @@ import { MotionSection, MotionItem } from "@/components/shared/MotionSection";
 export const metadata = {
   title: "Programs & Fees",
   description:
-    "View schedules, seat availability, and fee structures for all PowerMyTennis modules.",
+    "View schedules, seat availability, and fee structures for all PowerMyTennis training programs — from Orange Ball to High Performance.",
+  alternates: {
+    canonical: "https://powermytennis.com/programs-and-fees",
+  },
 };
 
 export default function ProgramsAndFeesPage() {

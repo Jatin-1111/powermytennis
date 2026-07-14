@@ -7,7 +7,10 @@ import { MotionSection, MotionItem } from "@/components/shared/MotionSection";
 export const metadata = {
   title: "Facilities",
   description:
-    "Explore our state-of-the-art tennis infrastructure and comprehensive performance reporting system.",
+    "Explore PowerMyTennis's state-of-the-art clay tennis courts and comprehensive performance reporting system in New Chandigarh.",
+  alternates: {
+    canonical: "https://powermytennis.com/facilities",
+  },
 };
 
 export default function FacilitiesPage() {

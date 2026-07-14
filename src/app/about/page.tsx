@@ -6,6 +6,9 @@ export const metadata = {
   title: "About The Academy",
   description:
     "Learn about the vision, coaching philosophy, and location of PowerMyTennis High Performance Academy in New Chandigarh.",
+  alternates: {
+    canonical: "https://powermytennis.com/about",
+  },
 };
 
 export default function AboutPage() {

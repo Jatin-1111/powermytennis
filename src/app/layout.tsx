@@ -12,17 +12,49 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL('https://powermytennis.com'),
   title: {
-    template: "%s | PowerMyTennis High Performance Academy",
-    default: "PowerMyTennis High Performance Academy",
+    template: "%s | PowerMyTennis",
+    default: "PowerMyTennis High Performance Academy | Elite Tennis Training in New Chandigarh",
   },
-  description: siteConfig.tagline,
+  description: "Elite clay-court tennis training for aspiring players in New Chandigarh, Chandigarh, Kharar, Ropar & SAS Nagar. High-performance coaching from beginner to professional level.",
+  keywords: [
+    "tennis academy New Chandigarh",
+    "tennis coaching Chandigarh",
+    "clay court tennis training",
+    "high performance tennis academy",
+    "tennis training Punjab",
+    "junior tennis coaching India",
+    "professional tennis coaching",
+    "PowerMyTennis",
+    "tennis lessons Kharar",
+    "tennis academy SAS Nagar",
+    "tennis academy Ropar",
+  ],
+  authors: [{ name: "PowerMyTennis High Performance Academy" }],
+  creator: "PowerMyTennis",
+  publisher: "PowerMyTennis",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
   openGraph: {
     title: "PowerMyTennis High Performance Academy",
-    description: siteConfig.tagline,
+    description: "Elite clay-court tennis training in New Chandigarh. High-performance coaching at every level — from beginners to tournament players.",
     url: "https://powermytennis.com",
     siteName: "PowerMyTennis",
     locale: "en_IN",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PowerMyTennis High Performance Academy",
+    description: "Elite clay-court tennis training in New Chandigarh. High-performance coaching at every level.",
   },
 };
 
@@ -31,19 +63,52 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  // JSON-LD Schema for LocalBusiness
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "SportsActivityLocation",
-    "name": siteConfig.name,
-    "description": siteConfig.tagline,
-    "url": "https://powermytennis.com",
-    "telephone": siteConfig.phone,
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": siteConfig.address.city,
-      "addressCountry": "IN"
-    }
+    "@graph": [
+      {
+        "@type": ["SportsActivityLocation", "LocalBusiness"],
+        "@id": "https://powermytennis.com/#organization",
+        "name": siteConfig.name,
+        "description": siteConfig.tagline,
+        "url": "https://powermytennis.com",
+        "telephone": `+91 ${siteConfig.phone}`,
+        "email": siteConfig.email,
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": siteConfig.address.city,
+          "addressRegion": "Punjab",
+          "addressCountry": "IN",
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": siteConfig.address.coordinates.lat,
+          "longitude": siteConfig.address.coordinates.lng,
+        },
+        "sport": "Tennis",
+        "image": "https://powermytennis.com/powermytennis-logo.jpeg",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://powermytennis.com/powermytennis-logo.jpeg",
+        },
+        "areaServed": siteConfig.address.accessibleFrom.map((city) => ({
+          "@type": "City",
+          "name": city,
+        })),
+        "hasMap": `https://maps.google.com/?q=${siteConfig.address.coordinates.lat},${siteConfig.address.coordinates.lng}`,
+        "priceRange": "₹₹",
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://powermytennis.com/#website",
+        "url": "https://powermytennis.com",
+        "name": "PowerMyTennis",
+        "description": siteConfig.tagline,
+        "publisher": {
+          "@id": "https://powermytennis.com/#organization",
+        },
+      },
+    ],
   };
 
   const isComingSoon = process.env.NEXT_PUBLIC_COMING_SOON === 'true';

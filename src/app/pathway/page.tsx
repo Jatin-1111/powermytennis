@@ -7,7 +7,10 @@ import { MotionSection, MotionItem } from "@/components/shared/MotionSection";
 export const metadata = {
   title: "Coaching Pathway",
   description:
-    "Explore the PowerMyTennis skill-based coaching groups from Orange to High Performance.",
+    "Explore the PowerMyTennis skill-based coaching pathway from Orange Ball beginners to High Performance tournament players.",
+  alternates: {
+    canonical: "https://powermytennis.com/pathway",
+  },
 };
 
 export default function PathwayPage() {

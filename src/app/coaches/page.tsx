@@ -6,7 +6,10 @@ import { MotionSection, MotionItem } from "@/components/shared/MotionSection";
 export const metadata = {
   title: "Coaching Team",
   description:
-    "Meet our formidable coaching team with 80+ years of cumulative coaching experience.",
+    "Meet our formidable coaching team with 80+ years of cumulative coaching experience. Expert tennis coaches in New Chandigarh, Punjab.",
+  alternates: {
+    canonical: "https://powermytennis.com/coaches",
+  },
 };
 
 export default function CoachesPage() {

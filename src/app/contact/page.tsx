@@ -7,7 +7,10 @@ import { siteConfig } from "@/data/siteConfig";
 export const metadata = {
   title: "Contact Us",
   description:
-    "Get in touch with PowerMyTennis Academy to book a trial or inquire about our programs.",
+    "Get in touch with PowerMyTennis Academy in New Chandigarh to book a free trial session or inquire about our tennis programs.",
+  alternates: {
+    canonical: "https://powermytennis.com/contact",
+  },
 };
 
 export default function ContactPage() {
