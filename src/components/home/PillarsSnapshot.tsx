@@ -27,9 +27,15 @@ const pillars = [
   },
   {
     num: "04",
-    title: "Mental",
+    title: "Mental Strength",
     description:
       "Building focus, resilience, and a competitive attitude for high-pressure moments.",
+  },
+  {
+    num: "05",
+    title: "Personalized Coaching",
+    description:
+      "Tailored one-on-one programs designed around each player's unique goals, strengths, and growth areas.",
   },
 ];
 
@@ -91,7 +97,7 @@ export function PillarsSnapshot() {
           <div className="flex-1 h-[3px] bg-gradient-to-l from-transparent via-brand-neutral/20 to-brand-neutral/60 rounded-l-full" />
         </div>
         <h2 className="text-h2 font-black uppercase text-brand-primary tracking-tight mb-12">
-          The Four Pillars
+          The Five Pillars
         </h2>
       </Container>
 
