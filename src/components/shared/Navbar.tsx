@@ -120,31 +120,57 @@ export function Navbar() {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -10, scale: 0.95 }}
+            initial={{ opacity: 0, y: -16, scale: 0.97 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: -10, scale: 0.95 }}
-            transition={{ duration: 0.2 }}
-            className="lg:hidden absolute top-full left-0 right-0 mt-2 bg-brand-white/95 backdrop-blur-2xl border border-brand-neutral/20 shadow-2xl rounded-2xl overflow-hidden"
+            exit={{ opacity: 0, y: -12, scale: 0.97 }}
+            transition={{ type: "spring", stiffness: 320, damping: 28 }}
+            className="lg:hidden absolute top-full left-0 right-0 mt-3 bg-brand-white/98 backdrop-blur-2xl border border-brand-neutral/20 shadow-2xl rounded-2xl overflow-hidden"
           >
-            <div className="px-4 py-6 space-y-1 sm:px-6 flex flex-col">
-              {NAV_LINKS.map((link) => {
+            {/* Accent bar */}
+            <div className="h-1 w-full bg-gradient-to-r from-brand-accent via-brand-secondary to-brand-accent" />
+
+            <div className="px-5 pt-5 pb-6 sm:px-7 flex flex-col gap-1">
+              {NAV_LINKS.map((link, i) => {
                 const isActive = pathname === link.href;
                 return (
-                  <Link
+                  <motion.div
                     key={link.name}
-                    href={link.href}
-                    className={`block px-4 py-3 rounded-xl text-sm font-black uppercase tracking-widest transition-colors ${
-                      isActive
-                        ? "bg-brand-primary text-brand-white"
-                        : "text-brand-primary hover:bg-brand-neutral/10"
-                    }`}
-                    onClick={closeMenu}
+                    initial={{ opacity: 0, x: -18 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: i * 0.06, type: "spring", stiffness: 300, damping: 26 }}
                   >
-                    {link.name}
-                  </Link>
+                    <Link
+                      href={link.href}
+                      className={`flex items-center gap-4 px-4 py-4 rounded-xl text-sm font-black uppercase tracking-widest transition-all duration-200 group ${
+                        isActive
+                          ? "bg-brand-primary text-brand-white shadow-md"
+                          : "text-brand-primary hover:bg-brand-neutral/10 hover:pl-6"
+                      }`}
+                      onClick={closeMenu}
+                    >
+                      {/* Active indicator dot */}
+                      <span
+                        className={`shrink-0 w-1.5 h-1.5 rounded-full transition-all duration-200 ${
+                          isActive
+                            ? "bg-brand-accent"
+                            : "bg-brand-neutral/40 group-hover:bg-brand-accent"
+                        }`}
+                      />
+                      {link.name}
+                    </Link>
+                  </motion.div>
                 );
               })}
-              <div className="pt-6 px-2 md:hidden">
+
+              {/* Divider */}
+              <div className="my-3 h-px bg-brand-neutral/20" />
+
+              {/* CTA */}
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: NAV_LINKS.length * 0.06 + 0.05, type: "spring", stiffness: 280, damping: 24 }}
+              >
                 <Button
                   href="/contact"
                   variant="primary"
@@ -153,7 +179,7 @@ export function Navbar() {
                 >
                   Contact Us
                 </Button>
-              </div>
+              </motion.div>
             </div>
           </motion.div>
         )}
