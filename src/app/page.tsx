@@ -4,6 +4,7 @@ import { HeroSection } from "@/components/home/HeroSection";
 import { PillarsSnapshot } from "@/components/home/PillarsSnapshot";
 import { QuickLinks } from "@/components/home/QuickLinks";
 import { TestimonialMarquee } from "@/components/home/TestimonialMarquee";
+import { MeetOurCoachesCTA } from "@/components/home/MeetOurCoachesCTA";
 import { TrialCTA } from "@/components/home/TrialCTA";
 
 export const metadata: Metadata = {
@@ -21,6 +22,7 @@ export default function Home() {
       <LaunchBanner />
       <HeroSection />
       <PillarsSnapshot />
+      <MeetOurCoachesCTA />
       <TestimonialMarquee />
       <TrialCTA />
       <QuickLinks />
