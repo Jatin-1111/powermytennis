@@ -10,7 +10,6 @@ export function MapEmbed() {
 
   return (
     <div className="w-full h-full min-h-[400px] md:min-h-[500px] rounded-[2rem] overflow-hidden shadow-xl border border-brand-neutral/20 bg-brand-white flex flex-col relative group">
-
       {/* Map Technical Header */}
       <div className="bg-brand-neutral/5 border-b border-brand-neutral/20 px-6 py-3 flex items-center justify-between relative z-10">
         <div className="flex items-center gap-3">

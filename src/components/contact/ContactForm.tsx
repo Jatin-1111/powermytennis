@@ -85,7 +85,8 @@ export function ContactForm() {
             Send Message
           </h3>
           <p className="text-brand-black/50 font-medium text-sm max-w-sm">
-            Fill in the details below. We respond within 24 hours — for urgent queries, WhatsApp us directly.
+            Fill in the details below. We respond within 24 hours — for urgent
+            queries, WhatsApp us directly.
           </p>
         </div>
 
@@ -175,7 +176,11 @@ export function ContactForm() {
                 required
                 className="w-full bg-transparent border-2 border-brand-neutral/20 focus:border-brand-accent rounded-xl px-5 py-4 transition-all outline-none text-brand-primary font-bold appearance-none cursor-pointer peer"
               >
-                <option value="" disabled className="text-brand-neutral/50 font-medium">
+                <option
+                  value=""
+                  disabled
+                  className="text-brand-neutral/50 font-medium"
+                >
                   Select an inquiry type...
                 </option>
                 {programOptions.map((opt) => (
@@ -185,8 +190,18 @@ export function ContactForm() {
                 ))}
               </select>
               <div className="absolute right-5 top-1/2 -translate-y-1/2 pointer-events-none text-brand-neutral peer-focus:text-brand-accent transition-colors">
-                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
+                <svg
+                  className="w-5 h-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2.5}
+                    d="M19 9l-7 7-7-7"
+                  />
                 </svg>
               </div>
             </div>
@@ -220,7 +235,7 @@ export function ContactForm() {
         >
           {/* Button Background slide */}
           <div className="absolute inset-0 bg-brand-secondary translate-y-[101%] group-hover:translate-y-0 transition-transform duration-300 ease-out" />
-          
+
           {isPending ? (
             <div className="flex items-center gap-3 relative z-10">
               <div className="w-5 h-5 border-3 border-brand-white border-t-transparent rounded-full animate-spin" />
@@ -239,7 +254,12 @@ export function ContactForm() {
                 viewBox="0 0 24 24"
                 stroke="currentColor"
               >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2.5}
+                  d="M14 5l7 7m0 0l-7 7m7-7H3"
+                />
               </svg>
             </div>
           )}

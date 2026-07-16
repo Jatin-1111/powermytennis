@@ -49,7 +49,9 @@ export function ProgramCard({ program, featured = false }: ProgramCardProps) {
 
             <div>
               <div className="flex items-baseline gap-1 mb-1">
-                <span className="text-xl font-black text-brand-white/60">₹</span>
+                <span className="text-xl font-black text-brand-white/60">
+                  ₹
+                </span>
                 <span className="text-5xl font-black text-brand-white font-mono tracking-tighter">
                   {program.fee.toLocaleString("en-IN")}
                 </span>
@@ -98,10 +100,17 @@ export function ProgramCard({ program, featured = false }: ProgramCardProps) {
                     className="space-y-0"
                   >
                     {program.modules![activeModule]?.slots.map((slot, sIdx) => (
-                      <li key={sIdx} className="flex flex-col text-sm border-l-[3px] border-brand-accent pl-4 py-3 relative">
+                      <li
+                        key={sIdx}
+                        className="flex flex-col text-sm border-l-[3px] border-brand-accent pl-4 py-3 relative"
+                      >
                         <div className="absolute -left-[9px] top-4 w-3.5 h-3.5 rounded-full bg-brand-white border-2 border-brand-accent shadow-sm" />
-                        <span className="font-black text-brand-secondary tracking-tight">{slot.time}</span>
-                        <span className="text-brand-black font-medium mt-0.5 leading-snug">{slot.activity}</span>
+                        <span className="font-black text-brand-secondary tracking-tight">
+                          {slot.time}
+                        </span>
+                        <span className="text-brand-black font-medium mt-0.5 leading-snug">
+                          {slot.activity}
+                        </span>
                       </li>
                     ))}
                   </motion.ul>
@@ -117,13 +126,28 @@ export function ProgramCard({ program, featured = false }: ProgramCardProps) {
                   </h4>
                   <ul className="space-y-4">
                     {program.inclusions.map((inclusion, idx) => (
-                      <li key={idx} className="flex items-start gap-3 text-sm text-brand-black group/inc">
+                      <li
+                        key={idx}
+                        className="flex items-start gap-3 text-sm text-brand-black group/inc"
+                      >
                         <div className="p-1.5 bg-brand-accent/20 rounded-full shrink-0 mt-0.5 group-hover/inc:bg-brand-accent transition-all duration-300">
-                          <svg className="w-3 h-3 text-brand-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                          <svg
+                            className="w-3 h-3 text-brand-primary"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={3}
+                              d="M5 13l4 4L19 7"
+                            />
                           </svg>
                         </div>
-                        <span className="font-bold leading-relaxed">{inclusion}</span>
+                        <span className="font-bold leading-relaxed">
+                          {inclusion}
+                        </span>
                       </li>
                     ))}
                   </ul>
@@ -156,9 +180,13 @@ export function ProgramCard({ program, featured = false }: ProgramCardProps) {
       </div>
 
       {/* Fee — fixed min-height so cards with/without courtInfo align */}
-      <div className={`relative z-10 py-6 px-7 text-center border-b border-brand-neutral/20 min-h-[120px] flex flex-col items-center justify-center ${isPremium ? "bg-brand-neutral/10" : "bg-brand-neutral/5"}`}>
+      <div
+        className={`relative z-10 py-6 px-7 text-center border-b border-brand-neutral/20 min-h-[120px] flex flex-col items-center justify-center ${isPremium ? "bg-brand-neutral/10" : "bg-brand-neutral/5"}`}
+      >
         <div className="flex items-baseline justify-center gap-1">
-          <span className="text-2xl font-black text-brand-secondary opacity-70">₹</span>
+          <span className="text-2xl font-black text-brand-secondary opacity-70">
+            ₹
+          </span>
           <span className="text-5xl font-black text-brand-secondary font-mono tracking-tighter">
             {program.fee.toLocaleString("en-IN")}
           </span>
@@ -172,7 +200,9 @@ export function ProgramCard({ program, featured = false }: ProgramCardProps) {
             <p className="text-brand-black font-bold text-xs tracking-widest uppercase bg-brand-white px-4 py-2 rounded-xl border border-brand-neutral/30 shadow-sm">
               {program.courtInfo}
             </p>
-          ) : <span />}
+          ) : (
+            <span />
+          )}
         </div>
       </div>
 
@@ -209,10 +239,17 @@ export function ProgramCard({ program, featured = false }: ProgramCardProps) {
               className="space-y-0 mb-6"
             >
               {program.modules[activeModule]?.slots.map((slot, sIdx) => (
-                <li key={sIdx} className="flex flex-col text-sm border-l-[3px] border-brand-accent pl-4 py-2.5 relative last:pb-0">
+                <li
+                  key={sIdx}
+                  className="flex flex-col text-sm border-l-[3px] border-brand-accent pl-4 py-2.5 relative last:pb-0"
+                >
                   <div className="absolute -left-[9px] top-3.5 w-3.5 h-3.5 rounded-full bg-brand-white border-2 border-brand-accent shadow-sm" />
-                  <span className="font-black text-brand-secondary tracking-tight">{slot.time}</span>
-                  <span className="text-brand-black font-medium mt-0.5 leading-snug">{slot.activity}</span>
+                  <span className="font-black text-brand-secondary tracking-tight">
+                    {slot.time}
+                  </span>
+                  <span className="text-brand-black font-medium mt-0.5 leading-snug">
+                    {slot.activity}
+                  </span>
                 </li>
               ))}
             </motion.ul>
@@ -229,9 +266,16 @@ export function ProgramCard({ program, featured = false }: ProgramCardProps) {
             </h4>
             <ul className="space-y-0">
               {program.simpleSchedule.map((slot, idx) => (
-                <li key={idx} className="flex flex-col md:flex-row justify-between items-start md:items-center py-3.5 border-b border-brand-neutral/10 last:border-0 hover:bg-brand-neutral/5 transition-colors duration-150 px-2 rounded-lg -mx-2">
-                  <span className="font-bold text-brand-primary text-sm whitespace-nowrap mb-0.5 md:mb-0">{slot.time}</span>
-                  <span className="text-brand-black font-medium text-sm">{slot.activity}</span>
+                <li
+                  key={idx}
+                  className="flex flex-col md:flex-row justify-between items-start md:items-center py-3.5 border-b border-brand-neutral/10 last:border-0 hover:bg-brand-neutral/5 transition-colors duration-150 px-2 rounded-lg -mx-2"
+                >
+                  <span className="font-bold text-brand-primary text-sm whitespace-nowrap mb-0.5 md:mb-0">
+                    {slot.time}
+                  </span>
+                  <span className="text-brand-black font-medium text-sm">
+                    {slot.activity}
+                  </span>
                 </li>
               ))}
             </ul>
@@ -246,10 +290,23 @@ export function ProgramCard({ program, featured = false }: ProgramCardProps) {
             </h4>
             <ul className="space-y-3">
               {program.inclusions.map((inclusion, idx) => (
-                <li key={idx} className="flex items-start gap-3 text-sm text-brand-black group/inc">
+                <li
+                  key={idx}
+                  className="flex items-start gap-3 text-sm text-brand-black group/inc"
+                >
                   <div className="p-1.5 bg-brand-accent/20 rounded-full shrink-0 mt-0.5 group-hover/inc:bg-brand-accent transition-all duration-300">
-                    <svg className="w-3 h-3 text-brand-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                    <svg
+                      className="w-3 h-3 text-brand-primary"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={3}
+                        d="M5 13l4 4L19 7"
+                      />
                     </svg>
                   </div>
                   <span className="font-bold leading-relaxed">{inclusion}</span>

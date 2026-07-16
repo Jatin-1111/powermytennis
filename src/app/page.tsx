@@ -8,7 +8,8 @@ import { MeetOurCoachesCTA } from "@/components/home/MeetOurCoachesCTA";
 import { TrialCTA } from "@/components/home/TrialCTA";
 
 export const metadata: Metadata = {
-  title: "PowerMyTennis High Performance Academy | Elite Tennis Training in New Chandigarh",
+  title:
+    "PowerMyTennis High Performance Academy | Elite Tennis Training in New Chandigarh",
   description:
     "Join PowerMyTennis — New Chandigarh's premier clay-court tennis academy. Expert coaching for juniors and adults across all levels. Book a free trial session today.",
   alternates: {

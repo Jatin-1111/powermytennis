@@ -12,7 +12,8 @@ const FACILITIES = [
     stat: "4",
     unit: "Courts",
     icon: null,
-    description: "ITF-standard red clay surface for elite training and match play",
+    description:
+      "ITF-standard red clay surface for elite training and match play",
     hero: true,
   },
   {
@@ -93,8 +94,10 @@ function Card({
       <div className="flex flex-col flex-1 p-6 md:p-7 relative z-10">
         {/* Label + description at top */}
         <div className="mb-auto">
-          <h3 className={`font-black uppercase text-brand-white tracking-tight leading-tight mb-2
-            ${facility.hero ? "text-h2" : "text-h3"}`}>
+          <h3
+            className={`font-black uppercase text-brand-white tracking-tight leading-tight mb-2
+            ${facility.hero ? "text-h2" : "text-h3"}`}
+          >
             {facility.label}
           </h3>
           <p className="text-brand-white/45 text-sm font-medium leading-relaxed group-hover:text-brand-white/65 transition-colors duration-300">
@@ -105,8 +108,10 @@ function Card({
         {/* Stat at bottom */}
         {facility.stat && (
           <div className="mt-6 flex items-baseline gap-2">
-            <span className={`font-black text-brand-white leading-none tracking-tighter
-              ${facility.hero ? "text-h1" : "text-h2"}`}>
+            <span
+              className={`font-black text-brand-white leading-none tracking-tighter
+              ${facility.hero ? "text-h1" : "text-h2"}`}
+            >
               {facility.stat}
             </span>
             <span className="text-brand-accent font-black text-sm uppercase tracking-widest">
@@ -118,7 +123,10 @@ function Card({
         {/* No-stat: Premium Icon */}
         {!facility.stat && facility.icon && (
           <div className="mt-8 text-brand-white/20 group-hover:text-brand-accent transition-colors duration-500">
-            <facility.icon className="w-12 h-12 md:w-16 md:h-16 group-hover:scale-110 transition-transform duration-500 drop-shadow-[0_0_15px_rgba(198,217,43,0)] group-hover:drop-shadow-[0_0_15px_rgba(198,217,43,0.5)]" strokeWidth={1.5} />
+            <facility.icon
+              className="w-12 h-12 md:w-16 md:h-16 group-hover:scale-110 transition-transform duration-500 drop-shadow-[0_0_15px_rgba(198,217,43,0)] group-hover:drop-shadow-[0_0_15px_rgba(198,217,43,0.5)]"
+              strokeWidth={1.5}
+            />
           </div>
         )}
       </div>
@@ -133,7 +141,10 @@ export function FacilityIconGrid() {
     // Explicit grid — no auto-rows to avoid overflow
     <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
       {/* Tall Hero Column (Left) */}
-      <div className="col-span-2 md:col-span-1 md:row-span-2" style={{ minHeight: "420px" }}>
+      <div
+        className="col-span-2 md:col-span-1 md:row-span-2"
+        style={{ minHeight: "420px" }}
+      >
         <Card
           facility={clay}
           index={0}

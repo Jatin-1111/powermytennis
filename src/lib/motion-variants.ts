@@ -1,7 +1,9 @@
 import { Variants } from "framer-motion";
 
 // Premium Engineered Easings
-export const EASE_OUT_EXPO: [number, number, number, number] = [0.16, 1, 0.3, 1];
+export const EASE_OUT_EXPO: [number, number, number, number] = [
+  0.16, 1, 0.3, 1,
+];
 export const EASE_IN_OUT: [number, number, number, number] = [0.65, 0, 0.35, 1];
 
 // Entrance Animations (Max 600ms)

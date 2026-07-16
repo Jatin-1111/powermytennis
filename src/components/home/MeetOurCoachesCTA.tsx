@@ -29,7 +29,10 @@ export function MeetOurCoachesCTA() {
               <div
                 key={coach.id}
                 className="relative w-14 h-14 md:w-16 md:h-16 rounded-full border-2 border-brand-neutral/20 group-hover:border-brand-accent/40 overflow-hidden transition-all duration-500 shadow-md"
-                style={{ zIndex: coaches.length - i, transitionDelay: `${i * 40}ms` }}
+                style={{
+                  zIndex: coaches.length - i,
+                  transitionDelay: `${i * 40}ms`,
+                }}
               >
                 {coach.photoUrl ? (
                   <Image
@@ -53,8 +56,14 @@ export function MeetOurCoachesCTA() {
           {/* Coach names list */}
           <div className="hidden md:flex flex-col gap-0.5">
             {coaches.slice(0, 3).map((coach) => (
-              <p key={coach.id} className="text-xs font-bold text-brand-black/50 group-hover:text-brand-white/50 transition-colors duration-500 uppercase tracking-wider whitespace-nowrap">
-                {coach.name.split(" ")[0]} <span className="text-brand-secondary group-hover:text-brand-accent/60 transition-colors duration-500">{coach.role}</span>
+              <p
+                key={coach.id}
+                className="text-xs font-bold text-brand-black/50 group-hover:text-brand-white/50 transition-colors duration-500 uppercase tracking-wider whitespace-nowrap"
+              >
+                {coach.name.split(" ")[0]}{" "}
+                <span className="text-brand-secondary group-hover:text-brand-accent/60 transition-colors duration-500">
+                  {coach.role}
+                </span>
               </p>
             ))}
             <p className="text-[10px] font-bold text-brand-black/30 group-hover:text-brand-white/30 transition-colors duration-500 uppercase tracking-widest">
@@ -71,9 +80,16 @@ export function MeetOurCoachesCTA() {
           <div className="w-10 h-10 md:w-12 md:h-12 rounded-full border border-brand-neutral/20 group-hover:border-brand-accent group-hover:bg-brand-accent flex items-center justify-center transition-all duration-500">
             <svg
               className="w-4 h-4 md:w-5 md:h-5 text-brand-primary group-hover:text-brand-primary transition-colors duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"
-              fill="none" viewBox="0 0 24 24" stroke="currentColor"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
             >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M7 17L17 7M17 7H7M17 7v10" />
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2.5}
+                d="M7 17L17 7M17 7H7M17 7v10"
+              />
             </svg>
           </div>
         </div>
@@ -81,4 +97,3 @@ export function MeetOurCoachesCTA() {
     </div>
   );
 }
-

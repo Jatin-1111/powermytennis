@@ -26,7 +26,8 @@ export function ComingSoon() {
             {siteConfig.address.city}
           </div>
           <h1 className="text-hero font-black uppercase tracking-tight leading-none text-brand-white text-balance">
-            Something <span className="text-brand-accent">Powerful</span> Is Coming
+            Something <span className="text-brand-accent">Powerful</span> Is
+            Coming
           </h1>
           <p className="text-body-lg text-brand-neutral max-w-2xl mx-auto font-medium">
             We are putting the finishing touches on our high-performance tennis

@@ -19,25 +19,25 @@ export default function ProgramsAndFeesPage() {
   const highPerformance = programs.find((p) => p.id === "high-performance")!;
   // Second tier: Pro and Tournament side by side
   const secondTier = programs.filter((p) =>
-    ["pro", "tournament"].includes(p.id)
+    ["pro", "tournament"].includes(p.id),
   );
   // Development foundation
   const developmentTiers = programs.filter((p) =>
-    ["intermediate", "beginner", "orange"].includes(p.id)
+    ["intermediate", "beginner", "orange"].includes(p.id),
   );
 
   return (
     <main className="min-h-screen bg-brand-white pb-32">
       {/* Dark Premium Header */}
       <div className="bg-brand-primary py-32 text-center relative overflow-hidden border-b border-brand-accent/20">
-        <div 
+        <div
           className="absolute inset-0 overflow-hidden pointer-events-none opacity-10"
           style={{
-            backgroundImage: `repeating-linear-gradient(45deg, transparent, transparent 40px, rgba(198, 217, 43, 0.4) 40px, rgba(198, 217, 43, 0.4) 42px)`
+            backgroundImage: `repeating-linear-gradient(45deg, transparent, transparent 40px, rgba(198, 217, 43, 0.4) 40px, rgba(198, 217, 43, 0.4) 42px)`,
           }}
         />
         <div className="absolute inset-0 shadow-[inset_0_0_100px_rgba(10,12,13,1)] pointer-events-none" />
-        
+
         <div className="relative z-10 px-4">
           <MotionSection>
             <MotionItem>
@@ -115,7 +115,8 @@ export default function ProgramsAndFeesPage() {
                     Book a Free Assessment
                   </h3>
                   <p className="text-brand-black/55 text-sm font-medium mt-2 max-w-md text-pretty">
-                    Our coaches will evaluate your current level and recommend the right program — no commitment required.
+                    Our coaches will evaluate your current level and recommend
+                    the right program — no commitment required.
                   </p>
                 </div>
                 <a
@@ -124,8 +125,18 @@ export default function ProgramsAndFeesPage() {
                 >
                   <div className="absolute inset-0 bg-brand-secondary translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />
                   <span className="relative z-10">Contact Us</span>
-                  <svg className="w-4 h-4 relative z-10 group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                  <svg
+                    className="w-4 h-4 relative z-10 group-hover:translate-x-1 transition-transform duration-300"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2.5}
+                      d="M14 5l7 7m0 0l-7 7m7-7H3"
+                    />
                   </svg>
                 </a>
               </div>
@@ -181,7 +192,7 @@ export default function ProgramsAndFeesPage() {
                 name: "PowerMyTennis High Performance Academy",
                 sameAs: "https://powermytennis.com",
               },
-            }))
+            })),
           ),
         }}
       />

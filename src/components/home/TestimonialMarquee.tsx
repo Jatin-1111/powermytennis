@@ -48,18 +48,24 @@ export function TestimonialMarquee() {
             >
               {/* Subtle accent line at the top */}
               <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-accent/0 via-brand-accent/0 to-brand-accent/0 group-hover:from-brand-accent/50 group-hover:via-brand-accent group-hover:to-brand-accent/50 transition-all duration-700 opacity-0 group-hover:opacity-100" />
-              
+
               <div className="mb-8">
                 <Quote className="w-8 h-8 text-brand-secondary/40 mb-6 group-hover:text-brand-accent transition-colors duration-500" />
                 <p className="text-brand-white/80 font-medium leading-relaxed md:text-lg">
-                  "{testimonial.quote.split(testimonial.highlight || "").map((part, i, arr) => (
-                    <span key={i}>
-                      {part}
-                      {i < arr.length - 1 && testimonial.highlight && (
-                        <span className="text-brand-white font-black">{testimonial.highlight}</span>
-                      )}
-                    </span>
-                  ))}"
+                  "
+                  {testimonial.quote
+                    .split(testimonial.highlight || "")
+                    .map((part, i, arr) => (
+                      <span key={i}>
+                        {part}
+                        {i < arr.length - 1 && testimonial.highlight && (
+                          <span className="text-brand-white font-black">
+                            {testimonial.highlight}
+                          </span>
+                        )}
+                      </span>
+                    ))}
+                  "
                 </p>
               </div>
 

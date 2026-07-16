@@ -16,14 +16,14 @@ export default function AboutPage() {
     <main className="min-h-screen bg-brand-white">
       {/* Dark Premium Header */}
       <div className="bg-brand-primary py-32 text-center relative overflow-hidden border-b border-brand-accent/20">
-        <div 
+        <div
           className="absolute inset-0 overflow-hidden pointer-events-none opacity-10"
           style={{
-            backgroundImage: `repeating-linear-gradient(45deg, transparent, transparent 40px, rgba(198, 217, 43, 0.4) 40px, rgba(198, 217, 43, 0.4) 42px)`
+            backgroundImage: `repeating-linear-gradient(45deg, transparent, transparent 40px, rgba(198, 217, 43, 0.4) 40px, rgba(198, 217, 43, 0.4) 42px)`,
           }}
         />
         <div className="absolute inset-0 shadow-[inset_0_0_100px_rgba(10,12,13,1)] pointer-events-none" />
-        
+
         <div className="relative z-10 px-4">
           <MotionSection>
             <MotionItem>

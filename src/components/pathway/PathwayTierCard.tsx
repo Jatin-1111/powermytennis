@@ -23,13 +23,13 @@ const tagContainerVariants = {
 
 const tagVariants = {
   idle: { x: 0, y: 0, scale: 1 },
-  hover: { 
+  hover: {
     x: [0, -4, 0],
     scale: 1.05,
-    transition: { 
-      duration: 0.4, 
-      ease: EASE_OUT_EXPO 
-    }
+    transition: {
+      duration: 0.4,
+      ease: EASE_OUT_EXPO,
+    },
   },
 };
 
@@ -39,7 +39,7 @@ export function PathwayTierCard({
   onToggle,
 }: PathwayTierCardProps) {
   return (
-    <motion.div 
+    <motion.div
       initial="idle"
       whileHover="hover"
       className="border border-brand-neutral/20 rounded-2xl bg-brand-white shadow-card-idle overflow-hidden transition-all duration-300 hover:shadow-card-hover hover:border-brand-accent/50 focus-within:ring-2 focus-within:ring-brand-accent focus-within:border-brand-accent group"
@@ -62,12 +62,15 @@ export function PathwayTierCard({
         </div>
 
         <div className="flex items-center justify-between md:justify-end gap-6 w-full md:w-auto">
-          <motion.div 
+          <motion.div
             variants={tagContainerVariants}
             className="flex -space-x-2"
           >
             {tier.modules.map((modId, idx) => (
-              <motion.div key={`${tier.id}-${modId}-${idx}`} variants={tagVariants}>
+              <motion.div
+                key={`${tier.id}-${modId}-${idx}`}
+                variants={tagVariants}
+              >
                 <PathwayModuleTag
                   colorId={modId}
                   className="border-2 border-brand-white shadow-sm"

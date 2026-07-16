@@ -34,12 +34,14 @@ export function Navbar() {
   }, []);
 
   // If on home page and at the top, push navbar down to clear the LaunchBanner
-  const topPositionClass = isHome && !isScrolled ? "top-[60px] md:top-[64px]" : "top-4 md:top-6";
+  const topPositionClass =
+    isHome && !isScrolled ? "top-[60px] md:top-[64px]" : "top-4 md:top-6";
 
   return (
-    <header className={`fixed left-4 right-4 md:left-1/2 md:-translate-x-1/2 md:w-[95%] md:max-w-6xl z-50 transition-all duration-500 ease-out ${topPositionClass}`}>
+    <header
+      className={`fixed left-4 right-4 md:left-1/2 md:-translate-x-1/2 md:w-[95%] md:max-w-6xl z-50 transition-all duration-500 ease-out ${topPositionClass}`}
+    >
       <div className="relative flex h-20 md:h-24 items-center justify-between px-4 sm:px-6 lg:px-8 bg-brand-white/85 backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.08)] border border-brand-white/40 rounded-2xl md:rounded-full transition-all duration-300">
-        
         {/* Logo */}
         <Link
           href="/"
@@ -100,9 +102,15 @@ export function Navbar() {
               {isOpen ? "Close main menu" : "Open main menu"}
             </span>
             <div className="w-6 h-6 relative flex flex-col justify-center items-center">
-              <span className={`block w-5 h-0.5 bg-current transition-transform duration-300 ${isOpen ? "rotate-45 translate-y-[1px]" : "-translate-y-1"}`}></span>
-              <span className={`block w-5 h-0.5 bg-current transition-opacity duration-300 ${isOpen ? "opacity-0" : "opacity-100 mt-1"}`}></span>
-              <span className={`block w-5 h-0.5 bg-current transition-transform duration-300 ${isOpen ? "-rotate-45 -translate-y-[1px] absolute" : "translate-y-1 mt-1"}`}></span>
+              <span
+                className={`block w-5 h-0.5 bg-current transition-transform duration-300 ${isOpen ? "rotate-45 translate-y-[1px]" : "-translate-y-1"}`}
+              ></span>
+              <span
+                className={`block w-5 h-0.5 bg-current transition-opacity duration-300 ${isOpen ? "opacity-0" : "opacity-100 mt-1"}`}
+              ></span>
+              <span
+                className={`block w-5 h-0.5 bg-current transition-transform duration-300 ${isOpen ? "-rotate-45 -translate-y-[1px] absolute" : "translate-y-1 mt-1"}`}
+              ></span>
             </div>
           </button>
         </div>
@@ -111,7 +119,7 @@ export function Navbar() {
       {/* Floating Mobile Menu Panel */}
       <AnimatePresence>
         {isOpen && (
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: -10, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -10, scale: 0.95 }}
@@ -126,8 +134,8 @@ export function Navbar() {
                     key={link.name}
                     href={link.href}
                     className={`block px-4 py-3 rounded-xl text-sm font-black uppercase tracking-widest transition-colors ${
-                      isActive 
-                        ? "bg-brand-primary text-brand-white" 
+                      isActive
+                        ? "bg-brand-primary text-brand-white"
                         : "text-brand-primary hover:bg-brand-neutral/10"
                     }`}
                     onClick={closeMenu}

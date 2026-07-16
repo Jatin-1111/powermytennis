@@ -5,15 +5,15 @@ const routes: Array<{
   priority: number;
   changeFrequency: MetadataRoute.Sitemap[number]["changeFrequency"];
 }> = [
-  { path: "",                   priority: 1.0, changeFrequency: "weekly" },
+  { path: "", priority: 1.0, changeFrequency: "weekly" },
   { path: "/programs-and-fees", priority: 0.9, changeFrequency: "weekly" },
-  { path: "/coaches",           priority: 0.9, changeFrequency: "monthly" },
-  { path: "/contact",           priority: 0.9, changeFrequency: "monthly" },
-  { path: "/about",             priority: 0.8, changeFrequency: "monthly" },
-  { path: "/pathway",           priority: 0.8, changeFrequency: "monthly" },
-  { path: "/facilities",        priority: 0.7, changeFrequency: "monthly" },
-  { path: "/private-lessons",   priority: 0.7, changeFrequency: "monthly" },
-  { path: "/policies",          priority: 0.5, changeFrequency: "monthly" },
+  { path: "/coaches", priority: 0.9, changeFrequency: "monthly" },
+  { path: "/contact", priority: 0.9, changeFrequency: "monthly" },
+  { path: "/about", priority: 0.8, changeFrequency: "monthly" },
+  { path: "/pathway", priority: 0.8, changeFrequency: "monthly" },
+  { path: "/facilities", priority: 0.7, changeFrequency: "monthly" },
+  { path: "/private-lessons", priority: 0.7, changeFrequency: "monthly" },
+  { path: "/policies", priority: 0.5, changeFrequency: "monthly" },
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

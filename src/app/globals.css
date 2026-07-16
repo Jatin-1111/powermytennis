@@ -16,25 +16,25 @@
   --font-sans: var(--font-body);
 
   /* Brand Colors */
-  --color-brand-primary: #22261B;
-  --color-brand-accent: #C6D92B;
-  --color-brand-secondary: #33471F;
-  --color-brand-neutral: #C6ACA2;
-  --color-brand-coral: #C14A3D;
-  --color-brand-white: #FFFFFF;
-  --color-brand-black: #1A1A1A;
+  --color-brand-primary: #22261b;
+  --color-brand-accent: #c6d92b;
+  --color-brand-secondary: #33471f;
+  --color-brand-neutral: #c6aca2;
+  --color-brand-coral: #c14a3d;
+  --color-brand-white: #ffffff;
+  --color-brand-black: #1a1a1a;
 
   /* Pathway / Module Tag Colors */
-  --color-module-orange: #F2994A;
-  --color-module-peach: #F5C177;
-  --color-module-purple: #A66BC1;
-  --color-module-red: #E0483E;
-  --color-module-cyan: #6FD6E0;
-  --color-module-grey: #D9D9D9;
-  --color-module-green: #3FA34D;
-  --color-module-yellow-green: #C4D92B;
-  --color-module-dark-green: #2F5233;
-  --color-module-pink: #E85A9C;
+  --color-module-orange: #f2994a;
+  --color-module-peach: #f5c177;
+  --color-module-purple: #a66bc1;
+  --color-module-red: #e0483e;
+  --color-module-cyan: #6fd6e0;
+  --color-module-grey: #d9d9d9;
+  --color-module-green: #3fa34d;
+  --color-module-yellow-green: #c4d92b;
+  --color-module-dark-green: #2f5233;
+  --color-module-pink: #e85a9c;
 
   /* ─── Typography Scale ───────────────────────────────────────────────────
    *  At 1280px viewport:
@@ -93,10 +93,15 @@
   --spacing-element: clamp(1rem, 2vw, 2rem);
 
   /* Engineered Depth System */
-  --shadow-sm: 0 2px 8px -2px rgb(34 38 27 / 0.08), 0 1px 4px -1px rgb(34 38 27 / 0.04);
-  --shadow-md: 0 12px 24px -4px rgb(34 38 27 / 0.12), 0 4px 12px -2px rgb(34 38 27 / 0.08);
-  --shadow-lg: 0 24px 48px -12px rgb(34 38 27 / 0.18), 0 8px 24px -4px rgb(34 38 27 / 0.12);
-  --shadow-xl: 0 32px 64px -16px rgb(34 38 27 / 0.25), 0 16px 32px -8px rgb(34 38 27 / 0.15);
+  --shadow-sm:
+    0 2px 8px -2px rgb(34 38 27 / 0.08), 0 1px 4px -1px rgb(34 38 27 / 0.04);
+  --shadow-md:
+    0 12px 24px -4px rgb(34 38 27 / 0.12), 0 4px 12px -2px rgb(34 38 27 / 0.08);
+  --shadow-lg:
+    0 24px 48px -12px rgb(34 38 27 / 0.18), 0 8px 24px -4px rgb(34 38 27 / 0.12);
+  --shadow-xl:
+    0 32px 64px -16px rgb(34 38 27 / 0.25),
+    0 16px 32px -8px rgb(34 38 27 / 0.15);
 
   --shadow-card-idle: var(--shadow-sm);
   --shadow-card-hover: var(--shadow-xl);

@@ -54,10 +54,10 @@ export function PillarsSnapshot() {
           {/* Geometric Pattern: Diagonal Racing Pinstripes */}
           <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-30 transition-opacity duration-700 group-hover:opacity-60">
             {/* The diagonal pinstripes */}
-            <div 
+            <div
               className="absolute -inset-[50%]"
               style={{
-                backgroundImage: `repeating-linear-gradient(45deg, transparent, transparent 30px, rgba(157, 242, 40, 0.15) 30px, rgba(157, 242, 40, 0.15) 32px)`
+                backgroundImage: `repeating-linear-gradient(45deg, transparent, transparent 30px, rgba(157, 242, 40, 0.15) 30px, rgba(157, 242, 40, 0.15) 32px)`,
               }}
             />
             {/* Deep shadow vignette so the edges fade perfectly */}
@@ -78,7 +78,9 @@ export function PillarsSnapshot() {
                 <div className="flex flex-col items-center justify-center text-center p-4">
                   <div className="text-h1 font-black text-brand-white mb-2 flex items-baseline drop-shadow-md">
                     <AnimatedCounter value={stat.value} duration={2} />
-                    <span className="text-brand-accent ml-1">{stat.suffix}</span>
+                    <span className="text-brand-accent ml-1">
+                      {stat.suffix}
+                    </span>
                   </div>
                   <div className="text-sm md:text-base font-bold text-brand-white/80 uppercase tracking-widest">
                     {stat.label}
@@ -109,7 +111,11 @@ export function PillarsSnapshot() {
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-60px" }}
-            transition={{ duration: 0.5, ease: EASE_OUT_EXPO, delay: index * 0.08 }}
+            transition={{
+              duration: 0.5,
+              ease: EASE_OUT_EXPO,
+              delay: index * 0.08,
+            }}
             className="group relative border-b border-brand-neutral/20 overflow-hidden cursor-default"
           >
             {/* Slide-in dark fill */}
@@ -118,7 +124,6 @@ export function PillarsSnapshot() {
             {/* Content — inside Container to stay aligned with rest of page */}
             <Container className="relative z-10">
               <div className="flex items-center gap-0 py-8 md:py-10">
-
                 {/* Number */}
                 <div className="w-16 md:w-20 flex-shrink-0">
                   <span className="text-xs font-black tracking-[0.2em] text-brand-secondary/50 group-hover:text-brand-white/30 transition-colors duration-500">
@@ -128,9 +133,7 @@ export function PillarsSnapshot() {
 
                 {/* Large title */}
                 <div className="flex-1 min-w-0">
-                  <h3
-                    className="text-h2 font-black uppercase tracking-tight leading-none text-brand-primary group-hover:text-white transition-colors duration-500"
-                  >
+                  <h3 className="text-h2 font-black uppercase tracking-tight leading-none text-brand-primary group-hover:text-white transition-colors duration-500">
                     {pillar.title}
                   </h3>
                 </div>
@@ -143,7 +146,9 @@ export function PillarsSnapshot() {
                 {/* Description — right-aligned, fixed width on desktop */}
                 <div className="hidden md:block md:w-56 lg:w-72 xl:w-96 flex-shrink-0">
                   <p className="text-sm font-medium text-brand-black/70 group-hover:text-brand-white/80 transition-colors duration-500 leading-relaxed flex gap-2">
-                    <span className="text-brand-accent group-hover:text-brand-accent/70 transition-colors duration-500 select-none">—</span>
+                    <span className="text-brand-accent group-hover:text-brand-accent/70 transition-colors duration-500 select-none">
+                      —
+                    </span>
                     <span>{pillar.description}</span>
                   </p>
                 </div>
@@ -151,7 +156,9 @@ export function PillarsSnapshot() {
 
               {/* Mobile description — below title */}
               <p className="md:hidden text-sm font-medium text-brand-black/70 group-hover:text-brand-white/80 transition-colors duration-500 leading-relaxed pb-6 -mt-2 flex gap-2">
-                <span className="text-brand-accent group-hover:text-brand-accent/70 transition-colors duration-500 select-none">—</span>
+                <span className="text-brand-accent group-hover:text-brand-accent/70 transition-colors duration-500 select-none">
+                  —
+                </span>
                 <span>{pillar.description}</span>
               </p>
             </Container>

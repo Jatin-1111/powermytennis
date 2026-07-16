@@ -143,7 +143,7 @@ export function AcademyStory() {
                     className="absolute inset-0 opacity-[0.04]"
                     style={{
                       backgroundImage: `linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)`,
-                      backgroundSize: '40px 40px'
+                      backgroundSize: "40px 40px",
                     }}
                   />
                 </div>
@@ -171,7 +171,6 @@ export function AcademyStory() {
             </MotionItem>
             <MotionItem>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-
                 {/* Director Card */}
                 <div className="flex items-start gap-6 bg-brand-neutral/5 border border-brand-neutral/15 rounded-2xl p-8 hover:border-brand-accent/30 transition-colors duration-300">
                   <div className="w-16 h-16 rounded-full bg-brand-primary text-brand-accent flex items-center justify-center text-lg font-black shrink-0 shadow-md">
@@ -185,10 +184,15 @@ export function AcademyStory() {
                       Yengkhom Romen Singh
                     </h3>
                     <p className="text-sm font-medium text-brand-black/50 mb-4 leading-relaxed">
-                      ITF Level 2 &nbsp;·&nbsp; NIS Certified Coach &nbsp;·&nbsp; Ex-Director, Coaching &amp; Development (CLTA)
+                      ITF Level 2 &nbsp;·&nbsp; NIS Certified Coach
+                      &nbsp;·&nbsp; Ex-Director, Coaching &amp; Development
+                      (CLTA)
                     </p>
                     <p className="text-sm text-brand-black/60 leading-relaxed">
-                      With 28+ years of professional coaching experience and a tenure leading coaching development at the national level, Romen's vision is to bring world-standard, purposeful tennis training to northern India.
+                      With 28+ years of professional coaching experience and a
+                      tenure leading coaching development at the national level,
+                      Romen's vision is to bring world-standard, purposeful
+                      tennis training to northern India.
                     </p>
                   </div>
                 </div>
@@ -199,14 +203,17 @@ export function AcademyStory() {
                     Our Mission
                   </div>
                   <p className="text-brand-white font-medium text-lg leading-relaxed">
-                    "To nurture champions not just for tennis but for life — through discipline, dedication, and{" "}
-                    <span className="text-brand-accent font-black">purposeful coaching</span>."
+                    "To nurture champions not just for tennis but for life —
+                    through discipline, dedication, and{" "}
+                    <span className="text-brand-accent font-black">
+                      purposeful coaching
+                    </span>
+                    ."
                   </p>
                   <div className="mt-6 pt-6 border-t border-brand-white/10 text-brand-white/35 text-xs font-bold uppercase tracking-widest">
                     — Yengkhom Romen Singh, Director
                   </div>
                 </div>
-
               </div>
             </MotionItem>
           </MotionSection>

@@ -5,13 +5,25 @@ import { EASE_OUT_EXPO } from "@/lib/motion-variants";
 
 const objective = [
   { label: "Radar Tracking", detail: "Real-time ball trajectory & spin data" },
-  { label: "Serve Speed Analysis", detail: "Radar-measured velocity per delivery" },
-  { label: "Fitness Screening", detail: "VO₂ max, agility & strength benchmarks" },
+  {
+    label: "Serve Speed Analysis",
+    detail: "Radar-measured velocity per delivery",
+  },
+  {
+    label: "Fitness Screening",
+    detail: "VO₂ max, agility & strength benchmarks",
+  },
 ];
 
 const subjective = [
-  { label: "Attitude & Behavior", detail: "On-court demeanor and coachability" },
-  { label: "Focus & Concentration", detail: "Mental engagement across session duration" },
+  {
+    label: "Attitude & Behavior",
+    detail: "On-court demeanor and coachability",
+  },
+  {
+    label: "Focus & Concentration",
+    detail: "Mental engagement across session duration",
+  },
   { label: "Mental Strength", detail: "Resilience under competitive pressure" },
   { label: "Tactical Play", detail: "Match pattern recognition & execution" },
 ];
@@ -61,7 +73,10 @@ function ReportPanel({
           >
             <div
               className="w-1.5 h-1.5 rounded-full mt-2 flex-shrink-0"
-              style={{ backgroundColor: dotColor, boxShadow: `0 0 8px ${dotColor}` }}
+              style={{
+                backgroundColor: dotColor,
+                boxShadow: `0 0 8px ${dotColor}`,
+              }}
             />
             <div>
               <div className="text-base font-bold text-brand-white leading-snug group-hover/item:text-brand-accent transition-colors duration-200">
@@ -96,7 +111,9 @@ export function PerformanceReportsSection() {
           Performance Reports
         </h2>
         <p className="text-brand-black/55 font-medium mt-3 max-w-lg leading-relaxed text-pretty">
-          High Performance athletes receive a monthly progress report and quarterly fitness screening — covering both measurable and qualitative performance metrics.
+          High Performance athletes receive a monthly progress report and
+          quarterly fitness screening — covering both measurable and qualitative
+          performance metrics.
         </p>
       </div>
 
