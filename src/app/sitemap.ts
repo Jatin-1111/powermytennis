@@ -17,7 +17,7 @@ const routes: Array<{
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://powermytennis.com";
+  const baseUrl = "https://www.powermytennis.com";
   const now = new Date();
 
   return routes.map(({ path, priority, changeFrequency }) => ({

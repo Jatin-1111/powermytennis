@@ -3,7 +3,7 @@ import lighthouse from "lighthouse";
 
 // ─── Config ──────────────────────────────────────────────────────────────────
 
-const BASE_URL = "http://localhost:3001";
+const BASE_URL = "https://powermytennis.com";
 
 const PAGES = [
   "/",
@@ -50,19 +50,21 @@ async function run() {
 
   // ── Pre-flight check ────────────────────────────────────────────────────────
   try {
-    const { default: http } = await import("http");
+    const protocol = BASE_URL.startsWith("https") ? "https" : "http";
+    const { default: client } = await import(protocol);
     await new Promise((resolve, reject) => {
-      const req = http.get(BASE_URL, (res) => {
+      const req = client.get(BASE_URL, (res) => {
         res.resume();
         resolve(res.statusCode);
       });
-      req.setTimeout(3000, () => { req.destroy(); reject(new Error("timeout")); });
+      req.setTimeout(5000, () => { req.destroy(); reject(new Error("timeout")); });
       req.on("error", reject);
     });
   } catch {
+    const isLocal = BASE_URL.includes("localhost");
     console.error(
-      `\x1b[31m✖ Cannot reach ${BASE_URL} — is the dev server running?\x1b[0m\n` +
-      `  Run: npm run dev\n`
+      `\x1b[31m✖ Cannot reach ${BASE_URL}\x1b[0m\n` +
+      (isLocal ? `  Run: npm run dev\n` : `  Check your network or that the site is deployed.\n`)
     );
     process.exit(1);
   }

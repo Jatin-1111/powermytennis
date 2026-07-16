@@ -233,7 +233,7 @@ export function Footer() {
 
       {/* Bottom Bar */}
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mt-4">
-        <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-bold uppercase tracking-widest text-brand-white/40">
+        <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-bold uppercase tracking-widest text-brand-white/60">
           <p>
             &copy; {new Date().getFullYear()} {siteConfig.name}. All rights
             reserved.

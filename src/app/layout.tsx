@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Inter, Outfit } from "next/font/google";
 import { siteConfig } from "@/data/siteConfig";
 import { WhatsAppCTA } from "@/components/shared/WhatsAppCTA";
 import { Navbar } from "@/components/shared/Navbar";
@@ -7,8 +8,20 @@ import { ComingSoon } from "@/components/shared/ComingSoon";
 import { MotionProvider } from "@/components/shared/MotionProvider";
 import "./globals.css";
 
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-body",
+  display: "swap",
+});
+
+const outfit = Outfit({
+  subsets: ["latin"],
+  variable: "--font-heading",
+  display: "swap",
+});
+
 export const metadata: Metadata = {
-  metadataBase: new URL("https://powermytennis.com"),
+  metadataBase: new URL("https://www.powermytennis.com"),
   title: {
     template: "%s | PowerMyTennis",
     default:
@@ -47,7 +60,7 @@ export const metadata: Metadata = {
     title: "PowerMyTennis High Performance Academy",
     description:
       "Elite clay-court tennis training in New Chandigarh. High-performance coaching at every level — from beginners to tournament players.",
-    url: "https://powermytennis.com",
+    url: "https://www.powermytennis.com",
     siteName: "PowerMyTennis",
     locale: "en_IN",
     type: "website",
@@ -70,10 +83,10 @@ export default function RootLayout({
     "@graph": [
       {
         "@type": ["SportsActivityLocation", "LocalBusiness"],
-        "@id": "https://powermytennis.com/#organization",
+        "@id": "https://www.powermytennis.com/#organization",
         name: siteConfig.name,
         description: siteConfig.tagline,
-        url: "https://powermytennis.com",
+        url: "https://www.powermytennis.com",
         telephone: `+91 ${siteConfig.phone}`,
         email: siteConfig.email,
         address: {
@@ -88,10 +101,10 @@ export default function RootLayout({
           longitude: siteConfig.address.coordinates.lng,
         },
         sport: "Tennis",
-        image: "https://powermytennis.com/powermytennis-logo.jpeg",
+        image: "https://www.powermytennis.com/powermytennis-logo.jpeg",
         logo: {
           "@type": "ImageObject",
-          url: "https://powermytennis.com/powermytennis-logo.jpeg",
+          url: "https://www.powermytennis.com/powermytennis-logo.jpeg",
         },
         areaServed: siteConfig.address.accessibleFrom.map((city) => ({
           "@type": "City",
@@ -102,12 +115,12 @@ export default function RootLayout({
       },
       {
         "@type": "WebSite",
-        "@id": "https://powermytennis.com/#website",
-        url: "https://powermytennis.com",
+        "@id": "https://www.powermytennis.com/#website",
+        url: "https://www.powermytennis.com",
         name: "PowerMyTennis",
         description: siteConfig.tagline,
         publisher: {
-          "@id": "https://powermytennis.com/#organization",
+          "@id": "https://www.powermytennis.com/#organization",
         },
       },
     ],
@@ -117,19 +130,7 @@ export default function RootLayout({
 
   if (isComingSoon) {
     return (
-      <html lang="en" className={`h-full antialiased font-sans`}>
-        <head>
-          <link rel="preconnect" href="https://fonts.googleapis.com" />
-          <link
-            rel="preconnect"
-            href="https://fonts.gstatic.com"
-            crossOrigin="anonymous"
-          />
-          <link
-            href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Outfit:wght@100..900&display=swap"
-            rel="stylesheet"
-          />
-        </head>
+      <html lang="en" className={`${inter.variable} ${outfit.variable} h-full antialiased font-sans`}>
         <body className="min-h-full flex flex-col bg-brand-primary">
           <ComingSoon />
         </body>
@@ -138,19 +139,8 @@ export default function RootLayout({
   }
 
   return (
-    <html lang="en" className={`h-full antialiased font-sans`}>
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="anonymous"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Outfit:wght@100..900&display=swap"
-          rel="stylesheet"
-        />
-      </head>
+    <html lang="en" className={`${inter.variable} ${outfit.variable} h-full antialiased font-sans`}>
+      <head />
       <body className="min-h-full flex flex-col">
         {/* Inject JSON-LD Schema */}
         <script
