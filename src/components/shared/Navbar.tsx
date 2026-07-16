@@ -38,7 +38,7 @@ export function Navbar() {
 
   return (
     <header className={`fixed left-4 right-4 md:left-1/2 md:-translate-x-1/2 md:w-[95%] md:max-w-6xl z-50 transition-all duration-500 ease-out ${topPositionClass}`}>
-      <div className="relative flex h-16 md:h-20 items-center justify-between px-4 sm:px-6 lg:px-8 bg-brand-white/85 backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.08)] border border-brand-white/40 rounded-2xl md:rounded-full transition-all duration-300">
+      <div className="relative flex h-20 md:h-24 items-center justify-between px-4 sm:px-6 lg:px-8 bg-brand-white/85 backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.08)] border border-brand-white/40 rounded-2xl md:rounded-full transition-all duration-300">
         
         {/* Logo */}
         <Link
@@ -46,12 +46,12 @@ export function Navbar() {
           className="flex items-center gap-3 shrink-0 py-2"
           onClick={closeMenu}
         >
-          <div className="relative h-10 md:h-12 flex items-center">
+          <div className="relative h-14 md:h-20 flex items-center hover:scale-105 transition-transform duration-300 origin-left">
             <Image
               src="/powermytennis-logo.jpeg"
               alt="PowerMyTennis Logo"
-              width={160}
-              height={60}
+              width={240}
+              height={80}
               className="h-full w-auto object-contain rounded"
               priority
             />

@@ -35,6 +35,12 @@ export function ContactForm() {
   if (!programOptions.includes("Pathway Consultation")) {
     programOptions.unshift("Pathway Consultation");
   }
+  if (!programOptions.includes("Private Individual Coaching")) {
+    programOptions.push("Private Individual Coaching");
+  }
+  if (!programOptions.includes("Others")) {
+    programOptions.push("Others");
+  }
 
   if (state.success) {
     return (

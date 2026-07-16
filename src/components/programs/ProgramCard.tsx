@@ -3,7 +3,6 @@
 import { useState } from "react";
 import { Program } from "@/data/programs";
 import { formatCurrency } from "@/lib/utils";
-import { AnimatedCounter } from "@/components/shared/AnimatedCounter";
 import { motion, AnimatePresence } from "framer-motion";
 import { EASE_IN_OUT } from "@/lib/motion-variants";
 
@@ -52,7 +51,7 @@ export function ProgramCard({ program, featured = false }: ProgramCardProps) {
               <div className="flex items-baseline gap-1 mb-1">
                 <span className="text-xl font-black text-brand-white/60">₹</span>
                 <span className="text-5xl font-black text-brand-white font-mono tracking-tighter">
-                  <AnimatedCounter value={program.fee} duration={2} />
+                  {program.fee.toLocaleString("en-IN")}
                 </span>
               </div>
               <div className="text-brand-accent font-bold uppercase tracking-widest text-xs">
@@ -161,7 +160,7 @@ export function ProgramCard({ program, featured = false }: ProgramCardProps) {
         <div className="flex items-baseline justify-center gap-1">
           <span className="text-2xl font-black text-brand-secondary opacity-70">₹</span>
           <span className="text-5xl font-black text-brand-secondary font-mono tracking-tighter">
-            <AnimatedCounter value={program.fee} duration={2} />
+            {program.fee.toLocaleString("en-IN")}
           </span>
           <span className="text-brand-secondary font-bold uppercase tracking-widest opacity-60 text-xs ml-1">
             /{program.feeFrequency.replace("per ", "")}

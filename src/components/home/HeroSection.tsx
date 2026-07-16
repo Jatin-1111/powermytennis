@@ -32,7 +32,7 @@ export function HeroSection() {
       >
         <div className="absolute inset-0">
           <Image
-            src="https://images.unsplash.com/photo-1595435934249-5df7ed86e1c0?q=80&w=2000&auto=format&fit=crop"
+            src="/hero-clay-court.png"
             alt="PowerMyTennis Academy Training"
             fill
             priority

@@ -31,14 +31,14 @@ export function Footer() {
             <div>
               <Link
                 href="/"
-                className="inline-block -ml-3 mb-8 bg-brand-white p-3 rounded-2xl shadow-sm hover:opacity-90 transition-opacity"
+                className="inline-block -ml-3 mb-8 bg-brand-white p-2 rounded-2xl shadow-md hover:scale-105 hover:shadow-lg transition-all duration-300 origin-left"
               >
                 <Image
                   src="/powermytennis-logo.jpeg"
                   alt="PowerMyTennis Logo"
-                  width={180}
-                  height={70}
-                  className="h-10 w-auto object-contain rounded-md"
+                  width={240}
+                  height={80}
+                  className="h-16 w-auto object-contain rounded-md"
                 />
               </Link>
               <p className="text-brand-white/60 text-sm leading-relaxed mb-8 max-w-sm">

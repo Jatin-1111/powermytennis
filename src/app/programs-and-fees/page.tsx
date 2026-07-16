@@ -65,9 +65,6 @@ export default function ProgramsAndFeesPage() {
               Ace The Court
             </SectionHeading>
           </MotionItem>
-          <MotionItem>
-            <DiscountCallout />
-          </MotionItem>
         </MotionSection>
 
         {/* ── PERFORMANCE TIER GROUP ───────────────────────────────────── */}
@@ -158,6 +155,15 @@ export default function ProgramsAndFeesPage() {
                 </MotionItem>
               ))}
             </div>
+          </MotionSection>
+        </div>
+
+        {/* ── DISCOUNTS & POLICIES ─────────────────────────────────────── */}
+        <div className="mt-20 md:mt-28">
+          <MotionSection>
+            <MotionItem>
+              <DiscountCallout />
+            </MotionItem>
           </MotionSection>
         </div>
       </Container>
