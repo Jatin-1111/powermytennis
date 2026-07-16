@@ -50,6 +50,7 @@ export function Footer() {
                 href="https://instagram.com/powermytennis"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Instagram"
                 className="w-10 h-10 rounded-full border border-brand-white/20 flex items-center justify-center hover:bg-brand-white hover:text-brand-primary transition-colors cursor-pointer group"
               >
                 <svg
@@ -69,6 +70,7 @@ export function Footer() {
                 href="https://facebook.com/powermytennis"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Facebook"
                 className="w-10 h-10 rounded-full border border-brand-white/20 flex items-center justify-center hover:bg-brand-white hover:text-brand-primary transition-colors cursor-pointer group"
               >
                 <svg
@@ -208,11 +210,22 @@ export function Footer() {
         </div>
       </div>
 
-      {/* Massive Typographic Wordmark */}
-      <div className="w-full flex justify-center overflow-hidden pointer-events-none select-none border-t border-brand-white/10 pt-16 pb-4">
+      {/* Massive Typographic Wordmark — decorative only, hidden from a11y tree */}
+      <div
+        className="w-full flex justify-center overflow-hidden pointer-events-none select-none border-t border-brand-white/10 pt-16 pb-4"
+        aria-hidden="true"
+        role="presentation"
+      >
         <p
-          aria-hidden="true"
-          className="text-[14vw] font-black uppercase text-brand-white/5 tracking-tighter leading-none"
+          className="text-[14vw] font-black uppercase tracking-tighter leading-none"
+          style={{
+            backgroundImage:
+              "linear-gradient(to bottom, rgba(255,255,255,0.07), rgba(255,255,255,0.03))",
+            WebkitBackgroundClip: "text",
+            WebkitTextFillColor: "transparent",
+            backgroundClip: "text",
+            color: "transparent",
+          }}
         >
           PowerMyTennis
         </p>

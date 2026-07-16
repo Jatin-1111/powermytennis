@@ -30,8 +30,22 @@ export function ContactForm() {
     }
   }, [searchParams]);
 
+  const toTitleCase = (str: string) => {
+    return str
+      .toLowerCase()
+      .split(" ")
+      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(" ");
+  };
+
   // Program options from data
-  const programOptions = programs.map((p) => p.name);
+  const programOptions = programs.map((p) => toTitleCase(p.name));
+  
+  // Ensure the reason from URL is included in options if it's custom
+  if (defaultProgram && !programOptions.includes(defaultProgram) && defaultProgram !== "") {
+    programOptions.unshift(defaultProgram);
+  }
+
   if (!programOptions.includes("Pathway Consultation")) {
     programOptions.unshift("Pathway Consultation");
   }

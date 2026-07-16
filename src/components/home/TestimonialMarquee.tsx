@@ -71,14 +71,14 @@ export function TestimonialMarquee() {
 
               <div>
                 <div className="w-10 h-px bg-brand-neutral/30 mb-4 group-hover:bg-brand-accent/50 group-hover:w-16 transition-all duration-500" />
-                <h4 className="text-brand-white font-bold uppercase tracking-widest text-sm">
+                <h3 className="text-brand-white font-bold uppercase tracking-widest text-sm">
                   {testimonial.authorName}
-                </h4>
+                </h3>
                 <p className="text-brand-accent text-xs font-bold uppercase tracking-widest mt-1">
                   {testimonial.authorRole}
                 </p>
                 {testimonial.program && (
-                  <p className="text-brand-white/30 text-[10px] font-bold uppercase tracking-widest mt-1">
+                  <p className="text-brand-white/50 text-[10px] font-bold uppercase tracking-widest mt-1">
                     {testimonial.program}
                   </p>
                 )}

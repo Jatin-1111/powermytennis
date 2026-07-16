@@ -25,6 +25,26 @@ export function TrialCTA() {
   const inputClass =
     "w-full bg-brand-white/5 border border-brand-white/15 focus:border-brand-accent rounded-xl px-5 py-4 transition-all outline-none text-brand-white font-medium placeholder:text-brand-white/30 text-sm";
 
+  const toTitleCase = (str: string) => {
+    return str
+      .toLowerCase()
+      .split(" ")
+      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(" ");
+  };
+
+  const programOptions = programs.map((p) => toTitleCase(p.name));
+  
+  if (!programOptions.includes("Pathway Consultation")) {
+    programOptions.unshift("Pathway Consultation");
+  }
+  if (!programOptions.includes("Private Individual Coaching")) {
+    programOptions.push("Private Individual Coaching");
+  }
+  if (!programOptions.includes("Others")) {
+    programOptions.push("Others");
+  }
+
   return (
     <section className="bg-brand-primary py-section relative overflow-hidden border-y border-brand-accent/10">
       {/* Geometric pinstripe background */}
@@ -223,30 +243,26 @@ export function TrialCTA() {
                         required
                         value={selectedProgram}
                         onChange={(e) => setSelectedProgram(e.target.value)}
-                        className={`${inputClass} appearance-none cursor-pointer`}
+                        className={`${inputClass} appearance-none cursor-pointer ${
+                          !selectedProgram ? "!text-brand-white/40" : ""
+                        }`}
                       >
                         <option
                           value=""
                           disabled
-                          className="bg-brand-primary text-brand-white/50"
+                          hidden
                         >
                           Select a program...
                         </option>
-                        {programs.map((p) => (
+                        {programOptions.map((opt) => (
                           <option
-                            key={p.id}
-                            value={p.name}
+                            key={opt}
+                            value={opt}
                             className="bg-brand-primary text-brand-white font-medium"
                           >
-                            {p.name}
+                            {opt}
                           </option>
                         ))}
-                        <option
-                          value="Not sure yet"
-                          className="bg-brand-primary text-brand-white font-medium"
-                        >
-                          Not sure yet
-                        </option>
                       </select>
                       <svg
                         className="absolute right-5 top-1/2 -translate-y-1/2 w-4 h-4 text-brand-white/40 pointer-events-none"

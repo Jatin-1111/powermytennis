@@ -84,7 +84,7 @@ export default function PrivateLessonsPage() {
                   </div>
                   <h3 className="text-5xl lg:text-6xl font-black uppercase tracking-tight text-brand-white leading-[0.9]">
                     {chiefCoach.role.replace(" COACH", "")}
-                    <span className="block text-brand-white/30 text-3xl lg:text-4xl mt-2">
+                    <span className="block text-brand-white/50 text-3xl lg:text-4xl mt-2">
                       COACH
                     </span>
                   </h3>
