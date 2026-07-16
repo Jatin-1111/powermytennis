@@ -110,7 +110,7 @@ export function PerformanceReportsSection() {
         <h2 className="text-h2 font-black uppercase text-brand-primary tracking-tight leading-tight">
           Performance Reports
         </h2>
-        <p className="text-brand-black/55 font-medium mt-3 max-w-lg leading-relaxed text-pretty">
+        <p className="text-brand-black/70 font-medium mt-3 max-w-lg leading-relaxed text-pretty">
           High Performance athletes receive a monthly progress report and
           quarterly fitness screening — covering both measurable and qualitative
           performance metrics.

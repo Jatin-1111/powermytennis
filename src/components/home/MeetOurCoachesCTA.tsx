@@ -26,7 +26,7 @@ export function MeetOurCoachesCTA() {
 
           {/* Arrow — visible on all screen sizes */}
           <div className="flex items-center gap-3 shrink-0 md:order-last">
-            <span className="hidden lg:block text-xs font-black uppercase tracking-[0.25em] text-brand-black/40 group-hover:text-brand-white/40 transition-colors duration-500">
+            <span className="hidden lg:block text-xs font-black uppercase tracking-[0.25em] text-brand-black/70 group-hover:text-brand-white/70 transition-colors duration-500">
               View All
             </span>
             <div className="w-9 h-9 md:w-12 md:h-12 rounded-full border border-brand-neutral/30 group-hover:border-brand-accent group-hover:bg-brand-accent flex items-center justify-center transition-all duration-500 shrink-0">
@@ -66,7 +66,7 @@ export function MeetOurCoachesCTA() {
           </div>
 
           {/* Mobile: count label next to avatars */}
-          <span className="md:hidden text-xs font-bold uppercase tracking-widest text-brand-black/40 group-hover:text-brand-white/40 transition-colors duration-500">
+          <span className="md:hidden text-xs font-bold uppercase tracking-widest text-brand-black/70 group-hover:text-brand-white/70 transition-colors duration-500">
             {coaches.length} Coaches
           </span>
 
@@ -79,7 +79,7 @@ export function MeetOurCoachesCTA() {
                 <span className="text-brand-secondary group-hover:text-brand-accent/60 transition-colors duration-500">{coach.role}</span>
               </p>
             ))}
-            <p className="text-[10px] font-bold text-brand-black/30 group-hover:text-brand-white/30 transition-colors duration-500 uppercase tracking-widest">
+            <p className="text-[10px] font-bold text-brand-black/65 group-hover:text-brand-white/65 transition-colors duration-500 uppercase tracking-widest">
               + {coaches.length - 3} more
             </p>
           </div>

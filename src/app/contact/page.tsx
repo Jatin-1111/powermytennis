@@ -58,13 +58,13 @@ export default function ContactPage() {
               <div className="text-center sm:text-left flex-1 pl-2">
                 <div className="flex items-center justify-center sm:justify-start gap-2 mb-3">
                   <div className="w-2 h-2 rounded-sm bg-brand-accent/30 group-hover:bg-brand-accent transition-colors duration-300" />
-                  <span className="text-[10px] font-black tracking-[0.25em] uppercase text-brand-black/30 group-hover:text-brand-primary transition-colors">
+                  <span className="text-[10px] font-black tracking-[0.25em] uppercase text-brand-black/70 group-hover:text-brand-primary transition-colors">
                     CONTACT : PHONE
                   </span>
                 </div>
-                <h3 className="font-black text-brand-primary uppercase tracking-widest text-h3 mb-1">
+                <h2 className="font-black text-brand-primary uppercase tracking-widest text-h3 mb-1">
                   Call Us
-                </h3>
+                </h2>
                 <p className="text-brand-black/70 text-body-lg font-medium tracking-wide font-mono">
                   {siteConfig.phone}
                 </p>
@@ -115,13 +115,13 @@ export default function ContactPage() {
               <div className="text-center sm:text-left flex-1 pl-2">
                 <div className="flex items-center justify-center sm:justify-start gap-2 mb-3">
                   <div className="w-2 h-2 rounded-sm bg-brand-accent/30 group-hover:bg-brand-accent transition-colors duration-300" />
-                  <span className="text-[10px] font-black tracking-[0.25em] uppercase text-brand-black/30 group-hover:text-brand-primary transition-colors">
+                  <span className="text-[10px] font-black tracking-[0.25em] uppercase text-brand-black/70 group-hover:text-brand-primary transition-colors">
                     CONTACT : EMAIL
                   </span>
                 </div>
-                <h3 className="font-black text-brand-primary uppercase tracking-widest text-h3 mb-1">
+                <h2 className="font-black text-brand-primary uppercase tracking-widest text-h3 mb-1">
                   Email Us
-                </h3>
+                </h2>
                 <p className="text-brand-black/70 text-body-lg font-medium tracking-wide font-mono">
                   {siteConfig.email}
                 </p>

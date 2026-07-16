@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Container } from "@/components/shared/Container";
 import { SectionHeading } from "@/components/shared/SectionHeading";
 import { FacilityIconGrid } from "@/components/facilities/FacilityIconGrid";
@@ -66,48 +67,57 @@ export default function FacilitiesPage() {
 
           <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
             {/* Aerial — spans 2 rows on md */}
-            <div className="col-span-2 md:col-span-1 overflow-hidden rounded-2xl aspect-[4/3] md:aspect-auto md:row-span-2">
-              <img
+            <div className="relative col-span-2 md:col-span-1 overflow-hidden rounded-2xl aspect-[4/3] md:aspect-auto md:row-span-2">
+              <Image
                 src="/powermytennis-assets/courts-aerial.jpeg"
                 alt="Aerial view of PowerMyTennis clay courts"
-                className="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-700"
-                style={{ minHeight: "260px" }}
+                fill
+                className="object-cover object-center hover:scale-105 transition-transform duration-700"
+                sizes="(max-width: 768px) calc(100vw - 24px), 33vw"
               />
             </div>
 
             {/* Trophy moment — coach + player at net, faces clearly visible */}
-            <div className="overflow-hidden rounded-2xl aspect-[4/3]">
-              <img
+            <div className="relative overflow-hidden rounded-2xl aspect-[4/3]">
+              <Image
                 src="/powermytennis-assets/player-trophy-group.jpeg"
                 alt="Coach and player celebrating with trophy at the net"
-                className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-700"
+                fill
+                className="object-cover object-top hover:scale-105 transition-transform duration-700"
+                sizes="(max-width: 768px) calc(50vw - 18px), 33vw"
               />
             </div>
 
             {/* Junior player — charming portrait of young student */}
-            <div className="overflow-hidden rounded-2xl aspect-[4/3]">
-              <img
+            <div className="relative overflow-hidden rounded-2xl aspect-[4/3]">
+              <Image
                 src="/powermytennis-assets/junior-player-smile.jpeg"
                 alt="Junior player on clay court with racket"
-                className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-700"
+                fill
+                className="object-cover object-top hover:scale-105 transition-transform duration-700"
+                sizes="(max-width: 768px) calc(50vw - 18px), 33vw"
               />
             </div>
 
             {/* Solo trophy — player holding trophies at net */}
-            <div className="overflow-hidden rounded-2xl aspect-[4/3]">
-              <img
+            <div className="relative overflow-hidden rounded-2xl aspect-[4/3]">
+              <Image
                 src="/powermytennis-assets/player-trophy-solo.jpeg"
                 alt="Player holding trophies at the net on clay court"
-                className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-700"
+                fill
+                className="object-cover object-top hover:scale-105 transition-transform duration-700"
+                sizes="(max-width: 768px) calc(50vw - 18px), 33vw"
               />
             </div>
 
             {/* Court overview — facility shot */}
-            <div className="overflow-hidden rounded-2xl aspect-[4/3]">
-              <img
+            <div className="relative overflow-hidden rounded-2xl aspect-[4/3]">
+              <Image
                 src="/powermytennis-assets/courts-overview.jpeg"
                 alt="PowerMyTennis clay courts with floodlights"
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                fill
+                className="object-cover hover:scale-105 transition-transform duration-700"
+                sizes="(max-width: 768px) calc(50vw - 18px), 33vw"
                 style={{ objectPosition: "50% 35%" }}
               />
             </div>
@@ -124,30 +134,36 @@ export default function FacilitiesPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {/* Coach portrait — spans 2 rows; image is absolute so it doesn't inflate the container height */}
+            {/* Coach portrait — spans 2 rows */}
             <div className="relative overflow-hidden rounded-2xl aspect-[4/3] md:aspect-auto md:row-span-2">
-              <img
+              <Image
                 src="/powermytennis-assets/coach-portrait-balls.jpeg"
                 alt="Head coach on court with tennis balls and city skyline"
-                className="absolute inset-0 w-full h-full object-cover object-top hover:scale-105 transition-transform duration-700"
+                fill
+                className="object-cover object-top hover:scale-105 transition-transform duration-700"
+                sizes="(max-width: 768px) 100vw, 50vw"
               />
             </div>
 
             {/* Right top */}
-            <div className="overflow-hidden rounded-2xl aspect-[4/3]">
-              <img
+            <div className="relative overflow-hidden rounded-2xl aspect-[4/3]">
+              <Image
                 src="/powermytennis-assets/player-forehand-action.jpeg"
                 alt="Player hitting a forehand on clay court"
-                className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-700"
+                fill
+                className="object-cover object-top hover:scale-105 transition-transform duration-700"
+                sizes="(max-width: 768px) 100vw, 50vw"
               />
             </div>
 
             {/* Right bottom */}
-            <div className="overflow-hidden rounded-2xl aspect-[4/3]">
-              <img
+            <div className="relative overflow-hidden rounded-2xl aspect-[4/3]">
+              <Image
                 src="/powermytennis-assets/player-backhand-action.jpeg"
                 alt="Player hitting a backhand on clay court"
-                className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-700"
+                fill
+                className="object-cover object-top hover:scale-105 transition-transform duration-700"
+                sizes="(max-width: 768px) 100vw, 50vw"
               />
             </div>
           </div>
@@ -164,19 +180,23 @@ export default function FacilitiesPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {/* Coach Romen with two junior students — great group coaching moment */}
-            <div className="overflow-hidden rounded-2xl aspect-[4/3]">
-              <img
+            <div className="relative overflow-hidden rounded-2xl aspect-[4/3]">
+              <Image
                 src="/powermytennis-assets/coach-students-group.jpeg"
                 alt="Coach with two junior students on the clay court"
-                className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-700"
+                fill
+                className="object-cover object-top hover:scale-105 transition-transform duration-700"
+                sizes="(max-width: 768px) 100vw, 50vw"
               />
             </div>
             {/* Coach and student holding rackets — 1-on-1 coaching relationship */}
-            <div className="overflow-hidden rounded-2xl aspect-[4/3]">
-              <img
+            <div className="relative overflow-hidden rounded-2xl aspect-[4/3]">
+              <Image
                 src="/powermytennis-assets/coach-student-rackets.jpeg"
                 alt="Coach and student posing with rackets on the clay court"
-                className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-700"
+                fill
+                className="object-cover object-top hover:scale-105 transition-transform duration-700"
+                sizes="(max-width: 768px) 100vw, 50vw"
               />
             </div>
           </div>

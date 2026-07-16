@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Coach } from "@/data/coaches";
 
 interface CoachCardProps {
@@ -18,11 +19,12 @@ export function CoachCard({ coach }: CoachCardProps) {
       {/* Photo Area */}
       <div className="h-72 w-full bg-brand-neutral/30 flex items-center justify-center relative overflow-hidden">
         {coach.photoUrl ? (
-          // eslint-disable-next-line @next/next/no-img-element
-          <img
+          <Image
             src={coach.photoUrl}
             alt={`Photo of ${coach.name}, ${coach.role}`}
-            className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+            fill
+            className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
+            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
           />
         ) : (
           <div

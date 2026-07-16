@@ -18,7 +18,7 @@ export function MapEmbed() {
             Academy Location
           </span>
         </div>
-        <div className="text-[10px] font-bold tracking-widest text-brand-neutral font-mono">
+        <div className="text-[10px] font-bold tracking-widest text-brand-black/65 font-mono">
           {lat.toFixed(4)}° N, {lng.toFixed(4)}° E
         </div>
       </div>
