@@ -49,4 +49,12 @@ export const coaches: Coach[] = [
     experience: "",
     photoUrl: "/coach-rahul.jpeg",
   },
+  {
+    id: "karanveer",
+    name: "Karanveer",
+    role: "Coach",
+    credentials: "Specializes in technical training & mental agility",
+    experience: "13+ years of experience",
+    photoUrl: "/coach-karanveer.jpeg",
+  },
 ];
