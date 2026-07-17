@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 
 import {
   motion,
@@ -16,12 +16,33 @@ import { Container } from "@/components/shared/Container";
 import { MotionSection, MotionItem } from "@/components/shared/MotionSection";
 import { MagneticButton } from "@/components/shared/MagneticButton";
 
+// fastSeek (Safari/Firefox) is cheaper than setting currentTime, and the
+// all-intra encode makes it frame-accurate too.
+function seekTo(video: HTMLVideoElement, time: number) {
+  if (typeof video.fastSeek === "function") {
+    video.fastSeek(time);
+  } else {
+    video.currentTime = time;
+  }
+}
+
 export function HeroSection() {
   const containerRef = useRef<HTMLElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
   // Holds the latest scrub target while the browser finishes a pending seek
   const pendingSeekRef = useRef<number | null>(null);
   const prefersReducedMotion = useReducedMotion();
+
+  // Chrome ignores media= on <video><source>, so pick the encode in JS.
+  // null until mounted keeps SSR markup stable.
+  const [videoSrc, setVideoSrc] = useState<string | null>(null);
+  useEffect(() => {
+    setVideoSrc(
+      window.matchMedia("(max-width: 768px)").matches
+        ? "/hero-video-scrub-mobile.mp4"
+        : "/hero-video-scrub.mp4"
+    );
+  }, []);
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -64,9 +85,12 @@ export function HeroSection() {
     const target = p * video.duration;
     if (video.seeking) {
       pendingSeekRef.current = target;
-    } else {
-      video.currentTime = target;
+      return;
     }
+    // Sub-frame deltas can't change the displayed frame — skipping them
+    // stops seek-spam that overwhelms mobile decoders
+    if (Math.abs(target - video.currentTime) < 1 / 30) return;
+    seekTo(video, target);
   });
 
   useEffect(() => {
@@ -74,7 +98,7 @@ export function HeroSection() {
     if (!video) return;
     const onSeeked = () => {
       if (pendingSeekRef.current !== null) {
-        video.currentTime = pendingSeekRef.current;
+        seekTo(video, pendingSeekRef.current);
         pendingSeekRef.current = null;
       }
     };
@@ -108,15 +132,17 @@ export function HeroSection() {
           }
           className="absolute inset-0 z-0 overflow-hidden bg-brand-black"
         >
-          <motion.video
-            ref={videoRef}
-            style={animate ? { scale: videoZoom } : undefined}
-            src="/hero-video-scrub.mp4"
-            muted
-            playsInline
-            preload="auto"
-            className="w-full h-full object-cover object-center"
-          />
+          {videoSrc && (
+            <motion.video
+              ref={videoRef}
+              style={animate ? { scale: videoZoom } : undefined}
+              src={videoSrc}
+              muted
+              playsInline
+              preload="auto"
+              className="w-full h-full object-cover object-center"
+            />
+          )}
 
           {/* Legibility gradient — heavy while the headline is on screen */}
           <motion.div
