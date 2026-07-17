@@ -8,7 +8,7 @@ export const metadata = {
   description:
     "Registration, fee deposit, and scheduling policies for PowerMyTennis High Performance Academy in New Chandigarh.",
   alternates: {
-    canonical: "https://powermytennis.com/policies",
+    canonical: "https://www.powermytennis.com/policies",
   },
 };
 

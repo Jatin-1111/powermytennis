@@ -30,6 +30,8 @@ export const metadata: Metadata = {
   description:
     "Elite clay-court tennis training for aspiring players in New Chandigarh, Chandigarh, Kharar, Ropar & SAS Nagar. High-performance coaching from beginner to professional level.",
   keywords: [
+    "PowerMyTennis",
+    "power my tennis",
     "tennis academy New Chandigarh",
     "tennis coaching Chandigarh",
     "clay court tennis training",
@@ -37,7 +39,6 @@ export const metadata: Metadata = {
     "tennis training Punjab",
     "junior tennis coaching India",
     "professional tennis coaching",
-    "PowerMyTennis",
     "tennis lessons Kharar",
     "tennis academy SAS Nagar",
     "tennis academy Ropar",
@@ -85,6 +86,7 @@ export default function RootLayout({
         "@type": ["SportsActivityLocation", "LocalBusiness"],
         "@id": "https://www.powermytennis.com/#organization",
         name: siteConfig.name,
+        alternateName: "Power My Tennis",
         description: siteConfig.tagline,
         url: "https://www.powermytennis.com",
         telephone: `+91 ${siteConfig.phone}`,
@@ -118,9 +120,18 @@ export default function RootLayout({
         "@id": "https://www.powermytennis.com/#website",
         url: "https://www.powermytennis.com",
         name: "PowerMyTennis",
+        alternateName: "Power My Tennis",
         description: siteConfig.tagline,
         publisher: {
           "@id": "https://www.powermytennis.com/#organization",
+        },
+        potentialAction: {
+          "@type": "SearchAction",
+          target: {
+            "@type": "EntryPoint",
+            urlTemplate: "https://www.powermytennis.com/?q={search_term_string}",
+          },
+          "query-input": "required name=search_term_string",
         },
       },
     ],

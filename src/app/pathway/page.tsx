@@ -9,7 +9,7 @@ export const metadata = {
   description:
     "Explore the PowerMyTennis skill-based coaching pathway from Orange Ball beginners to High Performance tournament players.",
   alternates: {
-    canonical: "https://powermytennis.com/pathway",
+    canonical: "https://www.powermytennis.com/pathway",
   },
 };
 

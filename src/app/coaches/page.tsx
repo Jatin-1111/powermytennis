@@ -8,7 +8,7 @@ export const metadata = {
   description:
     "Meet our formidable coaching team with 80+ years of cumulative coaching experience. Expert tennis coaches in New Chandigarh, Punjab.",
   alternates: {
-    canonical: "https://powermytennis.com/coaches",
+    canonical: "https://www.powermytennis.com/coaches",
   },
 };
 

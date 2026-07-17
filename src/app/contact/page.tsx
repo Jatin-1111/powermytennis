@@ -9,7 +9,7 @@ export const metadata = {
   description:
     "Get in touch with PowerMyTennis Academy in New Chandigarh to book a free trial session or inquire about our tennis programs.",
   alternates: {
-    canonical: "https://powermytennis.com/contact",
+    canonical: "https://www.powermytennis.com/contact",
   },
 };
 

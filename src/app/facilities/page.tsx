@@ -10,7 +10,7 @@ export const metadata = {
   description:
     "Explore PowerMyTennis's state-of-the-art clay tennis courts and comprehensive performance reporting system in New Chandigarh.",
   alternates: {
-    canonical: "https://powermytennis.com/facilities",
+    canonical: "https://www.powermytennis.com/facilities",
   },
 };
 

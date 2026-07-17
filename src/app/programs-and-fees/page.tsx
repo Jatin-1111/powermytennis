@@ -10,7 +10,7 @@ export const metadata = {
   description:
     "View schedules, seat availability, and fee structures for all PowerMyTennis training programs — from Orange Ball to High Performance.",
   alternates: {
-    canonical: "https://powermytennis.com/programs-and-fees",
+    canonical: "https://www.powermytennis.com/programs-and-fees",
   },
 };
 

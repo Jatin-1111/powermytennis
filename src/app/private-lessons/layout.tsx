@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   description:
     "One-on-one high-performance tennis coaching and personalized training programs at PowerMyTennis Academy, New Chandigarh.",
   alternates: {
-    canonical: "https://powermytennis.com/private-lessons",
+    canonical: "https://www.powermytennis.com/private-lessons",
   },
 };
 
