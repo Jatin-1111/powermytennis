@@ -30,7 +30,7 @@ export const coaches: Coach[] = [
     name: "Navneet Chahal",
     role: "Coach",
     credentials: "Ex-Founder & Coach, Prime Tennis Academy, Bathinda",
-    experience: "",
+    experience: "7+ years of experience",
     photoUrl: "/coach-navneet.jpg",
   },
   {
