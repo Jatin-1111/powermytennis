@@ -25,10 +25,10 @@ export const metadata: Metadata = {
   title: {
     template: "%s | PowerMyTennis",
     default:
-      "PowerMyTennis High Performance Academy | Elite Tennis Training in New Chandigarh",
+      "PowerMyTennis High Performance Academy | Tennis Training in New Chandigarh",
   },
   description:
-    "Elite clay-court tennis training for aspiring players in New Chandigarh, Chandigarh, Kharar, Ropar & SAS Nagar. High-performance coaching from beginner to professional level.",
+    "Clay-court tennis training for aspiring players in New Chandigarh, Chandigarh, Kharar, Ropar & SAS Nagar. High-performance coaching from beginner to professional level.",
   keywords: [
     "PowerMyTennis",
     "power my tennis",
@@ -70,7 +70,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "PowerMyTennis High Performance Academy",
     description:
-      "Elite clay-court tennis training in New Chandigarh. High-performance coaching at every level.",
+      "Clay-court tennis training in New Chandigarh. High-performance coaching at every level.",
   },
 };
 
