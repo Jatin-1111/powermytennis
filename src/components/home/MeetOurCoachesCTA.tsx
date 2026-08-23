@@ -42,11 +42,11 @@ export function MeetOurCoachesCTA() {
 
         {/* Avatars — shown on all sizes, below title on mobile */}
         <div className="flex items-center mt-4 md:mt-0 md:flex-1 md:justify-center gap-3 md:gap-0">
-          <div className="flex items-center -space-x-3 md:-space-x-4">
-            {coaches.slice(0, 5).map((coach, i) => (
+          <div className="flex items-center -space-x-3 xl:-space-x-4">
+            {coaches.map((coach, i) => (
               <div
                 key={coach.id}
-                className="relative w-10 h-10 md:w-16 md:h-16 rounded-full border-2 border-brand-neutral/20 group-hover:border-brand-accent/40 overflow-hidden transition-all duration-500 shadow-md bg-brand-primary"
+                className="relative w-10 h-10 xl:w-16 xl:h-16 rounded-full border-2 border-brand-neutral/20 group-hover:border-brand-accent/40 overflow-hidden transition-all duration-500 shadow-md bg-brand-primary"
                 style={{ zIndex: coaches.length - i, transitionDelay: `${i * 40}ms` }}
               >
                 {coach.photoUrl ? (
@@ -66,13 +66,13 @@ export function MeetOurCoachesCTA() {
           </div>
 
           {/* Mobile: count label next to avatars */}
-          <span className="md:hidden text-xs font-bold uppercase tracking-widest text-brand-black/70 group-hover:text-brand-white/70 transition-colors duration-500">
+          <span className="lg:hidden text-xs font-bold uppercase tracking-widest text-brand-black/70 group-hover:text-brand-white/70 transition-colors duration-500">
             {coaches.length} Coaches
           </span>
 
           {/* Desktop: divider + name list */}
-          <div className="hidden md:block w-px h-10 bg-brand-neutral/20 group-hover:bg-brand-white/10 transition-colors duration-500 mx-8 shrink-0" />
-          <div className="hidden md:flex flex-col gap-0.5">
+          <div className="hidden lg:block w-px h-10 bg-brand-neutral/20 group-hover:bg-brand-white/10 transition-colors duration-500 mx-4 xl:mx-8 shrink-0" />
+          <div className="hidden lg:flex flex-col gap-0.5">
             {coaches.slice(0, 3).map((coach) => (
               <p key={coach.id} className="text-xs font-bold text-brand-black/50 group-hover:text-brand-white/50 transition-colors duration-500 uppercase tracking-wider whitespace-nowrap">
                 {coach.name.split(" ")[0]}{" "}

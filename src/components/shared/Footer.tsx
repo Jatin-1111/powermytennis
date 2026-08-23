@@ -216,19 +216,32 @@ export function Footer() {
         aria-hidden="true"
         role="presentation"
       >
-        <p
-          className="text-[14vw] font-black uppercase tracking-tighter leading-none"
-          style={{
-            backgroundImage:
-              "linear-gradient(to bottom, rgba(255,255,255,0.07), rgba(255,255,255,0.03))",
-            WebkitBackgroundClip: "text",
-            WebkitTextFillColor: "transparent",
-            backgroundClip: "text",
-            color: "transparent",
-          }}
+        {/* textLength pins the wordmark to the viewBox width, so it spans the
+            full width at every breakpoint instead of overflowing and clipping */}
+        <svg
+          viewBox="0 0 1000 96"
+          className="w-full block"
+          preserveAspectRatio="xMidYMid meet"
         >
-          PowerMyTennis
-        </p>
+          <defs>
+            <linearGradient id="footer-wordmark" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stopColor="rgba(255,255,255,0.07)" />
+              <stop offset="100%" stopColor="rgba(255,255,255,0.03)" />
+            </linearGradient>
+          </defs>
+          <text
+            x="500"
+            y="90"
+            textAnchor="middle"
+            textLength="1000"
+            lengthAdjust="spacingAndGlyphs"
+            fontSize="120"
+            className="font-black uppercase"
+            fill="url(#footer-wordmark)"
+          >
+            PowerMyTennis
+          </text>
+        </svg>
       </div>
 
       {/* Bottom Bar */}
