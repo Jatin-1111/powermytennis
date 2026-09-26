@@ -6,16 +6,15 @@ import { QuickLinks } from "@/components/home/QuickLinks";
 import { TestimonialMarquee } from "@/components/home/TestimonialMarquee";
 import { MeetOurCoachesCTA } from "@/components/home/MeetOurCoachesCTA";
 import { TrialCTA } from "@/components/home/TrialCTA";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title:
-    "PowerMyTennis High Performance Academy | Tennis Training in New Chandigarh",
+export const metadata: Metadata = pageMetadata({
+  title: "PowerMyTennis | Clay-Court Tennis Academy in New Chandigarh",
   description:
-    "Power My Tennis is New Chandigarh's premier clay-court tennis academy. PowerMyTennis offers expert coaching for juniors and adults across all levels. Book a free trial session today.",
-  alternates: {
-    canonical: "https://www.powermytennis.com",
-  },
-};
+    "PowerMyTennis (Power My Tennis) is a high-performance clay-court tennis academy in New Chandigarh, near Chandigarh, Kharar, Mohali & Ropar. Expert coaching for juniors and adults. Book a free trial.",
+  path: "",
+  absoluteTitle: true,
+});
 
 export default function Home() {
   return (

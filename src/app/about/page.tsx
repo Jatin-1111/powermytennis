@@ -1,19 +1,21 @@
 import { AcademyStory } from "@/components/about/AcademyStory";
 import { LocationAccessibility } from "@/components/about/LocationAccessibility";
 import { MotionSection, MotionItem } from "@/components/shared/MotionSection";
+import type { Metadata } from "next";
+import { JsonLd } from "@/components/shared/JsonLd";
+import { breadcrumbJsonLd, pageMetadata } from "@/lib/seo";
 
-export const metadata = {
-  title: "About The Academy",
+export const metadata: Metadata = pageMetadata({
+  title: "About Our Tennis Academy in New Chandigarh",
   description:
-    "Learn about the vision, coaching philosophy, and location of PowerMyTennis High Performance Academy in New Chandigarh.",
-  alternates: {
-    canonical: "https://www.powermytennis.com/about",
-  },
-};
+    "The vision, coaching philosophy and location of PowerMyTennis High Performance Academy — a clay-court tennis academy in New Chandigarh, easily reached from Chandigarh, Kharar, Ropar and Mohali (SAS Nagar).",
+  path: "/about",
+});
 
 export default function AboutPage() {
   return (
     <main className="min-h-screen bg-brand-white">
+      <JsonLd data={breadcrumbJsonLd("About", "/about")} />
       {/* Dark Premium Header */}
       <div className="bg-brand-primary py-32 text-center relative overflow-hidden border-b border-brand-accent/20">
         <div

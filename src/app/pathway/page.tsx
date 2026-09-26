@@ -3,19 +3,21 @@ import { SectionHeading } from "@/components/shared/SectionHeading";
 import { Button } from "@/components/shared/Button";
 import { PathwayChart } from "@/components/pathway/PathwayChart";
 import { MotionSection, MotionItem } from "@/components/shared/MotionSection";
+import type { Metadata } from "next";
+import { JsonLd } from "@/components/shared/JsonLd";
+import { breadcrumbJsonLd, pageMetadata } from "@/lib/seo";
 
-export const metadata = {
-  title: "Coaching Pathway",
+export const metadata: Metadata = pageMetadata({
+  title: "Tennis Pathway: Orange Ball to High Performance",
   description:
-    "Explore the PowerMyTennis skill-based coaching pathway from Orange Ball beginners to High Performance tournament players.",
-  alternates: {
-    canonical: "https://www.powermytennis.com/pathway",
-  },
-};
+    "Follow the PowerMyTennis skill-based coaching pathway — Orange Ball, Beginner, Intermediate, Tournament, Pro and High Performance — built for junior tennis players in New Chandigarh.",
+  path: "/pathway",
+});
 
 export default function PathwayPage() {
   return (
     <main className="min-h-screen bg-brand-white pb-24">
+      <JsonLd data={breadcrumbJsonLd("Coaching Pathway", "/pathway")} />
       {/* Dark Premium Header */}
       <div className="bg-brand-primary py-32 text-center relative overflow-hidden border-b border-brand-accent/20">
         <div

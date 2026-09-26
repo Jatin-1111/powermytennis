@@ -2,19 +2,49 @@ import { Container } from "@/components/shared/Container";
 import { SectionHeading } from "@/components/shared/SectionHeading";
 import { CoachGrid } from "@/components/coaches/CoachGrid";
 import { MotionSection, MotionItem } from "@/components/shared/MotionSection";
+import type { Metadata } from "next";
+import { JsonLd } from "@/components/shared/JsonLd";
+import {
+  SITE_URL,
+  breadcrumbJsonLd,
+  organizationRef,
+  pageMetadata,
+} from "@/lib/seo";
+import { coaches } from "@/data/coaches";
 
-export const metadata = {
-  title: "Coaching Team",
+export const metadata: Metadata = pageMetadata({
+  title: "Tennis Coaches in New Chandigarh",
   description:
-    "Meet our formidable coaching team with 80+ years of cumulative coaching experience. Expert tennis coaches in New Chandigarh, Punjab.",
-  alternates: {
-    canonical: "https://www.powermytennis.com/coaches",
-  },
-};
+    "Meet the PowerMyTennis coaching team — 80+ years of combined experience, led by ITF Level 2 & NIS coach Yengkhom Romen Singh and AITA Level 4 coach Mayank Valecha. Expert tennis coaching in New Chandigarh, Punjab.",
+  path: "/coaches",
+});
 
 export default function CoachesPage() {
   return (
     <main className="min-h-screen bg-brand-white pb-24">
+      <JsonLd
+        data={[
+          breadcrumbJsonLd("Coaches", "/coaches"),
+          {
+            "@context": "https://schema.org",
+            "@type": "ItemList",
+            name: "PowerMyTennis Coaching Team",
+            itemListElement: coaches.map((coach, i) => ({
+              "@type": "ListItem",
+              position: i + 1,
+              item: {
+                "@type": "Person",
+                "@id": `${SITE_URL}/coaches#${coach.id}`,
+                name: coach.name,
+                jobTitle: coach.role,
+                ...(coach.credentials && { description: coach.credentials }),
+                ...(coach.photoUrl && { image: `${SITE_URL}${coach.photoUrl}` }),
+                worksFor: organizationRef,
+              },
+            })),
+          },
+        ]}
+      />
       {/* Dark Premium Header */}
       <div className="bg-brand-primary py-32 text-center relative overflow-hidden border-b border-brand-accent/20">
         <div

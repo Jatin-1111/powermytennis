@@ -2,19 +2,21 @@ import { Container } from "@/components/shared/Container";
 import { SectionHeading } from "@/components/shared/SectionHeading";
 import { policies, privateLessons } from "@/data/programs";
 import { MotionSection, MotionItem } from "@/components/shared/MotionSection";
+import type { Metadata } from "next";
+import { JsonLd } from "@/components/shared/JsonLd";
+import { breadcrumbJsonLd, pageMetadata } from "@/lib/seo";
 
-export const metadata = {
-  title: "Policies",
+export const metadata: Metadata = pageMetadata({
+  title: "Academy Policies, Registration & Fee Deposit",
   description:
-    "Registration, fee deposit, and scheduling policies for PowerMyTennis High Performance Academy in New Chandigarh.",
-  alternates: {
-    canonical: "https://www.powermytennis.com/policies",
-  },
-};
+    "Registration fee, quarterly fee deposit, sibling discount and scheduling policies for PowerMyTennis High Performance Academy in New Chandigarh.",
+  path: "/policies",
+});
 
 export default function PoliciesPage() {
   return (
     <main className="min-h-screen bg-brand-white pb-24">
+      <JsonLd data={breadcrumbJsonLd("Policies", "/policies")} />
       {/* Dark Premium Header */}
       <div className="bg-brand-primary py-32 text-center relative overflow-hidden border-b border-brand-accent/20">
         <div

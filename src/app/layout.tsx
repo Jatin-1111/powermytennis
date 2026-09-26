@@ -6,6 +6,8 @@ import { Navbar } from "@/components/shared/Navbar";
 import { Footer } from "@/components/shared/Footer";
 import { ComingSoon } from "@/components/shared/ComingSoon";
 import { MotionProvider } from "@/components/shared/MotionProvider";
+import { JsonLd } from "@/components/shared/JsonLd";
+import { ORGANIZATION_ID, SITE_URL } from "@/lib/seo";
 import "./globals.css";
 
 const inter = Inter({
@@ -21,7 +23,8 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.powermytennis.com"),
+  metadataBase: new URL(SITE_URL),
+  applicationName: "PowerMyTennis",
   title: {
     template: "%s | PowerMyTennis",
     default:
@@ -42,10 +45,16 @@ export const metadata: Metadata = {
     "tennis lessons Kharar",
     "tennis academy SAS Nagar",
     "tennis academy Ropar",
+    "tennis academy Mohali",
+    "tennis coaching near me",
+    "private tennis lessons Chandigarh",
+    "kids tennis classes New Chandigarh",
   ],
   authors: [{ name: "PowerMyTennis High Performance Academy" }],
   creator: "PowerMyTennis",
   publisher: "PowerMyTennis",
+  category: "sports",
+  formatDetection: { telephone: false, email: false, address: false },
   robots: {
     index: true,
     follow: true,
@@ -61,7 +70,7 @@ export const metadata: Metadata = {
     title: "PowerMyTennis High Performance Academy",
     description:
       "Elite clay-court tennis training in New Chandigarh. High-performance coaching at every level — from beginners to tournament players.",
-    url: "https://www.powermytennis.com",
+    url: SITE_URL,
     siteName: "PowerMyTennis",
     locale: "en_IN",
     type: "website",
@@ -84,11 +93,11 @@ export default function RootLayout({
     "@graph": [
       {
         "@type": ["SportsActivityLocation", "LocalBusiness"],
-        "@id": "https://www.powermytennis.com/#organization",
+        "@id": ORGANIZATION_ID,
         name: siteConfig.name,
         alternateName: "Power My Tennis",
         description: siteConfig.tagline,
-        url: "https://www.powermytennis.com",
+        url: SITE_URL,
         telephone: `+91 ${siteConfig.phone}`,
         email: siteConfig.email,
         address: {
@@ -103,10 +112,24 @@ export default function RootLayout({
           longitude: siteConfig.address.coordinates.lng,
         },
         sport: "Tennis",
-        image: "https://www.powermytennis.com/powermytennis-logo.jpeg",
+        image: [
+          `${SITE_URL}/powermytennis-logo.jpeg`,
+          `${SITE_URL}/hero-clay-court.png`,
+        ],
         logo: {
           "@type": "ImageObject",
-          url: "https://www.powermytennis.com/powermytennis-logo.jpeg",
+          url: `${SITE_URL}/powermytennis-logo.jpeg`,
+        },
+        sameAs: [
+          "https://instagram.com/powermytennis",
+          "https://facebook.com/powermytennis",
+        ],
+        contactPoint: {
+          "@type": "ContactPoint",
+          telephone: `+91 ${siteConfig.phone}`,
+          email: siteConfig.email,
+          contactType: "customer service",
+          areaServed: "IN",
         },
         areaServed: siteConfig.address.accessibleFrom.map((city) => ({
           "@type": "City",
@@ -117,21 +140,14 @@ export default function RootLayout({
       },
       {
         "@type": "WebSite",
-        "@id": "https://www.powermytennis.com/#website",
-        url: "https://www.powermytennis.com",
+        "@id": `${SITE_URL}/#website`,
+        url: SITE_URL,
         name: "PowerMyTennis",
-        alternateName: "Power My Tennis",
+        alternateName: ["Power My Tennis", "PowerMyTennis Academy"],
         description: siteConfig.tagline,
+        inLanguage: "en-IN",
         publisher: {
-          "@id": "https://www.powermytennis.com/#organization",
-        },
-        potentialAction: {
-          "@type": "SearchAction",
-          target: {
-            "@type": "EntryPoint",
-            urlTemplate: "https://www.powermytennis.com/?q={search_term_string}",
-          },
-          "query-input": "required name=search_term_string",
+          "@id": ORGANIZATION_ID,
         },
       },
     ],
@@ -154,10 +170,7 @@ export default function RootLayout({
       <head />
       <body className="min-h-full flex flex-col">
         {/* Inject JSON-LD Schema */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        <JsonLd data={jsonLd} />
 
         <MotionProvider>
           <Navbar />

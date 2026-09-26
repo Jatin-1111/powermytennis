@@ -4,15 +4,24 @@ import { programs } from "@/data/programs";
 import { ProgramCard } from "@/components/programs/ProgramCard";
 import { DiscountCallout } from "@/components/programs/DiscountCallout";
 import { MotionSection, MotionItem } from "@/components/shared/MotionSection";
+import type { Metadata } from "next";
+import { JsonLd } from "@/components/shared/JsonLd";
+import {
+  SITE_URL,
+  breadcrumbJsonLd,
+  organizationRef,
+  pageMetadata,
+} from "@/lib/seo";
 
-export const metadata = {
-  title: "Programs & Fees",
+const toTitleCase = (s: string) =>
+  s.toLowerCase().replace(/\b\w/g, (c) => c.toUpperCase());
+
+export const metadata: Metadata = pageMetadata({
+  title: "Tennis Programs, Batch Timings & Fees",
   description:
-    "View schedules, seat availability, and fee structures for all PowerMyTennis training programs — from Orange Ball to High Performance.",
-  alternates: {
-    canonical: "https://www.powermytennis.com/programs-and-fees",
-  },
-};
+    "Tennis training programs in New Chandigarh from ₹4,500/month — Orange Ball, Beginner, Intermediate, Tournament, Pro and High Performance. See batch timings, seats and fees, plus a 20% sibling discount.",
+  path: "/programs-and-fees",
+});
 
 export default function ProgramsAndFeesPage() {
   // The flagship program gets a featured hero slot
@@ -178,23 +187,33 @@ export default function ProgramsAndFeesPage() {
           </MotionSection>
         </div>
       </Container>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(
-            programs.map((p) => ({
-              "@context": "https://schema.org",
-              "@type": "Course",
-              name: p.name,
-              description: `High performance tennis training program: ${p.name}`,
-              provider: {
-                "@type": "Organization",
-                name: "PowerMyTennis High Performance Academy",
-                sameAs: "https://powermytennis.com",
-              },
-            })),
-          ),
-        }}
+      <JsonLd
+        data={[
+          breadcrumbJsonLd("Programs & Fees", "/programs-and-fees"),
+          ...programs.map((p) => ({
+            "@context": "https://schema.org",
+            "@type": "Course",
+            "@id": `${SITE_URL}/programs-and-fees#${p.id}`,
+            name: `${toTitleCase(p.name)} Tennis Program`,
+            description: `${toTitleCase(p.name)} tennis training program at PowerMyTennis High Performance Academy, New Chandigarh. ${p.seats} seats, ₹${p.fee.toLocaleString("en-IN")} ${p.feeFrequency}.`,
+            url: `${SITE_URL}/programs-and-fees`,
+            inLanguage: "en",
+            provider: organizationRef,
+            offers: {
+              "@type": "Offer",
+              category: "Paid",
+              price: p.fee,
+              priceCurrency: "INR",
+              availability: "https://schema.org/InStock",
+              url: `${SITE_URL}/programs-and-fees`,
+            },
+            hasCourseInstance: {
+              "@type": "CourseInstance",
+              courseMode: "Onsite",
+              location: organizationRef,
+            },
+          })),
+        ]}
       />
     </main>
   );

@@ -4,19 +4,21 @@ import { SectionHeading } from "@/components/shared/SectionHeading";
 import { FacilityIconGrid } from "@/components/facilities/FacilityIconGrid";
 import { PerformanceReportsSection } from "@/components/facilities/PerformanceReportsSection";
 import { MotionSection, MotionItem } from "@/components/shared/MotionSection";
+import type { Metadata } from "next";
+import { JsonLd } from "@/components/shared/JsonLd";
+import { breadcrumbJsonLd, pageMetadata } from "@/lib/seo";
 
-export const metadata = {
-  title: "Facilities",
+export const metadata: Metadata = pageMetadata({
+  title: "Clay Tennis Courts & Facilities, New Chandigarh",
   description:
-    "Explore PowerMyTennis's state-of-the-art clay tennis courts and comprehensive performance reporting system in New Chandigarh.",
-  alternates: {
-    canonical: "https://www.powermytennis.com/facilities",
-  },
-};
+    "Floodlit clay tennis courts, mini courts for young players, a gym for fitness sessions and detailed player performance reports at PowerMyTennis Academy, New Chandigarh.",
+  path: "/facilities",
+});
 
 export default function FacilitiesPage() {
   return (
     <main className="min-h-screen bg-brand-white pb-24">
+      <JsonLd data={breadcrumbJsonLd("Facilities", "/facilities")} />
       {/* Dark Premium Header */}
       <div className="bg-brand-primary py-32 text-center relative overflow-hidden border-b border-brand-accent/20">
         <div

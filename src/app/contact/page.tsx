@@ -3,15 +3,16 @@ import { Container } from "@/components/shared/Container";
 import { ContactForm } from "@/components/contact/ContactForm";
 import { MapEmbed } from "@/components/contact/MapEmbed";
 import { siteConfig } from "@/data/siteConfig";
+import type { Metadata } from "next";
+import { JsonLd } from "@/components/shared/JsonLd";
+import { breadcrumbJsonLd, pageMetadata } from "@/lib/seo";
 
-export const metadata = {
-  title: "Contact Us",
+export const metadata: Metadata = pageMetadata({
+  title: "Contact Us & Book a Free Tennis Trial",
   description:
-    "Get in touch with PowerMyTennis Academy in New Chandigarh to book a free trial session or inquire about our tennis programs.",
-  alternates: {
-    canonical: "https://www.powermytennis.com/contact",
-  },
-};
+    "Contact PowerMyTennis Academy in New Chandigarh to book a free trial tennis session or ask about programs, fees and batch timings. Call or WhatsApp +91 86992 12962.",
+  path: "/contact",
+});
 
 export default function ContactPage() {
   const formattedPhone = siteConfig.phone.replace(/\s+/g, "");
@@ -19,6 +20,7 @@ export default function ContactPage() {
 
   return (
     <main className="min-h-screen bg-brand-white pb-24">
+      <JsonLd data={breadcrumbJsonLd("Contact", "/contact")} />
       {/* Dark Premium Header */}
       <div className="bg-brand-primary py-32 text-center relative overflow-hidden border-b border-brand-accent/20">
         <div
