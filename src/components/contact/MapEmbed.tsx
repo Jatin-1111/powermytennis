@@ -14,11 +14,11 @@ export function MapEmbed() {
       <div className="bg-brand-neutral/5 border-b border-brand-neutral/20 px-6 py-3 flex items-center justify-between relative z-10">
         <div className="flex items-center gap-3">
           <div className="w-2 h-2 rounded-full bg-brand-accent animate-pulse" />
-          <span className="text-[10px] font-black uppercase tracking-[0.2em] text-brand-primary">
+          <span className="text-xs font-black uppercase tracking-[0.2em] text-brand-primary">
             Academy Location
           </span>
         </div>
-        <div className="text-[10px] font-bold tracking-widest text-brand-black/65 font-mono">
+        <div className="text-xs font-bold tracking-widest text-brand-black/65 font-mono">
           {lat.toFixed(4)}° N, {lng.toFixed(4)}° E
         </div>
       </div>

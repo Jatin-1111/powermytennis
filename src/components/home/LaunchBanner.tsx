@@ -7,10 +7,10 @@ export function LaunchBanner() {
         Now Enrolling &nbsp;·&nbsp; Admissions Open for All Levels
         &nbsp;&mdash;&nbsp;{" "}
         <Link
-          href="/contact"
-          className="underline underline-offset-2 hover:text-brand-accent transition-colors"
+          href="#book-trial"
+          className="inline-block py-2 -my-2 underline underline-offset-2 hover:text-brand-accent transition-colors"
         >
-          Book Your Free Trial →
+          Book a Free Trial →
         </Link>
       </p>
     </div>

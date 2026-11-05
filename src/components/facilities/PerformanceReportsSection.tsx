@@ -51,7 +51,7 @@ function ReportPanel({
     >
       {/* Panel header */}
       <div className="px-7 pt-7 pb-5 border-b border-brand-white/10">
-        <div className="text-xs font-black text-brand-white/30 uppercase tracking-[0.25em] mb-2">
+        <div className="text-xs font-black text-brand-white/65 uppercase tracking-[0.25em] mb-2">
           {subtitle}
         </div>
         <h3 className="text-h3 font-black uppercase text-brand-white tracking-tight">
@@ -82,7 +82,7 @@ function ReportPanel({
               <div className="text-base font-bold text-brand-white leading-snug group-hover/item:text-brand-accent transition-colors duration-200">
                 {item.label}
               </div>
-              <div className="text-xs font-medium text-brand-white/35 mt-0.5 leading-relaxed">
+              <div className="text-xs font-medium text-brand-white/65 mt-0.5 leading-relaxed">
                 {item.detail}
               </div>
             </div>

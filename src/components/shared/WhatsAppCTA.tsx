@@ -18,7 +18,7 @@ export function WhatsAppCTA() {
       whileInView="show"
       viewport={{ once: true, margin: "0px" }}
       className="fixed bottom-6 right-6 z-50 group flex items-center bg-brand-accent text-brand-primary rounded-full overflow-hidden cursor-pointer shadow-[0_4px_20px_rgba(198,217,43,0.35),0_0_0_4px_rgba(198,217,43,0.15)] hover:shadow-[0_6px_28px_rgba(198,217,43,0.45),0_0_0_6px_rgba(198,217,43,0.2)] transition-shadow duration-300 md:bottom-8 md:right-8"
-      aria-label="Contact on WhatsApp"
+      aria-label="Chat with us on WhatsApp"
     >
       {/* Icon — always visible */}
       <div className="w-14 h-14 md:w-16 md:h-16 flex items-center justify-center shrink-0">
@@ -33,7 +33,7 @@ export function WhatsAppCTA() {
       </div>
 
       {/* Label — hidden by default, slides in on hover */}
-      <span className="text-xs font-black uppercase tracking-widest whitespace-nowrap pr-5 max-w-0 opacity-0 group-hover:max-w-xs group-hover:opacity-100 transition-all duration-300 ease-out">
+      <span className="text-xs font-black uppercase tracking-widest whitespace-nowrap pr-5 max-w-0 opacity-0 group-hover:max-w-xs group-hover:opacity-100 group-focus-visible:max-w-xs group-focus-visible:opacity-100 transition-all duration-300 ease-out">
         Chat with us
       </span>
     </motion.a>

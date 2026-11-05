@@ -6,6 +6,7 @@ import { Navbar } from "@/components/shared/Navbar";
 import { Footer } from "@/components/shared/Footer";
 import { ComingSoon } from "@/components/shared/ComingSoon";
 import { MotionProvider } from "@/components/shared/MotionProvider";
+import { SmoothScroll } from "@/components/shared/SmoothScroll";
 import { JsonLd } from "@/components/shared/JsonLd";
 import { ORGANIZATION_ID, SITE_URL } from "@/lib/seo";
 import "./globals.css";
@@ -166,13 +167,21 @@ export default function RootLayout({
   }
 
   return (
-    <html lang="en" className={`${inter.variable} ${outfit.variable} h-full antialiased font-sans`}>
-      <head />
+    <html
+      lang="en"
+      className={`${inter.variable} ${outfit.variable} h-full antialiased font-sans`}
+      suppressHydrationWarning
+    >
+      <head>
+        {/* Marks JS as available before paint so the hero can pre-hide its intro elements */}
+        <script dangerouslySetInnerHTML={{ __html: "document.documentElement.classList.add('js')" }} />
+      </head>
       <body className="min-h-full flex flex-col">
         {/* Inject JSON-LD Schema */}
         <JsonLd data={jsonLd} />
 
         <MotionProvider>
+          <SmoothScroll />
           <Navbar />
 
           <div className="flex-1">{children}</div>

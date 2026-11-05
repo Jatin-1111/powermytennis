@@ -6,6 +6,8 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Button } from "./Button";
 import { motion, AnimatePresence } from "framer-motion";
+import { siteConfig } from "@/data/siteConfig";
+import { FREE_TRIAL, contactHref } from "@/lib/inquiry";
 
 const NAV_LINKS = [
   { name: "About", href: "/about" },
@@ -33,6 +35,16 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Escape closes the mobile menu
+  useEffect(() => {
+    if (!isOpen) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setIsOpen(false);
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [isOpen]);
+
   // If on home page and at the top, push navbar down to clear the LaunchBanner
   const topPositionClass =
     isHome && !isScrolled ? "top-[60px] md:top-[64px]" : "top-4 md:top-6";
@@ -47,6 +59,7 @@ export function Navbar() {
           href="/"
           className="flex items-center gap-3 shrink-0 py-2"
           onClick={closeMenu}
+          aria-label="PowerMyTennis home"
         >
           <div className="relative h-14 md:h-20 flex items-center hover:scale-105 transition-transform duration-300 origin-left">
             <Image
@@ -61,13 +74,14 @@ export function Navbar() {
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden lg:flex items-center lg:gap-1 xl:gap-2">
+        <nav aria-label="Main" className="hidden lg:flex items-center lg:gap-1 xl:gap-2">
           {NAV_LINKS.map((link) => {
             const isActive = pathname === link.href;
             return (
               <Link
                 key={link.name}
                 href={link.href}
+                aria-current={isActive ? "page" : undefined}
                 className={`relative lg:px-3 xl:px-4 py-2 text-xs font-black uppercase tracking-widest rounded-full transition-all duration-300 ${
                   isActive
                     ? "bg-brand-primary text-brand-white shadow-md"
@@ -84,19 +98,20 @@ export function Navbar() {
         <div className="flex items-center gap-3 shrink-0">
           <div className="hidden md:block">
             <Button
-              href="/contact"
+              href={contactHref(FREE_TRIAL)}
               variant="primary"
-              className="lg:px-4 xl:px-6 py-2.5 text-xs tracking-widest uppercase font-black shadow-md border border-brand-neutral/10 rounded-full"
+              className="px-5 lg:px-4 xl:px-6 py-2.5 text-xs tracking-widest uppercase font-black shadow-md border border-brand-neutral/10 rounded-full whitespace-nowrap"
             >
-              Contact Us
+              Free Trial
             </Button>
           </div>
 
           <button
             type="button"
-            className="lg:hidden inline-flex items-center justify-center p-2 rounded-full text-brand-primary hover:bg-brand-neutral/10 focus:outline-none transition-colors"
+            className="lg:hidden inline-flex items-center justify-center w-11 h-11 rounded-full text-brand-primary hover:bg-brand-neutral/10 transition-colors"
             onClick={() => setIsOpen(!isOpen)}
             aria-expanded={isOpen}
+            aria-controls="mobile-menu"
           >
             <span className="sr-only">
               {isOpen ? "Close main menu" : "Open main menu"}
@@ -119,7 +134,9 @@ export function Navbar() {
       {/* Floating Mobile Menu Panel */}
       <AnimatePresence>
         {isOpen && (
-          <motion.div
+          <motion.nav
+            id="mobile-menu"
+            aria-label="Main"
             initial={{ opacity: 0, y: -16, scale: 0.97 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -12, scale: 0.97 }}
@@ -141,6 +158,7 @@ export function Navbar() {
                   >
                     <Link
                       href={link.href}
+                      aria-current={isActive ? "page" : undefined}
                       className={`flex items-center gap-4 px-4 py-4 rounded-xl text-sm font-black uppercase tracking-widest transition-all duration-200 group ${
                         isActive
                           ? "bg-brand-primary text-brand-white shadow-md"
@@ -172,16 +190,31 @@ export function Navbar() {
                 transition={{ delay: NAV_LINKS.length * 0.06 + 0.05, type: "spring", stiffness: 280, damping: 24 }}
               >
                 <Button
-                  href="/contact"
+                  href={contactHref(FREE_TRIAL)}
                   variant="primary"
                   className="w-full text-center py-4 rounded-xl text-sm tracking-widest font-black uppercase shadow-lg"
                   onClick={closeMenu}
                 >
-                  Contact Us
+                  Book a Free Trial
                 </Button>
+                <div className="mt-3 grid grid-cols-2 gap-2 text-center text-xs font-black uppercase tracking-widest">
+                  <a
+                    href={`tel:+91${siteConfig.phone.replace(/\s+/g, "")}`}
+                    className="flex items-center justify-center min-h-11 rounded-xl border border-brand-neutral/40 text-brand-primary"
+                  >
+                    Call Us
+                  </a>
+                  <Link
+                    href="/contact"
+                    onClick={closeMenu}
+                    className="flex items-center justify-center min-h-11 rounded-xl border border-brand-neutral/40 text-brand-primary"
+                  >
+                    Contact
+                  </Link>
+                </div>
               </motion.div>
             </div>
-          </motion.div>
+          </motion.nav>
         )}
       </AnimatePresence>
     </header>

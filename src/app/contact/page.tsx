@@ -22,7 +22,7 @@ export default function ContactPage() {
     <main className="min-h-screen bg-brand-white pb-24">
       <JsonLd data={breadcrumbJsonLd("Contact", "/contact")} />
       {/* Dark Premium Header */}
-      <div className="bg-brand-primary py-32 text-center relative overflow-hidden border-b border-brand-accent/20">
+      <div className="bg-brand-primary pt-36 pb-16 md:py-32 text-center relative overflow-hidden border-b border-brand-accent/20">
         <div
           className="absolute inset-0 overflow-hidden pointer-events-none opacity-10"
           style={{
@@ -42,9 +42,9 @@ export default function ContactPage() {
           <h1 className="text-hero font-black uppercase tracking-tight text-brand-white mb-6 drop-shadow-lg">
             Get In Touch
           </h1>
-          <p className="text-brand-white/60 font-medium text-lg max-w-xl mx-auto text-pretty">
-            Reach out to our expert team to build a smart and realistic plan for
-            your child.
+          <p className="text-brand-white/75 font-medium text-lg max-w-xl mx-auto text-pretty">
+            Book a free trial or ask us anything about programs, fees and
+            timings. We call back within 24 hours.
           </p>
         </div>
       </div>
@@ -53,28 +53,31 @@ export default function ContactPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 lg:gap-16 items-start mt-4">
           <div className="order-2 lg:order-1 flex flex-col h-full gap-6">
             {/* Contact Info Card: Call Us */}
-            <div className="group relative bg-brand-white border border-brand-neutral/20 rounded-2xl p-8 hover:-translate-y-1 hover:border-brand-accent transition-all duration-300 shadow-sm hover:shadow-md cursor-default flex flex-col sm:flex-row gap-6 items-center sm:items-start justify-between">
+            <div className="group relative bg-brand-white border border-brand-neutral/20 rounded-2xl p-8 transition-colors duration-300 shadow-sm flex flex-col sm:flex-row gap-6 items-center sm:items-start justify-between">
               {/* Active Edge Indicator */}
               <div className="absolute left-0 top-0 bottom-0 w-[4px] bg-brand-accent rounded-l-2xl scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-center" />
 
               <div className="text-center sm:text-left flex-1 pl-2">
                 <div className="flex items-center justify-center sm:justify-start gap-2 mb-3">
                   <div className="w-2 h-2 rounded-sm bg-brand-accent/30 group-hover:bg-brand-accent transition-colors duration-300" />
-                  <span className="text-[10px] font-black tracking-[0.25em] uppercase text-brand-black/70 group-hover:text-brand-primary transition-colors">
-                    CONTACT : PHONE
+                  <span className="text-xs font-black tracking-[0.2em] uppercase text-brand-black/70">
+                    Phone &amp; WhatsApp
                   </span>
                 </div>
                 <h2 className="font-black text-brand-primary uppercase tracking-widest text-h3 mb-1">
                   Call Us
                 </h2>
-                <p className="text-brand-black/70 text-body-lg font-medium tracking-wide font-mono">
-                  {siteConfig.phone}
-                </p>
+                <a
+                  href={`tel:+91${formattedPhone}`}
+                  className="text-brand-black/80 text-body-lg font-medium tracking-wide font-mono hover:underline underline-offset-4"
+                >
+                  +91 {siteConfig.phone}
+                </a>
               </div>
               <div className="flex gap-4">
                 <a
                   href={`tel:+91${formattedPhone}`}
-                  aria-label="Call Us"
+                  aria-label={`Call +91 ${siteConfig.phone}`}
                   className="w-14 h-14 rounded-xl bg-brand-primary text-brand-white flex items-center justify-center hover:bg-brand-accent hover:text-brand-primary transition-all duration-300 shadow-sm hover:scale-105"
                 >
                   <svg
@@ -95,7 +98,7 @@ export default function ContactPage() {
                   href={whatsappUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="WhatsApp Us"
+                  aria-label="Chat on WhatsApp"
                   className="w-14 h-14 rounded-xl bg-brand-accent text-brand-primary flex items-center justify-center hover:bg-[#b0c426] transition-all duration-300 shadow-sm hover:scale-105"
                 >
                   <svg
@@ -110,28 +113,31 @@ export default function ContactPage() {
             </div>
 
             {/* Contact Info Card: Email Us */}
-            <div className="group relative bg-brand-white border border-brand-neutral/20 rounded-2xl p-8 hover:-translate-y-1 hover:border-brand-accent transition-all duration-300 shadow-sm hover:shadow-md cursor-default flex flex-col sm:flex-row gap-6 items-center sm:items-start justify-between">
+            <div className="group relative bg-brand-white border border-brand-neutral/20 rounded-2xl p-8 transition-colors duration-300 shadow-sm flex flex-col sm:flex-row gap-6 items-center sm:items-start justify-between">
               {/* Active Edge Indicator */}
               <div className="absolute left-0 top-0 bottom-0 w-[4px] bg-brand-accent rounded-l-2xl scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-center" />
 
               <div className="text-center sm:text-left flex-1 pl-2">
                 <div className="flex items-center justify-center sm:justify-start gap-2 mb-3">
                   <div className="w-2 h-2 rounded-sm bg-brand-accent/30 group-hover:bg-brand-accent transition-colors duration-300" />
-                  <span className="text-[10px] font-black tracking-[0.25em] uppercase text-brand-black/70 group-hover:text-brand-primary transition-colors">
-                    CONTACT : EMAIL
+                  <span className="text-xs font-black tracking-[0.2em] uppercase text-brand-black/70">
+                    Email
                   </span>
                 </div>
                 <h2 className="font-black text-brand-primary uppercase tracking-widest text-h3 mb-1">
                   Email Us
                 </h2>
-                <p className="text-brand-black/70 text-body-lg font-medium tracking-wide font-mono">
+                <a
+                  href={`mailto:${siteConfig.email}`}
+                  className="text-brand-black/80 text-body-lg font-medium tracking-wide font-mono hover:underline underline-offset-4 break-all"
+                >
                   {siteConfig.email}
-                </p>
+                </a>
               </div>
               <div className="flex gap-4">
                 <a
                   href={`mailto:${siteConfig.email}`}
-                  aria-label="Email Us"
+                  aria-label={`Email ${siteConfig.email}`}
                   className="w-14 h-14 rounded-xl bg-brand-primary text-brand-white flex items-center justify-center hover:bg-brand-accent hover:text-brand-primary transition-all duration-300 shadow-sm hover:scale-105"
                 >
                   <svg

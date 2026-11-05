@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { siteConfig } from "@/data/siteConfig";
+import { FREE_TRIAL, contactHref } from "@/lib/inquiry";
 
 export function Footer() {
   return (
@@ -9,14 +10,14 @@ export function Footer() {
         {/* Pre-Footer CTA */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-8 pb-16 border-b border-brand-white/10 mb-16">
           <h2 className="text-hero font-black uppercase tracking-tighter max-w-2xl">
-            Ready to <span className="text-brand-accent">dominate?</span>
+            Ready to get <span className="text-brand-accent">on court?</span>
           </h2>
           <Link
-            href="/contact"
+            href={contactHref(FREE_TRIAL)}
             className="group relative inline-flex items-center justify-center px-8 py-4 bg-brand-white text-brand-primary font-black uppercase tracking-widest text-sm rounded-full overflow-hidden transition-transform hover:scale-105"
           >
-            <span className="relative z-10 group-hover:text-brand-white transition-colors duration-300">
-              Contact Us
+            <span className="relative z-10">
+              Book a Free Trial
             </span>
             <div className="absolute inset-0 bg-brand-accent transform scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500 ease-out" />
           </Link>
@@ -39,7 +40,7 @@ export function Footer() {
                   className="h-16 w-auto object-contain rounded-md"
                 />
               </Link>
-              <p className="text-brand-white/60 text-sm leading-relaxed mb-8 max-w-sm">
+              <p className="text-brand-white/75 text-sm leading-relaxed mb-8 max-w-sm">
                 {siteConfig.tagline}
               </p>
             </div>
@@ -51,7 +52,7 @@ export function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
-                className="w-10 h-10 rounded-full border border-brand-white/20 flex items-center justify-center hover:bg-brand-white hover:text-brand-primary transition-colors cursor-pointer group"
+                className="w-11 h-11 rounded-full border border-brand-white/30 flex items-center justify-center hover:bg-brand-white hover:text-brand-primary transition-colors cursor-pointer group"
               >
                 <svg
                   className="w-4 h-4 text-brand-white group-hover:text-brand-primary transition-colors"
@@ -71,7 +72,7 @@ export function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Facebook"
-                className="w-10 h-10 rounded-full border border-brand-white/20 flex items-center justify-center hover:bg-brand-white hover:text-brand-primary transition-colors cursor-pointer group"
+                className="w-11 h-11 rounded-full border border-brand-white/30 flex items-center justify-center hover:bg-brand-white hover:text-brand-primary transition-colors cursor-pointer group"
               >
                 <svg
                   className="w-4 h-4 text-brand-white group-hover:text-brand-primary transition-colors"
@@ -93,13 +94,13 @@ export function Footer() {
             <h3 className="text-brand-accent font-black uppercase tracking-[0.2em] text-xs mb-8">
               Explore
             </h3>
-            <ul className="space-y-4">
+            <ul className="space-y-1">
               {["About", "Pathway", "Programs & Fees", "Facilities"].map(
                 (item) => (
                   <li key={item}>
                     <Link
                       href={`/${item.toLowerCase().replace(/ & /g, "-and-").replace(/ /g, "-")}`}
-                      className="text-brand-white/60 hover:text-brand-white hover:translate-x-1 inline-block transition-all text-sm font-bold uppercase tracking-wider"
+                      className="text-brand-white/75 hover:text-brand-white hover:translate-x-1 inline-flex items-center min-h-11 transition-all text-sm font-bold uppercase tracking-wider"
                     >
                       {item}
                     </Link>
@@ -114,7 +115,7 @@ export function Footer() {
             <h3 className="text-brand-accent font-black uppercase tracking-[0.2em] text-xs mb-8">
               Support
             </h3>
-            <ul className="space-y-4">
+            <ul className="space-y-1">
               {[
                 { name: "Private Lessons", path: "/private-lessons" },
                 { name: "Our Coaches", path: "/coaches" },
@@ -124,7 +125,7 @@ export function Footer() {
                 <li key={item.name}>
                   <Link
                     href={item.path}
-                    className="text-brand-white/60 hover:text-brand-white hover:translate-x-1 inline-block transition-all text-sm font-bold uppercase tracking-wider"
+                    className="text-brand-white/75 hover:text-brand-white hover:translate-x-1 inline-flex items-center min-h-11 transition-all text-sm font-bold uppercase tracking-wider"
                   >
                     {item.name}
                   </Link>
@@ -139,7 +140,13 @@ export function Footer() {
               Contact
             </h3>
             <ul className="space-y-6">
-              <li className="flex items-start gap-4 group cursor-default">
+              <li>
+                <a
+                  href={`https://maps.google.com/?q=${siteConfig.address.coordinates.lat},${siteConfig.address.coordinates.lng}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-start gap-4 group"
+                >
                 <div className="w-10 h-10 rounded-full bg-brand-white/5 flex items-center justify-center group-hover:bg-brand-accent group-hover:text-brand-primary transition-colors shrink-0">
                   <svg
                     className="w-4 h-4"
@@ -161,11 +168,13 @@ export function Footer() {
                     />
                   </svg>
                 </div>
-                <span className="text-brand-white/80 text-sm font-medium leading-relaxed pt-2">
-                  {siteConfig.address.city}
+                <span className="text-brand-white/80 group-hover:text-brand-white text-sm font-medium underline-offset-4 group-hover:underline leading-relaxed pt-2">
+                  {siteConfig.address.city} &middot; Get directions
                 </span>
+                </a>
               </li>
-              <li className="flex items-center gap-4 group cursor-default">
+              <li>
+                <a href={`tel:+91${siteConfig.phone.replace(/\s+/g, "")}`} className="flex items-center gap-4 group">
                 <div className="w-10 h-10 rounded-full bg-brand-white/5 flex items-center justify-center group-hover:bg-brand-accent group-hover:text-brand-primary transition-colors shrink-0">
                   <svg
                     className="w-4 h-4"
@@ -181,11 +190,13 @@ export function Footer() {
                     />
                   </svg>
                 </div>
-                <span className="text-brand-white/80 text-sm font-medium">
+                <span className="text-brand-white/80 group-hover:text-brand-white text-sm font-medium underline-offset-4 group-hover:underline">
                   {siteConfig.phone}
                 </span>
+                </a>
               </li>
-              <li className="flex items-center gap-4 group cursor-default">
+              <li>
+                <a href={`mailto:${siteConfig.email}`} className="flex items-center gap-4 group">
                 <div className="w-10 h-10 rounded-full bg-brand-white/5 flex items-center justify-center group-hover:bg-brand-accent group-hover:text-brand-primary transition-colors shrink-0">
                   <svg
                     className="w-4 h-4"
@@ -201,9 +212,10 @@ export function Footer() {
                     />
                   </svg>
                 </div>
-                <span className="text-brand-white/80 text-sm font-medium">
+                <span className="text-brand-white/80 group-hover:text-brand-white text-sm font-medium underline-offset-4 group-hover:underline">
                   {siteConfig.email}
                 </span>
+                </a>
               </li>
             </ul>
           </div>

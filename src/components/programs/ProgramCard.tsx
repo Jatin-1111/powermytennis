@@ -1,6 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
+import { contactHref, programInquiry } from "@/lib/inquiry";
 import { Program } from "@/data/programs";
 import { formatCurrency } from "@/lib/utils";
 import { motion, AnimatePresence } from "framer-motion";
@@ -20,7 +22,7 @@ export function ProgramCard({ program, featured = false }: ProgramCardProps) {
   if (featured) {
     // Wide horizontal hero layout for the flagship program
     return (
-      <div className="relative group bg-brand-white rounded-[2rem] overflow-hidden border-2 border-brand-accent shadow-[0_24px_64px_-12px_rgba(34,38,27,0.3)] hover:shadow-[0_40px_80px_-20px_rgba(198,217,43,0.35)] transition-all duration-500 ease-out hover:-translate-y-1">
+      <div className="relative group bg-brand-white rounded-[2rem] overflow-hidden border-2 border-brand-accent shadow-[0_24px_64px_-12px_rgba(34,38,27,0.3)] hover:shadow-[0_40px_80px_-20px_rgba(198,217,43,0.35)] transition-all duration-500 ease-out ">
         {/* Subtle glow on hover */}
         <div className="absolute inset-0 bg-gradient-to-br from-brand-accent/8 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none z-0" />
 
@@ -70,8 +72,10 @@ export function ProgramCard({ program, featured = false }: ProgramCardProps) {
                 {program.modules!.map((mod, idx) => (
                   <button
                     key={idx}
+                    type="button"
+                    aria-pressed={activeModule === idx}
                     onClick={() => setActiveModule(idx)}
-                    className={`text-xs font-black uppercase tracking-widest py-2.5 px-6 rounded-lg transition-all duration-300 ${
+                    className={`min-h-11 text-xs font-black uppercase tracking-widest py-2.5 px-6 rounded-lg transition-all duration-300 ${
                       activeModule === idx
                         ? "bg-brand-primary text-brand-accent shadow-sm"
                         : "text-brand-secondary hover:text-brand-primary hover:bg-brand-white/70"
@@ -154,6 +158,18 @@ export function ProgramCard({ program, featured = false }: ProgramCardProps) {
                 </div>
               )}
             </div>
+            <div className="mt-8 pt-6 border-t border-brand-neutral/20 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+              <p className="text-sm font-medium text-brand-black/70">
+                Not sure it&rsquo;s the right level? Ask us about a free trial.
+              </p>
+              <Link
+              href={contactHref(programInquiry(program.name))}
+              className="shrink-0 inline-flex items-center justify-center gap-2 min-h-12 px-6 rounded-xl bg-brand-primary text-brand-white hover:bg-brand-secondary font-black uppercase tracking-widest text-xs transition-colors"
+            >
+              Ask About This Program
+              <span aria-hidden="true">→</span>
+            </Link>
+            </div>
           </div>
         </div>
       </div>
@@ -163,7 +179,7 @@ export function ProgramCard({ program, featured = false }: ProgramCardProps) {
   // Standard card layout for all other programs
   return (
     <div
-      className={`relative group bg-brand-white rounded-[2rem] overflow-hidden flex flex-col h-full transition-all duration-500 ease-out hover:-translate-y-2 ${
+      className={`relative group bg-brand-white rounded-[2rem] overflow-hidden flex flex-col h-full transition-all duration-500 ease-out ${
         isPremium
           ? "border border-brand-accent/60 shadow-card-hover hover:shadow-[0_32px_64px_-16px_rgba(34,38,27,0.2)]"
           : "border border-brand-neutral/30 shadow-card-idle hover:shadow-card-hover"
@@ -214,8 +230,10 @@ export function ProgramCard({ program, featured = false }: ProgramCardProps) {
             {program.modules!.map((mod, idx) => (
               <button
                 key={idx}
+                type="button"
+                aria-pressed={activeModule === idx}
                 onClick={() => setActiveModule(idx)}
-                className={`flex-1 text-xs font-black uppercase tracking-widest py-2 px-3 rounded-lg transition-all duration-300 ${
+                className={`flex-1 min-h-11 text-xs font-black uppercase tracking-widest py-2 px-3 rounded-lg transition-all duration-300 ${
                   activeModule === idx
                     ? "bg-brand-primary text-brand-accent shadow-sm"
                     : "text-brand-secondary hover:text-brand-primary hover:bg-brand-white/70"
@@ -315,6 +333,14 @@ export function ProgramCard({ program, featured = false }: ProgramCardProps) {
             </ul>
           </div>
         )}
+
+        <Link
+              href={contactHref(programInquiry(program.name))}
+              className="mt-6 w-full inline-flex items-center justify-center gap-2 min-h-12 px-6 rounded-xl bg-brand-primary text-brand-white hover:bg-brand-secondary font-black uppercase tracking-widest text-xs transition-colors"
+            >
+              Ask About This Program
+              <span aria-hidden="true">→</span>
+            </Link>
       </div>
     </div>
   );

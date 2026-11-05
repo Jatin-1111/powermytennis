@@ -146,7 +146,7 @@ export const programs: Program[] = [
   },
   {
     id: "orange",
-    name: "ORANGE",
+    name: "ORANGE BALL",
     seats: 42,
     fee: 4500,
     feeFrequency: "per month",

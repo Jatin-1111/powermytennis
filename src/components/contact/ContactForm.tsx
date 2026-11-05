@@ -1,17 +1,27 @@
 "use client";
 
-import { useActionState } from "react";
+import { useActionState, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import {
   submitContactForm,
   type ContactFormState,
 } from "@/app/actions/contact";
-import { programs } from "@/data/programs";
-import { useState, useEffect } from "react";
+import { INQUIRY_OPTIONS } from "@/lib/inquiry";
 
 const initialState: ContactFormState = {
   success: false,
 };
+
+const labelClass =
+  "block text-xs font-black text-brand-secondary mb-2 uppercase tracking-[0.15em]";
+const optionalTag = (
+  <span className="normal-case tracking-normal font-medium text-brand-black/60">
+    {" "}
+    (optional)
+  </span>
+);
+const fieldClass =
+  "w-full bg-transparent border-2 border-brand-neutral/40 focus:border-brand-primary rounded-xl px-5 py-4 transition-colors outline-none text-brand-primary font-bold placeholder:text-brand-black/45 placeholder:font-medium";
 
 export function ContactForm() {
   const searchParams = useSearchParams();
@@ -20,41 +30,18 @@ export function ContactForm() {
     initialState,
   );
 
-  // Use state to hold the default value so we avoid hydration mismatch
-  const [defaultProgram, setDefaultProgram] = useState("");
+  // Pre-select the inquiry type from ?reason= (set by "Book a Free Trial",
+  // program cards, etc.). This component sits under a Suspense boundary,
+  // so reading search params during render is safe.
+  const [picked, setPicked] = useState<string | null>(null);
+  const program = picked ?? searchParams.get("reason") ?? "";
 
-  useEffect(() => {
-    const reason = searchParams.get("reason");
-    if (reason) {
-      setDefaultProgram(reason);
-    }
-  }, [searchParams]);
-
-  const toTitleCase = (str: string) => {
-    return str
-      .toLowerCase()
-      .split(" ")
-      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-      .join(" ");
-  };
-
-  // Program options from data
-  const programOptions = programs.map((p) => toTitleCase(p.name));
-  
-  // Ensure the reason from URL is included in options if it's custom
-  if (defaultProgram && !programOptions.includes(defaultProgram) && defaultProgram !== "") {
-    programOptions.unshift(defaultProgram);
+  const programOptions = [...INQUIRY_OPTIONS];
+  if (program && !programOptions.includes(program)) {
+    programOptions.unshift(program);
   }
 
-  if (!programOptions.includes("Pathway Consultation")) {
-    programOptions.unshift("Pathway Consultation");
-  }
-  if (!programOptions.includes("Private Individual Coaching")) {
-    programOptions.push("Private Individual Coaching");
-  }
-  if (!programOptions.includes("Others")) {
-    programOptions.push("Others");
-  }
+  const v = state.values;
 
   if (state.success) {
     return (
@@ -75,12 +62,13 @@ export function ContactForm() {
           </svg>
         </div>
         <h3 className="text-h3 font-black text-brand-primary uppercase tracking-tight mb-4">
-          Message Sent!
+          Request Received
         </h3>
         <p className="text-brand-black text-body-lg">{state.message}</p>
         <button
+          type="button"
           onClick={() => window.location.reload()}
-          className="mt-8 text-brand-secondary font-bold hover:underline uppercase tracking-widest text-sm"
+          className="mt-8 min-h-11 px-4 text-brand-secondary font-bold hover:underline uppercase tracking-widest text-sm"
         >
           Send another message
         </button>
@@ -96,149 +84,127 @@ export function ContactForm() {
       <div className="p-8 md:p-10 lg:p-12 flex-1 flex flex-col">
         <div className="mb-10">
           <h3 className="text-h2 font-black text-brand-primary uppercase tracking-tight mb-2">
-            Send Message
+            Send a Request
           </h3>
-          <p className="text-brand-black/50 font-medium text-sm max-w-sm">
-            Fill in the details below. We respond within 24 hours — for urgent
-            queries, WhatsApp us directly.
+          <p className="text-brand-black/70 font-medium text-sm max-w-sm">
+            We&rsquo;ll call you back within 24 hours. In a hurry? WhatsApp us
+            directly.
           </p>
         </div>
 
         {state.error && (
-          <div className="mb-8 p-4 bg-brand-coral/10 border-l-4 border-brand-coral text-brand-coral font-medium rounded-r-lg text-sm">
-            ERROR: {state.error}
+          <div
+            role="alert"
+            className="mb-8 p-4 bg-brand-coral/10 border-l-4 border-brand-coral text-[#9e3328] font-medium rounded-r-lg text-sm"
+          >
+            {state.error}
           </div>
         )}
 
         <div className="space-y-6 flex-1">
-          {/* Name & Phone in grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="group">
-              <label
-                htmlFor="name"
-                className="block text-[10px] font-black text-brand-secondary mb-2 uppercase tracking-[0.2em] group-focus-within:text-brand-accent transition-colors"
-              >
+            <div>
+              <label htmlFor="name" className={labelClass}>
                 Player / Parent Name
               </label>
-              <div className="relative">
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  required
-                  className="w-full bg-transparent border-2 border-brand-neutral/20 focus:border-brand-accent rounded-xl px-5 py-4 transition-all outline-none text-brand-primary font-bold placeholder:text-brand-neutral/50 placeholder:font-medium peer"
-                  placeholder="John Doe"
-                />
-                <div className="absolute right-4 top-1/2 -translate-y-1/2 w-1.5 h-1.5 rounded-full bg-brand-accent opacity-0 peer-focus:opacity-100 transition-opacity" />
-              </div>
-            </div>
-
-            <div className="group">
-              <label
-                htmlFor="phone"
-                className="block text-[10px] font-black text-brand-secondary mb-2 uppercase tracking-[0.2em] group-focus-within:text-brand-accent transition-colors"
-              >
-                Contact Number
-              </label>
-              <div className="relative">
-                <input
-                  type="tel"
-                  id="phone"
-                  name="phone"
-                  required
-                  className="w-full bg-transparent border-2 border-brand-neutral/20 focus:border-brand-accent rounded-xl px-5 py-4 transition-all outline-none text-brand-primary font-bold placeholder:text-brand-neutral/50 placeholder:font-medium peer"
-                  placeholder="+91 98765 43210"
-                />
-                <div className="absolute right-4 top-1/2 -translate-y-1/2 w-1.5 h-1.5 rounded-full bg-brand-accent opacity-0 peer-focus:opacity-100 transition-opacity" />
-              </div>
-            </div>
-          </div>
-
-          <div className="group">
-            <label
-              htmlFor="email"
-              className="block text-[10px] font-black text-brand-secondary mb-2 uppercase tracking-[0.2em] group-focus-within:text-brand-accent transition-colors"
-            >
-              Email Address
-            </label>
-            <div className="relative">
               <input
-                type="email"
-                id="email"
-                name="email"
+                type="text"
+                id="name"
+                name="name"
                 required
-                className="w-full bg-transparent border-2 border-brand-neutral/20 focus:border-brand-accent rounded-xl px-5 py-4 transition-all outline-none text-brand-primary font-bold placeholder:text-brand-neutral/50 placeholder:font-medium peer"
-                placeholder="john@example.com"
+                autoComplete="name"
+                defaultValue={v?.name}
+                className={fieldClass}
+                placeholder="e.g. Aarav Sharma"
               />
-              <div className="absolute right-4 top-1/2 -translate-y-1/2 w-1.5 h-1.5 rounded-full bg-brand-accent opacity-0 peer-focus:opacity-100 transition-opacity" />
+            </div>
+
+            <div>
+              <label htmlFor="phone" className={labelClass}>
+                Phone Number
+              </label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                required
+                autoComplete="tel"
+                inputMode="tel"
+                pattern="[0-9+\s\-]{10,16}"
+                title="A 10-digit mobile number, e.g. 98765 43210"
+                defaultValue={v?.phone}
+                className={fieldClass}
+                placeholder="98765 43210"
+              />
             </div>
           </div>
 
-          <div className="group">
-            <label
-              htmlFor="program"
-              className="block text-[10px] font-black text-brand-secondary mb-2 uppercase tracking-[0.2em] group-focus-within:text-brand-accent transition-colors"
-            >
-              Inquiry Type
+          <div>
+            <label htmlFor="program" className={labelClass}>
+              What can we help with?
             </label>
             <div className="relative">
               <select
                 id="program"
                 name="program"
-                value={defaultProgram}
-                onChange={(e) => setDefaultProgram(e.target.value)}
+                value={program || v?.program || ""}
+                onChange={(e) => setPicked(e.target.value)}
                 required
-                className="w-full bg-transparent border-2 border-brand-neutral/20 focus:border-brand-accent rounded-xl px-5 py-4 transition-all outline-none text-brand-primary font-bold appearance-none cursor-pointer peer"
+                className={`${fieldClass} appearance-none cursor-pointer pr-12`}
               >
-                <option
-                  value=""
-                  disabled
-                  className="text-brand-neutral/50 font-medium"
-                >
-                  Select an inquiry type...
+                <option value="" disabled>
+                  Choose one…
                 </option>
                 {programOptions.map((opt) => (
-                  <option key={opt} value={opt} className="font-bold">
+                  <option key={opt} value={opt}>
                     {opt}
                   </option>
                 ))}
               </select>
-              <div className="absolute right-5 top-1/2 -translate-y-1/2 pointer-events-none text-brand-neutral peer-focus:text-brand-accent transition-colors">
-                <svg
-                  className="w-5 h-5"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2.5}
-                    d="M19 9l-7 7-7-7"
-                  />
-                </svg>
-              </div>
+              <svg
+                aria-hidden="true"
+                className="absolute right-5 top-1/2 -translate-y-1/2 pointer-events-none w-5 h-5 text-brand-secondary"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2.5}
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
             </div>
           </div>
 
-          <div className="group">
-            <label
-              htmlFor="message"
-              className="block text-[10px] font-black text-brand-secondary mb-2 uppercase tracking-[0.2em] group-focus-within:text-brand-accent transition-colors"
-            >
-              Your Message
+          <div>
+            <label htmlFor="email" className={labelClass}>
+              Email{optionalTag}
             </label>
-            <div className="relative">
-              <textarea
-                id="message"
-                name="message"
-                rows={4}
-                required
-                className="w-full bg-transparent border-2 border-brand-neutral/20 focus:border-brand-accent rounded-xl px-5 py-4 transition-all outline-none resize-none text-brand-primary font-bold placeholder:text-brand-neutral/50 placeholder:font-medium peer"
-                placeholder="Tell us about your goals..."
-              />
-              <div className="absolute right-4 top-6 w-1.5 h-1.5 rounded-full bg-brand-accent opacity-0 peer-focus:opacity-100 transition-opacity" />
-            </div>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              autoComplete="email"
+              defaultValue={v?.email}
+              className={fieldClass}
+              placeholder="you@example.com"
+            />
+          </div>
+
+          <div>
+            <label htmlFor="message" className={labelClass}>
+              Message{optionalTag}
+            </label>
+            <textarea
+              id="message"
+              name="message"
+              rows={4}
+              defaultValue={v?.message}
+              className={`${fieldClass} resize-none`}
+              placeholder="Player's age, level, or preferred timings"
+            />
           </div>
         </div>
 
@@ -260,7 +226,7 @@ export function ContactForm() {
           ) : (
             <div className="flex items-center gap-3 relative z-10">
               <span className="font-black uppercase tracking-[0.2em] text-brand-white text-sm group-hover:text-brand-accent transition-colors duration-300">
-                Send Message
+                Send Request
               </span>
               <svg
                 className="w-5 h-5 text-brand-white group-hover:translate-x-1 group-hover:text-brand-accent transition-all duration-300"

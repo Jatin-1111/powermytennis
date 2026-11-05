@@ -139,3 +139,25 @@ body {
   scrollbar-width: thin;
   scrollbar-color: var(--color-brand-neutral) transparent;
 }
+
+/* Hero intro: hide elements GSAP will reveal, but only when JS is running
+   (html.js is set by an inline script in layout.tsx) and the user has not
+   asked for reduced motion. GSAP's autoAlpha sets visibility back. */
+@media (prefers-reduced-motion: no-preference) {
+  html.js [data-hero-reveal] {
+    visibility: hidden;
+  }
+}
+
+/* Visible keyboard focus everywhere: accent ring with a dark halo, so it
+   reads on both the white and the dark-green sections. */
+:focus-visible {
+  outline: 3px solid var(--color-brand-accent);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 6px var(--color-brand-primary);
+}
+
+/* Anchor jumps (#book-trial etc.) land below the fixed navbar */
+[id] {
+  scroll-margin-top: 7rem;
+}

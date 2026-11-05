@@ -177,13 +177,13 @@ export function AcademyStory() {
                     YR
                   </div>
                   <div>
-                    <div className="text-[10px] font-black uppercase tracking-[0.25em] text-brand-secondary mb-1">
+                    <div className="text-xs font-black uppercase tracking-[0.25em] text-brand-secondary mb-1">
                       Director(Coaching & Development), PowerMyTennis
                     </div>
                     <h3 className="text-xl font-black text-brand-primary uppercase tracking-tight mb-2">
                       Yengkhom Romen Singh
                     </h3>
-                    <p className="text-sm font-medium text-brand-black/50 mb-4 leading-relaxed">
+                    <p className="text-sm font-medium text-brand-black/70 mb-4 leading-relaxed">
                       ITF Level 2 &nbsp;·&nbsp; NIS Certified Coach
                       &nbsp;·&nbsp; Ex-Director, Coaching &amp; Development
                       (CLTA)
@@ -199,7 +199,7 @@ export function AcademyStory() {
 
                 {/* Mission Card */}
                 <div className="flex flex-col justify-center bg-brand-primary rounded-2xl p-8 border border-brand-white/5">
-                  <div className="text-[10px] font-black uppercase tracking-[0.25em] text-brand-accent mb-4">
+                  <div className="text-xs font-black uppercase tracking-[0.25em] text-brand-accent mb-4">
                     Our Mission
                   </div>
                   <p className="text-brand-white font-medium text-lg leading-relaxed">
@@ -210,7 +210,7 @@ export function AcademyStory() {
                     </span>
                     ."
                   </p>
-                  <div className="mt-6 pt-6 border-t border-brand-white/10 text-brand-white/35 text-xs font-bold uppercase tracking-widest">
+                  <div className="mt-6 pt-6 border-t border-brand-white/10 text-brand-white/65 text-xs font-bold uppercase tracking-widest">
                     — Yengkhom Romen Singh, Director
                   </div>
                 </div>

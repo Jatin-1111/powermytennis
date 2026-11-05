@@ -78,7 +78,7 @@ export function TestimonialMarquee() {
                   {testimonial.authorRole}
                 </p>
                 {testimonial.program && (
-                  <p className="text-brand-white/50 text-[10px] font-bold uppercase tracking-widest mt-1">
+                  <p className="text-brand-white/70 text-xs font-bold uppercase tracking-widest mt-1">
                     {testimonial.program}
                   </p>
                 )}

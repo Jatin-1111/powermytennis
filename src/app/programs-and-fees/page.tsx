@@ -13,8 +13,8 @@ import {
   pageMetadata,
 } from "@/lib/seo";
 
-const toTitleCase = (s: string) =>
-  s.toLowerCase().replace(/\b\w/g, (c) => c.toUpperCase());
+import { toTitleCase } from "@/lib/utils";
+import { FREE_TRIAL, contactHref } from "@/lib/inquiry";
 
 export const metadata: Metadata = pageMetadata({
   title: "Tennis Programs, Batch Timings & Fees",
@@ -70,14 +70,43 @@ export default function ProgramsAndFeesPage() {
       <Container className="py-16 md:py-24 relative">
         <MotionSection>
           <MotionItem>
-            <SectionHeading subtitle="Intense, dynamic & wholistic coaching modules designed for every level.">
-              Ace The Court
+            <SectionHeading subtitle="Intense, dynamic and holistic coaching for every level, from first-time juniors to tournament players.">
+              Find Your Program
             </SectionHeading>
           </MotionItem>
         </MotionSection>
 
+        {/* Jump links so beginners don't have to scroll past elite programs */}
+        <nav
+          aria-label="Program groups"
+          className="mt-10 flex flex-col sm:flex-row gap-3 justify-center"
+        >
+          <a
+            href="#foundation"
+            className="flex flex-col items-center justify-center min-h-14 px-6 py-3 rounded-2xl border-2 border-brand-secondary/30 hover:border-brand-secondary text-center transition-colors"
+          >
+            <span className="text-sm font-black uppercase tracking-widest text-brand-primary">
+              Foundation Programs ↓
+            </span>
+            <span className="text-xs font-medium text-brand-black/70">
+              New players &amp; juniors · Orange Ball, Beginner, Intermediate
+            </span>
+          </a>
+          <a
+            href="#performance"
+            className="flex flex-col items-center justify-center min-h-14 px-6 py-3 rounded-2xl border-2 border-brand-accent/60 hover:border-brand-accent text-center transition-colors"
+          >
+            <span className="text-sm font-black uppercase tracking-widest text-brand-primary">
+              Performance Programs ↓
+            </span>
+            <span className="text-xs font-medium text-brand-black/70">
+              Competitive players · Tournament, Pro, High Performance
+            </span>
+          </a>
+        </nav>
+
         {/* ── PERFORMANCE TIER GROUP ───────────────────────────────────── */}
-        <div className="mt-20 md:mt-28">
+        <div id="performance" className="mt-20 md:mt-28 scroll-mt-32">
           <MotionSection>
             <MotionItem>
               <div className="flex items-center gap-4 mb-10">
@@ -117,23 +146,23 @@ export default function ProgramsAndFeesPage() {
             <MotionItem>
               <div className="bg-brand-neutral/5 border border-brand-neutral/20 rounded-2xl p-8 md:p-10 flex flex-col sm:flex-row items-center justify-between gap-6">
                 <div>
-                  <p className="text-[10px] font-black uppercase tracking-[0.25em] text-brand-secondary mb-2">
+                  <p className="text-xs font-black uppercase tracking-[0.2em] text-brand-secondary mb-2">
                     Not Sure Which Level?
                   </p>
                   <h3 className="text-h2 font-black text-brand-primary uppercase tracking-tight">
-                    Book a Free Assessment
+                    Start With a Free Trial
                   </h3>
-                  <p className="text-brand-black/55 text-sm font-medium mt-2 max-w-md text-pretty">
-                    Our coaches will evaluate your current level and recommend
-                    the right program — no commitment required.
+                  <p className="text-brand-black/70 text-sm font-medium mt-2 max-w-md text-pretty">
+                    A coach assesses the player&rsquo;s level in one session and
+                    recommends the right program. No commitment.
                   </p>
                 </div>
                 <a
-                  href="/contact?reason=Program+Inquiry"
+                  href={contactHref(FREE_TRIAL)}
                   className="group relative inline-flex items-center gap-3 bg-brand-primary text-brand-white font-black uppercase tracking-widest text-xs px-8 py-4 rounded-xl overflow-hidden shrink-0 transition-all hover:shadow-lg"
                 >
                   <div className="absolute inset-0 bg-brand-secondary translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />
-                  <span className="relative z-10">Contact Us</span>
+                  <span className="relative z-10">Book a Free Trial</span>
                   <svg
                     className="w-4 h-4 relative z-10 group-hover:translate-x-1 transition-transform duration-300"
                     fill="none"
@@ -154,7 +183,7 @@ export default function ProgramsAndFeesPage() {
         </div>
 
         {/* ── FOUNDATION TIER GROUP ────────────────────────────────────── */}
-        <div className="mt-20 md:mt-28">
+        <div id="foundation" className="mt-20 md:mt-28 scroll-mt-32">
           <MotionSection>
             <MotionItem>
               <div className="flex items-center gap-4 mb-10">

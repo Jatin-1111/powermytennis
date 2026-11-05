@@ -1,11 +1,11 @@
 "use client";
 
 import { useActionState, useState } from "react";
+import { FREE_TRIAL, INQUIRY_OPTIONS } from "@/lib/inquiry";
 import {
   submitContactForm,
   type ContactFormState,
 } from "@/app/actions/contact";
-import { programs } from "@/data/programs";
 import { Container } from "@/components/shared/Container";
 import { MotionSection, MotionItem } from "@/components/shared/MotionSection";
 import { siteConfig } from "@/data/siteConfig";
@@ -20,33 +20,19 @@ export function TrialCTA() {
   const formattedPhone = siteConfig.phone.replace(/\s+/g, "");
   const whatsappUrl = `https://wa.me/91${formattedPhone}?text=Hi%2C%20I%27d%20like%20to%20book%20a%20free%20trial%20session%20at%20PowerMyTennis.`;
 
-  const [selectedProgram, setSelectedProgram] = useState("");
+  // A trial is the default — this is the "Book a Free Trial" form.
+  const [selectedProgram, setSelectedProgram] = useState(FREE_TRIAL);
+  const v = state.values;
 
   const inputClass =
-    "w-full bg-brand-white/5 border border-brand-white/15 focus:border-brand-accent rounded-xl px-5 py-4 transition-all outline-none text-brand-white font-medium placeholder:text-brand-white/30 text-sm";
-
-  const toTitleCase = (str: string) => {
-    return str
-      .toLowerCase()
-      .split(" ")
-      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-      .join(" ");
-  };
-
-  const programOptions = programs.map((p) => toTitleCase(p.name));
-  
-  if (!programOptions.includes("Pathway Consultation")) {
-    programOptions.unshift("Pathway Consultation");
-  }
-  if (!programOptions.includes("Private Individual Coaching")) {
-    programOptions.push("Private Individual Coaching");
-  }
-  if (!programOptions.includes("Others")) {
-    programOptions.push("Others");
-  }
+    "w-full bg-brand-white/5 border border-brand-white/30 focus:border-brand-accent rounded-xl px-5 py-4 transition-colors outline-none text-brand-white font-medium placeholder:text-brand-white/55 text-sm";
+  const labelClass =
+    "block text-xs font-black uppercase tracking-[0.15em] text-brand-white/75 mb-2";
 
   return (
-    <section className="bg-brand-primary py-section relative overflow-hidden border-y border-brand-accent/10">
+    <section
+      id="book-trial"
+      className="scroll-mt-28 bg-brand-primary py-section relative overflow-hidden border-y border-brand-accent/10">
       {/* Geometric pinstripe background */}
       <div
         className="absolute inset-0 pointer-events-none opacity-20"
@@ -63,7 +49,7 @@ export function TrialCTA() {
             <MotionItem>
               <div className="flex items-center gap-4 mb-6">
                 <span className="w-2 h-2 rounded-full bg-brand-accent animate-pulse" />
-                <span className="text-xs font-black uppercase tracking-[0.3em] text-brand-white/50">
+                <span className="text-xs font-black uppercase tracking-[0.3em] text-brand-white/70">
                   Zero Commitment
                 </span>
               </div>
@@ -132,9 +118,12 @@ export function TrialCTA() {
                   </svg>
                   WhatsApp us instead
                 </a>
-                <span className="text-brand-white/20 text-xs">
+                <a
+                  href={`tel:+91${formattedPhone}`}
+                  className="text-brand-white/70 text-sm hover:text-brand-white underline-offset-4 hover:underline"
+                >
                   or call {siteConfig.phone}
-                </span>
+                </a>
               </div>
             </MotionItem>
           </MotionSection>
@@ -160,9 +149,9 @@ export function TrialCTA() {
                     </svg>
                   </div>
                   <h3 className="text-2xl font-black text-brand-white uppercase tracking-tight mb-3">
-                    You&rsquo;re Booked!
+                    Request Received
                   </h3>
-                  <p className="text-brand-white/60 text-sm font-medium max-w-xs">
+                  <p className="text-brand-white/75 text-sm font-medium max-w-xs">
                     {state.message}
                   </p>
                 </div>
@@ -174,14 +163,14 @@ export function TrialCTA() {
                   <input
                     type="hidden"
                     name="message"
-                    value="Free trial session inquiry from homepage."
+                    value="Sent from the Book a Free Trial form on the homepage."
                   />
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                     <div>
                       <label
                         htmlFor="trial-name"
-                        className="block text-[10px] font-black uppercase tracking-[0.2em] text-brand-white/40 mb-2"
+                        className={labelClass}
                       >
                         Player / Parent Name
                       </label>
@@ -190,23 +179,30 @@ export function TrialCTA() {
                         id="trial-name"
                         name="name"
                         required
-                        placeholder="Your name"
+                        autoComplete="name"
+                        defaultValue={v?.name}
+                        placeholder="e.g. Aarav Sharma"
                         className={inputClass}
                       />
                     </div>
                     <div>
                       <label
                         htmlFor="trial-phone"
-                        className="block text-[10px] font-black uppercase tracking-[0.2em] text-brand-white/40 mb-2"
+                        className={labelClass}
                       >
-                        Contact Number
+                        Phone Number
                       </label>
                       <input
                         type="tel"
                         id="trial-phone"
                         name="phone"
                         required
-                        placeholder="+91 98765 43210"
+                        autoComplete="tel"
+                        inputMode="tel"
+                        pattern="[0-9+\s\-]{10,16}"
+                        title="A 10-digit mobile number, e.g. 98765 43210"
+                        defaultValue={v?.phone}
+                        placeholder="98765 43210"
                         className={inputClass}
                       />
                     </div>
@@ -215,16 +211,20 @@ export function TrialCTA() {
                   <div>
                     <label
                       htmlFor="trial-email"
-                      className="block text-[10px] font-black uppercase tracking-[0.2em] text-brand-white/40 mb-2"
+                      className={labelClass}
                     >
-                      Email Address
+                      Email{" "}
+                      <span className="normal-case tracking-normal font-medium">
+                        (optional)
+                      </span>
                     </label>
                     <input
                       type="email"
                       id="trial-email"
                       name="email"
-                      required
-                      placeholder="your@email.com"
+                      autoComplete="email"
+                      defaultValue={v?.email}
+                      placeholder="you@example.com"
                       className={inputClass}
                     />
                   </div>
@@ -232,9 +232,9 @@ export function TrialCTA() {
                   <div>
                     <label
                       htmlFor="trial-program"
-                      className="block text-[10px] font-black uppercase tracking-[0.2em] text-brand-white/40 mb-2"
+                      className={labelClass}
                     >
-                      Program of Interest
+                      Interested In
                     </label>
                     <div className="relative">
                       <select
@@ -243,18 +243,9 @@ export function TrialCTA() {
                         required
                         value={selectedProgram}
                         onChange={(e) => setSelectedProgram(e.target.value)}
-                        className={`${inputClass} appearance-none cursor-pointer ${
-                          !selectedProgram ? "!text-brand-white/40" : ""
-                        }`}
+                        className={`${inputClass} appearance-none cursor-pointer pr-12`}
                       >
-                        <option
-                          value=""
-                          disabled
-                          hidden
-                        >
-                          Select a program...
-                        </option>
-                        {programOptions.map((opt) => (
+                        {INQUIRY_OPTIONS.map((opt) => (
                           <option
                             key={opt}
                             value={opt}
@@ -265,7 +256,8 @@ export function TrialCTA() {
                         ))}
                       </select>
                       <svg
-                        className="absolute right-5 top-1/2 -translate-y-1/2 w-4 h-4 text-brand-white/40 pointer-events-none"
+                        aria-hidden="true"
+                        className="absolute right-5 top-1/2 -translate-y-1/2 w-4 h-4 text-brand-white/70 pointer-events-none"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
@@ -281,7 +273,10 @@ export function TrialCTA() {
                   </div>
 
                   {state.error && (
-                    <p className="text-brand-coral text-sm font-medium bg-brand-coral/10 px-4 py-3 rounded-xl border border-brand-coral/20">
+                    <p
+                      role="alert"
+                      className="text-[#ffb4a9] text-sm font-medium bg-brand-coral/15 px-4 py-3 rounded-xl border border-brand-coral/40"
+                    >
                       {state.error}
                     </p>
                   )}
@@ -317,9 +312,8 @@ export function TrialCTA() {
                     )}
                   </button>
 
-                  <p className="text-center text-brand-white/25 text-[11px] font-medium">
-                    We respond within 24 hours &nbsp;·&nbsp; No commitment
-                    required
+                  <p className="text-center text-brand-white/70 text-xs font-medium">
+                    We call back within 24 hours &nbsp;·&nbsp; No commitment
                   </p>
                 </form>
               )}

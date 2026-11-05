@@ -126,7 +126,7 @@ export function PillarsSnapshot() {
               <div className="flex items-center gap-0 py-8 md:py-10">
                 {/* Number */}
                 <div className="w-16 md:w-20 flex-shrink-0">
-                  <span className="text-xs font-black tracking-[0.2em] text-brand-secondary/50 group-hover:text-brand-white/30 transition-colors duration-500">
+                  <span className="text-xs font-black tracking-[0.2em] text-brand-secondary/80 group-hover:text-brand-white/65 transition-colors duration-500">
                     {pillar.num}
                   </span>
                 </div>

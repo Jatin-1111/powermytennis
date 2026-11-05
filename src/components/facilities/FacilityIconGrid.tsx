@@ -100,7 +100,7 @@ function Card({
           >
             {facility.label}
           </h3>
-          <p className="text-brand-white/45 text-sm font-medium leading-relaxed group-hover:text-brand-white/65 transition-colors duration-300">
+          <p className="text-brand-white/70 text-sm font-medium leading-relaxed group-hover:text-brand-white/85 transition-colors duration-300">
             {facility.description}
           </p>
         </div>

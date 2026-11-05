@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+import { PRIVATE_LESSONS, contactHref } from "@/lib/inquiry";
 import { Container } from "@/components/shared/Container";
 import { privateLessons } from "@/data/programs";
 import { formatCurrency } from "@/lib/utils";
@@ -119,7 +121,7 @@ export default function PrivateLessonsPage() {
                 className="bg-brand-neutral/5 rounded-[2rem] p-8 md:p-10 flex flex-col justify-between border border-brand-neutral/20 hover:border-brand-primary/20 hover:bg-brand-neutral/10 transition-colors group cursor-default"
               >
                 <div className="mb-12">
-                  <h3 className="text-2xl lg:text-3xl font-black uppercase tracking-tight text-brand-primary leading-none group-hover:text-brand-accent transition-colors duration-300">
+                  <h3 className="text-2xl lg:text-3xl font-black uppercase tracking-tight text-brand-primary leading-none group-hover:text-brand-secondary transition-colors duration-300">
                     {fee.role}
                   </h3>
                 </div>
@@ -128,7 +130,7 @@ export default function PrivateLessonsPage() {
                   <div className="font-black text-brand-secondary text-4xl lg:text-5xl tracking-tighter mb-1">
                     {formatCurrency(fee.fee)}
                   </div>
-                  <div className="text-brand-black/40 font-bold uppercase tracking-widest text-xs">
+                  <div className="text-brand-black/70 font-bold uppercase tracking-widest text-xs">
                     {fee.duration.replace("per ", "Per ")}
                   </div>
                 </div>
@@ -172,6 +174,25 @@ export default function PrivateLessonsPage() {
               <div className="w-12 h-1 bg-[#F2994A] mx-auto mt-6" />
             </motion.div>
           </div>
+        </div>
+
+        {/* Next step */}
+        <div className="mt-20 bg-brand-primary rounded-[2rem] p-8 md:p-12 flex flex-col md:flex-row md:items-center justify-between gap-6">
+          <div>
+            <h2 className="text-h3 font-black uppercase tracking-tight text-brand-white">
+              Book a Private Lesson
+            </h2>
+            <p className="text-brand-white/75 font-medium mt-2 max-w-md">
+              Tell us the player&rsquo;s level and preferred days. We&rsquo;ll
+              match a coach and confirm a slot within 24 hours.
+            </p>
+          </div>
+          <Link
+            href={contactHref(PRIVATE_LESSONS)}
+            className="inline-flex items-center justify-center min-h-12 px-8 rounded-full bg-brand-accent text-brand-primary font-black uppercase tracking-widest text-sm hover:bg-[#b0c426] transition-colors shrink-0"
+          >
+            Request a Lesson
+          </Link>
         </div>
       </Container>
     </main>

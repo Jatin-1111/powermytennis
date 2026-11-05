@@ -16,7 +16,7 @@ export function MeetOurCoachesCTA() {
 
           {/* Label + Title */}
           <div className="shrink-0">
-            <p className="text-[10px] font-black uppercase tracking-[0.3em] text-brand-secondary mb-0.5 group-hover:text-brand-accent transition-colors duration-500">
+            <p className="text-xs font-black uppercase tracking-[0.3em] text-brand-secondary mb-0.5 group-hover:text-brand-accent transition-colors duration-500">
               The Team
             </p>
             <h3 className="text-brand-primary group-hover:text-brand-white font-black uppercase tracking-tight text-lg md:text-2xl transition-colors duration-500">
@@ -74,12 +74,12 @@ export function MeetOurCoachesCTA() {
           <div className="hidden lg:block w-px h-10 bg-brand-neutral/20 group-hover:bg-brand-white/10 transition-colors duration-500 mx-4 xl:mx-8 shrink-0" />
           <div className="hidden lg:flex flex-col gap-0.5">
             {coaches.slice(0, 3).map((coach) => (
-              <p key={coach.id} className="text-xs font-bold text-brand-black/50 group-hover:text-brand-white/50 transition-colors duration-500 uppercase tracking-wider whitespace-nowrap">
+              <p key={coach.id} className="text-xs font-bold text-brand-black/70 group-hover:text-brand-white/75 transition-colors duration-500 uppercase tracking-wider whitespace-nowrap">
                 {coach.name.split(" ")[0]}{" "}
                 <span className="text-brand-secondary group-hover:text-brand-accent/60 transition-colors duration-500">{coach.role}</span>
               </p>
             ))}
-            <p className="text-[10px] font-bold text-brand-black/65 group-hover:text-brand-white/65 transition-colors duration-500 uppercase tracking-widest">
+            <p className="text-xs font-bold text-brand-black/65 group-hover:text-brand-white/65 transition-colors duration-500 uppercase tracking-widest">
               + {coaches.length - 3} more
             </p>
           </div>

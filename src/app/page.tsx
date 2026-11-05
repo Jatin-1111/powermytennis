@@ -6,6 +6,7 @@ import { QuickLinks } from "@/components/home/QuickLinks";
 import { TestimonialMarquee } from "@/components/home/TestimonialMarquee";
 import { MeetOurCoachesCTA } from "@/components/home/MeetOurCoachesCTA";
 import { TrialCTA } from "@/components/home/TrialCTA";
+import { SectionReveal } from "@/components/shared/SectionReveal";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = pageMetadata({
@@ -21,11 +22,21 @@ export default function Home() {
     <main className="min-h-screen bg-brand-white">
       <LaunchBanner />
       <HeroSection />
-      <PillarsSnapshot />
-      <MeetOurCoachesCTA />
-      <TestimonialMarquee />
-      <TrialCTA />
-      <QuickLinks />
+      <SectionReveal>
+        <PillarsSnapshot />
+      </SectionReveal>
+      <SectionReveal>
+        <MeetOurCoachesCTA />
+      </SectionReveal>
+      <SectionReveal>
+        <TestimonialMarquee />
+      </SectionReveal>
+      <SectionReveal>
+        <TrialCTA />
+      </SectionReveal>
+      <SectionReveal>
+        <QuickLinks />
+      </SectionReveal>
     </main>
   );
 }
